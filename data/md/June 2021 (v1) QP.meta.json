@@ -1,0 +1,1300 @@
+{
+  "source_pdf": "/Users/a67_68/projects/paper_researcher/data/papers/June 2021 (v1) QP.pdf",
+  "stem": "June 2021 (v1) QP",
+  "generator": "pdf_to_md.py",
+  "image_link_style": "markdown",
+  "table_format": "md",
+  "pages": 8,
+  "images": [],
+  "tables": [],
+  "blocks": [
+    {
+      "id": "blk-0001",
+      "page": 1,
+      "bbox": [
+        56.692100524902344,
+        100.04730224609375,
+        378.1720886230469,
+        125.82329559326172
+      ],
+      "kind": "text",
+      "text": "**Cambridge International AS & A Level**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0002",
+      "page": 1,
+      "bbox": [
+        56.692100524902344,
+        153.71542358398438,
+        538.5845947265625,
+        169.46742248535156
+      ],
+      "kind": "text",
+      "text": "**HISTORY **\n**9489/11**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0003",
+      "page": 1,
+      "bbox": [
+        56.692100524902344,
+        174.7701416015625,
+        538.5720825195312,
+        189.0901336669922
+      ],
+      "kind": "text",
+      "text": "Paper 1 Document Question\n**May/June 2021**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0004",
+      "page": 1,
+      "bbox": [
+        453.0021057128906,
+        194.7701416015625,
+        538.5820922851562,
+        209.0901336669922
+      ],
+      "kind": "text",
+      "text": "**1 hour 15 minutes**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0005",
+      "page": 1,
+      "bbox": [
+        56.692108154296875,
+        219.93014526367188,
+        279.2140808105469,
+        233.58013916015625
+      ],
+      "kind": "text",
+      "text": "You must answer on the enclosed answer booklet.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0006",
+      "page": 1,
+      "bbox": [
+        56.692108154296875,
+        244.93014526367188,
+        246.79208374023438,
+        258.58013916015625
+      ],
+      "kind": "text",
+      "text": "You will need:\nAnswer booklet (enclosed)",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0007",
+      "page": 1,
+      "bbox": [
+        56.682106018066406,
+        273.36016845703125,
+        273.38507080078125,
+        300.68017578125
+      ],
+      "kind": "text",
+      "text": "**INSTRUCTIONS**\n●\nAnswer **one** question from **one** section only.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0008",
+      "page": 1,
+      "bbox": [
+        56.682106018066406,
+        299.5201721191406,
+        524.3170166015625,
+        365.170166015625
+      ],
+      "kind": "text",
+      "text": "Section A: European option\nSection B: American option\nSection C: International option\n●\nFollow the instructions on the front cover of the answer booklet. If you need additional answer paper,\nask the invigilator for a continuation booklet.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0009",
+      "page": 1,
+      "bbox": [
+        56.682106018066406,
+        390.36016845703125,
+        433.6719665527344,
+        430.170166015625
+      ],
+      "kind": "text",
+      "text": "**INFORMATION**\n●\nThe total mark for this paper is 40.\n●\nThe number of marks for each question or part question is shown in brackets [ ].",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0010",
+      "page": 1,
+      "bbox": [
+        165.32989501953125,
+        730.8937377929688,
+        429.9268493652344,
+        745.2137451171875
+      ],
+      "kind": "text",
+      "text": "This document has **8** pages. Any blank pages are indicated.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0011",
+      "page": 2,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**2**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0012",
+      "page": 2,
+      "bbox": [
+        190.14340209960938,
+        61.02248764038086,
+        405.1307373046875,
+        76.77449035644531
+      ],
+      "kind": "text",
+      "text": "Answer **one** question from **one** section only.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0013",
+      "page": 2,
+      "bbox": [
+        225.431396484375,
+        87.02651977539062,
+        369.8669738769531,
+        102.77851867675781
+      ],
+      "kind": "text",
+      "text": "**Section A: European option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0014",
+      "page": 2,
+      "bbox": [
+        170.89340209960938,
+        113.03054809570312,
+        424.3961486816406,
+        128.7825469970703
+      ],
+      "kind": "text",
+      "text": "**Liberalism and nationalism in Germany, 1815–71**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0015",
+      "page": 2,
+      "bbox": [
+        49.618408203125,
+        152.02554321289062,
+        375.5660095214844,
+        167.7775421142578
+      ],
+      "kind": "text",
+      "text": "**1 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0016",
+      "page": 2,
+      "bbox": [
+        49.618408203125,
+        178.02957153320312,
+        120.18340301513672,
+        193.7815704345703
+      ],
+      "kind": "text",
+      "text": "** **\n**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0017",
+      "page": 2,
+      "bbox": [
+        72.30040740966797,
+        204.2095947265625,
+        176.21739196777344,
+        219.22459411621094
+      ],
+      "kind": "text",
+      "text": "To my dear Berliners,",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0018",
+      "page": 2,
+      "bbox": [
+        72.30040740966797,
+        230.213623046875,
+        548.7039184570312,
+        258.23065185546875
+      ],
+      "kind": "text",
+      "text": "A band of villains, mostly strangers, have caused this bloodshed. My troops, your brothers and\ncompatriots, only fired when they were forced to do so by many shots.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0019",
+      "page": 2,
+      "bbox": [
+        72.30040740966797,
+        269.21966552734375,
+        548.7533569335938,
+        362.24676513671875
+      ],
+      "kind": "text",
+      "text": "It rests with you now, citizens of my beloved capital, to prevent even greater chaos. Your king and\nmost loyal friend pleads with you to recognise your unhappy error. Return to the path of peace\nand clear the barricades still standing. I give you my royal oath that every street will be cleared of\ntroops. Military occupation will be restricted to the castle and armoury where it is necessary, and\neven this will be limited and only for a short time. Citizens, forget what has happened, just as in\nmy heart I too will forget it for the sake of the great future which will dawn for Prussia, and through\nPrussia for all Germany.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0020",
+      "page": 2,
+      "bbox": [
+        212.80340576171875,
+        373.69775390625,
+        545.6722412109375,
+        388.2507629394531
+      ],
+      "kind": "text",
+      "text": "*From a proclamation issued by Frederick William IV, 19 March 1848.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0021",
+      "page": 2,
+      "bbox": [
+        49.618408203125,
+        412.05474853515625,
+        120.59040069580078,
+        427.8067321777344
+      ],
+      "kind": "text",
+      "text": "** **\n**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0022",
+      "page": 2,
+      "bbox": [
+        72.30040740966797,
+        438.2347412109375,
+        548.7511596679688,
+        492.25579833984375
+      ],
+      "kind": "text",
+      "text": "Liberalism is a disease and works on the soul. Appearances become deceptive and the\nconsequences of clearly present causes are dismissed as superstition. God forbid that you, my\nfriend, should be seriously ill. But you seem to me to be sick, because disbelief in conspiracy is\nthe first unmistakable symptom of the liberalism that destroys the soul.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0023",
+      "page": 2,
+      "bbox": [
+        72.30040740966797,
+        503.24481201171875,
+        548.7686767578125,
+        609.2738647460938
+      ],
+      "kind": "text",
+      "text": "Stones for the stoning of my loyal soldiers were collected in all the houses of Berlin and Cologne.\nPeople had observed them being brought in from long distances, like the earth that was used to\nfortify the barricades. Nobody would explain this unusual requirement for stone and earth. In the\nmain thoroughfares all buildings were put into communication and connected by passageways\nso that it would be possible to torment the troops by hurling stones and firing shots at them from\nthe top-floor windows. It has been proved that more than ten thousand of the most disreputable\nscoundrels had flooded into the city over the course of weeks. This included convicts from the\nFrench prison, Poles and South Germans, Italian merchants and others.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0024",
+      "page": 2,
+      "bbox": [
+        63.22541046142578,
+        620.724853515625,
+        548.730224609375,
+        648.2798461914062
+      ],
+      "kind": "text",
+      "text": "*From a letter by Frederick William IV to his ambassador in London, April 1848. *\n*The ambassador had tried to convince him that the unrest in Berlin in March 1848 had not been the *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0025",
+      "page": 2,
+      "bbox": [
+        439.5133972167969,
+        646.7288208007812,
+        545.6910400390625,
+        661.2818603515625
+      ],
+      "kind": "text",
+      "text": "*result of a conspiracy.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0026",
+      "page": 3,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**3**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0027",
+      "page": 3,
+      "bbox": [
+        49.6065673828125,
+        61.02163314819336,
+        120.57855987548828,
+        76.77363586425781
+      ],
+      "kind": "text",
+      "text": "** **\n**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0028",
+      "page": 3,
+      "bbox": [
+        96.20010375976562,
+        350.5404052734375,
+        548.7093505859375,
+        365.0934143066406
+      ],
+      "kind": "text",
+      "text": "*A German cartoon published in March 1848. Frederick William IV calls to the revolutionaries, *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0029",
+      "page": 3,
+      "bbox": [
+        166.5341033935547,
+        363.54241943359375,
+        546.2542724609375,
+        378.0954284667969
+      ],
+      "kind": "text",
+      "text": "*‘You up ahead! Run to me because I want to spearhead [lead] the movement.’*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0030",
+      "page": 3,
+      "bbox": [
+        49.61510467529297,
+        401.8994140625,
+        120.58709716796875,
+        417.6513977050781
+      ],
+      "kind": "text",
+      "text": "** **\n**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0031",
+      "page": 3,
+      "bbox": [
+        72.29710388183594,
+        428.07940673828125,
+        548.7523193359375,
+        560.112548828125
+      ],
+      "kind": "text",
+      "text": "Our eyes turned anxiously to developments in Berlin. Prussia was by far the strongest of the\npurely German states. It was generally felt that the attitude of Prussia would be decisive in\ndetermining the fate of the revolution. For a while the Prussian king, Frederick William IV, seemed\nto be pleased with the role of leader of the national movement, which the revolution had made him\nassume. His unpredictable nature seemed to be warmed by a new enthusiasm. He took walks on\nthe streets and talked freely with the people. He spoke of constitutional principles of government\nto be introduced as a matter of course. But when the Prussian constituent assembly had met\nin Berlin and began to pass laws, and to design constitutional provisions, and to interfere with\nthe conduct of the government in the spirit of the revolution, the king started listening to more\nconservative voices.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0032",
+      "page": 3,
+      "bbox": [
+        50.16510009765625,
+        571.5634765625,
+        548.7070922851562,
+        599.1185302734375
+      ],
+      "kind": "text",
+      "text": "*From ‘The Reminiscences of Carl Schurz’, published in 1913. *\n*In 1848 Schurz was a student in Prussia and editor of a newspaper which promoted democratic reform.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0033",
+      "page": 3,
+      "bbox": [
+        49.6151008605957,
+        622.9225463867188,
+        385.9389953613281,
+        638.674560546875
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0034",
+      "page": 3,
+      "bbox": [
+        49.6260986328125,
+        648.926513671875,
+        211.15008544921875,
+        664.6785278320312
+      ],
+      "kind": "text",
+      "text": "** **\n**(a) **Read Sources **A** and **B**.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0035",
+      "page": 3,
+      "bbox": [
+        49.6260986328125,
+        674.9304809570312,
+        545.693115234375,
+        690.6824951171875
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nHow far do these sources agree about events in Berlin in March 1848?\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0036",
+      "page": 3,
+      "bbox": [
+        49.6260986328125,
+        700.9345092773438,
+        211.76605224609375,
+        716.6865234375
+      ],
+      "kind": "text",
+      "text": "** **\n**(b) **Read **all** of the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0037",
+      "page": 3,
+      "bbox": [
+        49.626094818115234,
+        726.9385375976562,
+        548.71044921875,
+        755.1315307617188
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n‘Frederick William IV supported the ideas of the revolutionaries.’ How far do the sources\nsupport this view?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0038",
+      "page": 4,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**4**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0039",
+      "page": 4,
+      "bbox": [
+        225.7241973876953,
+        61.02242660522461,
+        369.55584716796875,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**Section B: American option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0040",
+      "page": 4,
+      "bbox": [
+        202.481201171875,
+        87.02645874023438,
+        392.792236328125,
+        102.77845764160156
+      ],
+      "kind": "text",
+      "text": "**The origins of the Civil War, 1820–61**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0041",
+      "page": 4,
+      "bbox": [
+        49.61419677734375,
+        126.02145385742188,
+        375.5617980957031,
+        141.77345275878906
+      ],
+      "kind": "text",
+      "text": "**2 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0042",
+      "page": 4,
+      "bbox": [
+        49.61419677734375,
+        152.02548217773438,
+        120.17919158935547,
+        167.77748107910156
+      ],
+      "kind": "text",
+      "text": "** **\n**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0043",
+      "page": 4,
+      "bbox": [
+        72.29619598388672,
+        178.20550537109375,
+        548.7578735351562,
+        297.23663330078125
+      ],
+      "kind": "text",
+      "text": "Our readers will find in another column a full account of the arrest and reclamation of a negro\nnamed James Hamlet, a fugitive slave from Maryland. Under the Fugitive Slave Law, he was taken\ninto custody and an order issued directing him to be given up to his owner. The provisions of the\nbill recently passed by Congress were complied with. This is the first arrest that has taken place\nunder the Fugitive Slave Law and we doubt it will be the last. The arrest caused a commotion\nthroughout the city, especially among the coloured population and the ultra-abolitionists. There is\nreason to believe that the former will combine for the purposes of resisting the law but the law will\nbe upheld by all good citizens. Our coloured population may attempt a breach of the peace but, if\nthey do, they know full well the punishment which will assuredly be handed out to them.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0044",
+      "page": 4,
+      "bbox": [
+        49.61419677734375,
+        308.6876525878906,
+        548.7172241210938,
+        336.24267578125
+      ],
+      "kind": "text",
+      "text": "*From the ‘New York Herald’, September 1850. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0045",
+      "page": 4,
+      "bbox": [
+        49.61419677734375,
+        347.0556640625,
+        120.58618927001953,
+        362.8076477050781
+      ],
+      "kind": "text",
+      "text": "** **\n**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0046",
+      "page": 4,
+      "bbox": [
+        72.29619598388672,
+        373.23565673828125,
+        548.7392578125,
+        492.26678466796875
+      ],
+      "kind": "text",
+      "text": "We present an extract from a speech delivered at the great Union meeting held in New York City\non 30 October. James Seward addressed the vast multitude as follows: Among the compromise\nmeasures passed by the last Congress is the Fugitive Slave Bill. This law is nothing but a measure\nto carry out the act of 1793, which was founded on the Constitution. This act has been upheld for\nfifty-odd years. Why is it that now certain people are making war against it? It is because certain\nabolitionists and political agitators who want office have been endeavouring to mislead the people.\nI am therefore here with you to put down these agitators. *[Loud and enthusiastic cheering.]  *I have\nbeen a Whig all my life but if the old national Whig Party is to be poisoned by abolition feelings, I\nswear then to support it no longer.* [Cheering.] *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0047",
+      "page": 4,
+      "bbox": [
+        287.66522216796875,
+        503.7178039550781,
+        545.6482543945312,
+        518.2708129882812
+      ],
+      "kind": "text",
+      "text": "*From the ‘North Carolina Standard’, November 1850.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0048",
+      "page": 4,
+      "bbox": [
+        49.61421203613281,
+        529.083740234375,
+        123.64420318603516,
+        544.8357543945312
+      ],
+      "kind": "text",
+      "text": "** **\n**Source C **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0049",
+      "page": 4,
+      "bbox": [
+        72.29621124267578,
+        555.2637329101562,
+        548.7457885742188,
+        583.2808227539062
+      ],
+      "kind": "text",
+      "text": "*Resolved*, That we are opposed to Nullification* everywhere, North as well as South; that every\nresistance to the execution of the laws is an attack upon the safety of the citizen.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0050",
+      "page": 4,
+      "bbox": [
+        72.29621124267578,
+        594.269775390625,
+        548.7700805664062,
+        674.2947998046875
+      ],
+      "kind": "text",
+      "text": "*Resolved*, That while we always intend to be a law-abiding people and to submit to existing\nlaws, whether passed with or without our agreement, we claim the right to call for the repeal or\nmodification of any law. While we recognise the obligation of the Fugitive Slave Law, so-called,\npassed at the late session of Congress, upon all the people of the nation, we believe the\nharshness of its terms is not necessary nor required by the Constitution of the United States. We\nshall persevere in all lawful and proper attempts to secure its modification.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0051",
+      "page": 4,
+      "bbox": [
+        93.25121307373047,
+        685.7457275390625,
+        548.706298828125,
+        700.2987670898438
+      ],
+      "kind": "text",
+      "text": "*From resolutions passed by a meeting of Whigs in Boston (Massachusetts), November 1850. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0052",
+      "page": 4,
+      "bbox": [
+        128.07720947265625,
+        698.7477416992188,
+        545.6371459960938,
+        713.30078125
+      ],
+      "kind": "text",
+      "text": "**Nullification: a term used to describe the rejection of federal laws by individual states.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0053",
+      "page": 5,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**5**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0054",
+      "page": 5,
+      "bbox": [
+        49.6065673828125,
+        61.02163314819336,
+        120.57855987548828,
+        76.77363586425781
+      ],
+      "kind": "text",
+      "text": "** **\n**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0055",
+      "page": 5,
+      "bbox": [
+        72.28856658935547,
+        87.20166015625,
+        548.749267578125,
+        206.23277282714844
+      ],
+      "kind": "text",
+      "text": "The Fugitive Slave Law was not an ordinary law. It formed part of a system of agreements.\nTo repeal or essentially modify it would be a direct violation of the recent Compromise and an\nencroachment upon the rights of the South, carelessly committed, and will not be tolerated. This is\nnot the time to even think of modifying the Fugitive Slave Law. It has just been enacted. Whilst the\nSouth is not yet reconciled to the measures of Congress, shall we talk of modifying this important\nelement of reconciliation before it has been tried? The objections which are conjured up are\nequally applicable to the law of 1793. So far as it has been tried, it has produced no evils. The\nBoston Whigs are reading this law through the spectacles of fanatics and see a thousand worries\nthat do not in fact exist.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0056",
+      "page": 5,
+      "bbox": [
+        263.424560546875,
+        217.68380737304688,
+        548.7084350585938,
+        232.23680114746094
+      ],
+      "kind": "text",
+      "text": "*From the ‘Daily Union’ (Washington DC), November 1850. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0057",
+      "page": 5,
+      "bbox": [
+        49.6065673828125,
+        256.0408020019531,
+        385.93048095703125,
+        271.79278564453125
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0058",
+      "page": 5,
+      "bbox": [
+        49.61756896972656,
+        282.0448303222656,
+        211.1415557861328,
+        297.79681396484375
+      ],
+      "kind": "text",
+      "text": "** **\n**(a) **Read Sources **B** and **C**.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0059",
+      "page": 5,
+      "bbox": [
+        49.61756896972656,
+        308.0488586425781,
+        545.683349609375,
+        323.80084228515625
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nCompare and contrast the attitudes of Northern Whigs towards the Fugitive Slave Law.\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0060",
+      "page": 5,
+      "bbox": [
+        49.6175651550293,
+        347.0438537597656,
+        214.81552124023438,
+        362.79583740234375
+      ],
+      "kind": "text",
+      "text": "** **\n**(b) **Read **all** of the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0061",
+      "page": 5,
+      "bbox": [
+        49.6175651550293,
+        373.0478515625,
+        548.7425537109375,
+        401.2408752441406
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n‘The passing of the Fugitive Slave Law in 1850 solved the fugitive slave issue.’ How far do the\nsources support this view?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0062",
+      "page": 6,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**6**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0063",
+      "page": 6,
+      "bbox": [
+        217.5843048095703,
+        61.02242660522461,
+        377.7113952636719,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**Section C: International option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0064",
+      "page": 6,
+      "bbox": [
+        135.35931396484375,
+        87.02645874023438,
+        459.9473876953125,
+        102.77845764160156
+      ],
+      "kind": "text",
+      "text": "**The League of Nations and international relations in the 1930s**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0065",
+      "page": 6,
+      "bbox": [
+        49.61431121826172,
+        126.02145385742188,
+        375.5619201660156,
+        141.77345275878906
+      ],
+      "kind": "text",
+      "text": "**3 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0066",
+      "page": 6,
+      "bbox": [
+        49.61431121826172,
+        152.02548217773438,
+        120.17930603027344,
+        167.77748107910156
+      ],
+      "kind": "text",
+      "text": "** **\n**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0067",
+      "page": 6,
+      "bbox": [
+        72.29631042480469,
+        178.20550537109375,
+        548.7515869140625,
+        271.23260498046875
+      ],
+      "kind": "text",
+      "text": "In defiance of the most certain rights, the German government has sent considerable forces\ninto the demilitarised zone, and without having previously indicated its intention to rid itself of its\nobligations, without even having looked into entering negotiations on the subject. There can be\nno more peace in Europe, there can be no more international relations if this method is accepted.\nSpeaking in the name of the French government, I declare that we intend to see this essential\nguarantee of French security maintained. We are not disposed to leave French cities placed under\nthe fire of German cannons.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0068",
+      "page": 6,
+      "bbox": [
+        49.61431121826172,
+        282.6836242675781,
+        545.6792602539062,
+        297.23663330078125
+      ],
+      "kind": "text",
+      "text": "* *\n*From a radio broadcast to his nation by Albert Sarraut, the French Prime Minister, 8 March 1936.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0069",
+      "page": 6,
+      "bbox": [
+        49.61431121826172,
+        321.0406188964844,
+        120.5863037109375,
+        336.7926025390625
+      ],
+      "kind": "text",
+      "text": "** **\n**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0070",
+      "page": 6,
+      "bbox": [
+        55.89830017089844,
+        696.3424072265625,
+        548.7037963867188,
+        710.8954467773438
+      ],
+      "kind": "text",
+      "text": "*A cartoon by David Low, from a London newspaper, 11 March 1936. It shows Hitler holding two signs *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0071",
+      "page": 6,
+      "bbox": [
+        134.60330200195312,
+        709.3443603515625,
+        548.71044921875,
+        736.8994140625
+      ],
+      "kind": "text",
+      "text": "*which say: ‘Peace with nearly everybody’ and ‘Back to the League – & How!’. *\n*He is facing the French Prime Minister, Albert Sarraut, and ‘World longing for peace’.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0072",
+      "page": 7,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**7**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0073",
+      "page": 7,
+      "bbox": [
+        49.606300354003906,
+        61.02242660522461,
+        120.57829284667969,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "** **\n**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0074",
+      "page": 7,
+      "bbox": [
+        72.28829956054688,
+        87.20245361328125,
+        548.7291259765625,
+        167.22752380371094
+      ],
+      "kind": "text",
+      "text": "It is only right to say bluntly and frankly that public opinion in this country would not support the\ntaking of military sanctions, or even economic sanctions, against Germany at this time in order\nto remove German troops from the German Rhineland. Public opinion here does, I think, draw a\nclear distinction between the action of Signor Mussolini in resorting to aggressive war and waging\nit beyond his frontiers and the actions, up to date at any rate, of Herr Hitler. Hitler’s actions, much\nas we disapprove of them, have taken place within the frontiers of the German Reich.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0075",
+      "page": 7,
+      "bbox": [
+        72.28829956054688,
+        178.216552734375,
+        548.7245483398438,
+        232.2375946044922
+      ],
+      "kind": "text",
+      "text": "Let us say to the German people, in all friendship and in all frankness: We shall welcome you back\nto the League of Nations if you will now freely and loyally accept the common obligations of the\nCovenant to keep the peace, and cooperate in seeking to modify any treaties, not by brutal force\nor threats but by friendly discussion.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0076",
+      "page": 7,
+      "bbox": [
+        122.77830505371094,
+        243.68862915039062,
+        548.73681640625,
+        258.24163818359375
+      ],
+      "kind": "text",
+      "text": "*From a speech in the British Parliament by an Opposition spokesman on foreign policy, *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0077",
+      "page": 7,
+      "bbox": [
+        469.24530029296875,
+        256.6906433105469,
+        545.6734008789062,
+        271.24365234375
+      ],
+      "kind": "text",
+      "text": "*26 March 1936.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0078",
+      "page": 7,
+      "bbox": [
+        49.6173095703125,
+        295.0476379394531,
+        120.58930206298828,
+        310.79962158203125
+      ],
+      "kind": "text",
+      "text": "** **\n**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0079",
+      "page": 7,
+      "bbox": [
+        72.29930877685547,
+        321.2276306152344,
+        548.7721557617188,
+        466.2627868652344
+      ],
+      "kind": "text",
+      "text": "The reoccupation had a purely defensive character and was not intended to have any other\npurpose. The occupation by such a small military force made it clear that it was a purely symbolic\nact. There were no aggressive plans for the future, as is shown by the fact that the German\ngovernment, at the suggestion of Britain, on 12 March 1936 promised not to increase the forces\nin the Rhineland. We also agreed not to move the troops any closer to the border than they were\nalready, on condition that France would do the same. France did not want to accept this offer.\nIn a speech to the Reichstag on 7 March 1936, Hitler explained to the world the reasons for the\nreoccupation of the Rhineland. Even today I have the firm conviction that at that time Hitler was\nnot thinking of war. I must emphasise that any such intention was far from my own thoughts.\nOn the contrary, I considered the restoration of sovereignty throughout the Reich a step towards\npeace and understanding.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0080",
+      "page": 7,
+      "bbox": [
+        63.91730880737305,
+        477.7137756347656,
+        545.68212890625,
+        492.26678466796875
+      ],
+      "kind": "text",
+      "text": "*From a speech by the German Minister of Foreign Affairs (1932‒38) at the Nuremberg Trials, 1946.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0081",
+      "page": 7,
+      "bbox": [
+        64.55530548095703,
+        490.7157897949219,
+        548.7094116210938,
+        505.268798828125
+      ],
+      "kind": "text",
+      "text": "*He was being tried, along with other prominent Nazis, for war crimes committed by the Nazi regime *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0082",
+      "page": 7,
+      "bbox": [
+        344.51629638671875,
+        503.7178039550781,
+        545.693115234375,
+        518.2708129882812
+      ],
+      "kind": "text",
+      "text": "*during the 1930s and Second World War.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0083",
+      "page": 7,
+      "bbox": [
+        72.310302734375,
+        542.0747680664062,
+        385.95660400390625,
+        557.8267822265625
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0084",
+      "page": 7,
+      "bbox": [
+        49.62830352783203,
+        568.0787963867188,
+        211.1522979736328,
+        583.830810546875
+      ],
+      "kind": "text",
+      "text": "** **\n**(a) **Read Sources **A** and **C**.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0085",
+      "page": 7,
+      "bbox": [
+        49.62831115722656,
+        594.082763671875,
+        548.7105102539062,
+        622.2758178710938
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nCompare and contrast Sources A and C as evidence about the French and British responses\nto the Rhineland crisis.\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0086",
+      "page": 7,
+      "bbox": [
+        49.6282958984375,
+        633.0887451171875,
+        211.76824951171875,
+        648.8407592773438
+      ],
+      "kind": "text",
+      "text": "** **\n**(b) **Read **all** of the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0087",
+      "page": 7,
+      "bbox": [
+        49.628292083740234,
+        659.0927734375,
+        548.7412109375,
+        687.2858276367188
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n‘The remilitarisation of the Rhineland revealed Germany’s aggressive intentions.’ How far do\nthe sources support this view?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0088",
+      "page": 8,
+      "bbox": [
+        294.5788879394531,
+        35.66024398803711,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**8**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0089",
+      "page": 8,
+      "bbox": [
+        261.6836853027344,
+        61.02242660522461,
+        333.5917663574219,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**BLANK PAGE**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0090",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        698.9013671875,
+        547.6215209960938,
+        726.46044921875
+      ],
+      "kind": "text",
+      "text": "Permission to reproduce items where third-party owned material protected by copyright is included has been sought and cleared where possible. Every\nreasonable effort has been made by the publisher (UCLES) to trace copyright holders, but if any items requiring clearance have unwittingly been included, the\npublisher will be pleased to make amends at the earliest possible opportunity.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0091",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        734.9024047851562,
+        547.5978393554688,
+        762.46142578125
+      ],
+      "kind": "text",
+      "text": "To avoid the issue of disclosure of answer-related information to candidates, all copyright acknowledgements are reproduced online in the Cambridge\nAssessment International Education Copyright Acknowledgements Booklet. This is produced for each series of examinations and is freely available to download\nat www.cambridgeinternational.org after the live examination series.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0092",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        770.9033813476562,
+        547.5921020507812,
+        789.46044921875
+      ],
+      "kind": "text",
+      "text": "Cambridge Assessment International Education is part of the Cambridge Assessment Group. Cambridge Assessment is the brand name of the University of\nCambridge Local Examinations Syndicate (UCLES), which itself is a department of the University of Cambridge.",
+      "table_id": null,
+      "image_id": null
+    }
+  ]
+}
