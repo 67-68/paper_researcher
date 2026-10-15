@@ -48,6 +48,21 @@ except ImportError:  # pragma: no cover - exercised only without rich
     )
     raise SystemExit(2)
 
+try:
+    from prompt_toolkit import PromptSession
+    from prompt_toolkit.completion import Completer, Completion
+    from prompt_toolkit.formatted_text import FormattedText
+    from prompt_toolkit.history import InMemoryHistory
+
+    PROMPT_TOOLKIT = True
+except ImportError:  # pragma: no cover - optional dependency
+    PromptSession = None  # type: ignore
+    Completer = object  # type: ignore
+    Completion = None  # type: ignore
+    FormattedText = None  # type: ignore
+    InMemoryHistory = None  # type: ignore
+    PROMPT_TOOLKIT = False
+
 import paper_common  # noqa: E402
 import paperdb  # noqa: E402
 
@@ -63,6 +78,7 @@ HELP_SECTIONS = [
         [
             ("help / ?", "显示命令总览"),
             ("help -d / help --definition", "显示概念、数据流、profile 说明"),
+            ("help -e / help --examples", "用具体卷子演示查询与 DB 对应关系"),
             ("help <command>", "显示某条命令的说明"),
             ("stats", "显示 papers / documents / questions 计数"),
             ("clear", "清屏"),
@@ -76,10 +92,15 @@ HELP_SECTIONS = [
                 "papers [--subject S] [--kind QP|MS] [--session S]",
                 "列出卷子；记住序号供 open 使用",
             ),
-            ("open <n|pdf_id>", "打开卷子"),
+            (
+                "open <n|id>",
+                "统一入口：自动识别 paper / question / md；数字用最近列表",
+            ),
+            (
+                "question / q / jump",
+                "兼容别名，等同于 open",
+            ),
             ("paper [pdf_id]", "跳到当前题所属的卷子"),
-            ("question <n|question_id>", "打开题目；别名 q"),
-            ("jump <id>", "自动识别 paper / question / md 并打开"),
             ("tree [pdf_id]", "显示 stimulus -> main -> sub 树"),
             ("md [pdf_id|md_id]", "渲染 Markdown 全文"),
             ("tables [question_id]", "显示题目关联的表格"),
@@ -118,6 +139,41 @@ HELP_SECTIONS = [
     ),
 ]
 
+COMMAND_NAMES = [
+    "help",
+    "?",
+    "stats",
+    "papers",
+    "open",
+    "paper",
+    "question",
+    "q",
+    "jump",
+    "tree",
+    "md",
+    "tables",
+    "attachments",
+    "stimulus",
+    "sources",
+    "parent",
+    "children",
+    "next",
+    "prev",
+    "back",
+    "home",
+    "search",
+    "raw",
+    "sync",
+    "convert",
+    "split",
+    "pipeline",
+    "process",
+    "run",
+    "clear",
+    "quit",
+    "exit",
+]
+
 SCRIPT_DEPS = {
     "pdf_to_md.py": ["pymupdf", "pdfplumber"],
     "crawl_pdfs.py": ["requests"],
@@ -154,6 +210,7 @@ class PaperTUI:
         self.history = []  # type: List[Tuple[str, str]]
         self.last_paper_ids = []  # type: List[str]
         self.last_question_ids = []  # type: List[str]
+        self.last_list = ""  # "papers" | "questions"
         self.uv = shutil.which("uv")
 
     # ------------------------------------------------------------------
@@ -235,6 +292,7 @@ class PaperTUI:
 
         questions = self.fetch_paper_questions(pdf_id, include_stimulus=True)
         self.last_question_ids = [q["question_id"] for q in questions]
+        self.last_list = "questions"
         self.render_question_table(
             questions, title="Questions (stimulus + main + sub)"
         )
@@ -330,6 +388,7 @@ class PaperTUI:
         if children:
             self.render_question_table(children, title="Children")
             self.last_question_ids = [child["question_id"] for child in children]
+            self.last_list = "questions"
 
         self.render_tables(question)
         self.render_attachments(question)
@@ -492,6 +551,46 @@ class PaperTUI:
             return None
         return token
 
+    def _document_id(self, md_id: str) -> Optional[str]:
+        row = self.conn.execute(
+            "SELECT md_id FROM documents WHERE md_id = ?", (md_id,)
+        ).fetchone()
+        return row["md_id"] if row is not None else None
+
+    def resolve_open_ident(self, token: str) -> Optional[Tuple[str, str]]:
+        """Resolve a numeric index or id to (paper|question|md, id)."""
+        if token.isdigit():
+            candidates = []  # type: List[Tuple[str, Sequence[str]]]
+            if self.last_list == "questions" and self.last_question_ids:
+                candidates.append(("question", self.last_question_ids))
+                candidates.append(("paper", self.last_paper_ids))
+            elif self.last_list == "papers" and self.last_paper_ids:
+                candidates.append(("paper", self.last_paper_ids))
+                candidates.append(("question", self.last_question_ids))
+            elif self.current_kind in ("paper", "question") and self.last_question_ids:
+                candidates.append(("question", self.last_question_ids))
+                candidates.append(("paper", self.last_paper_ids))
+            else:
+                candidates.append(("paper", self.last_paper_ids))
+                candidates.append(("question", self.last_question_ids))
+            for kind, values in candidates:
+                ident = self.resolve_index(token, values)
+                if not ident:
+                    continue
+                if kind == "paper" and self.fetch_paper(ident):
+                    return ("paper", ident)
+                if kind == "question" and self.fetch_question(ident):
+                    return ("question", ident)
+            return None
+
+        if self.fetch_paper(token):
+            return ("paper", token)
+        if self.fetch_question(token):
+            return ("question", token)
+        if self._document_id(token):
+            return ("md", token)
+        return None
+
     def current_paper_id(self) -> Optional[str]:
         if self.current_kind == "paper":
             return self.current_id
@@ -591,8 +690,9 @@ class PaperTUI:
             self.console.print("[yellow]no children[/yellow]")
             return
         self.last_question_ids = [child["question_id"] for child in children]
+        self.last_list = "questions"
         self.render_question_table(children, title="Children")
-        self.console.print("[dim]question <n>[/dim]")
+        self.console.print("[dim]open <n>[/dim]")
 
     def cmd_next(self, args: List[str]) -> None:
         paper_id = self.current_paper_id()
@@ -646,6 +746,9 @@ class PaperTUI:
         if args and args[0] in ("-d", "--definition"):
             self.print_definition()
             return
+        if args and args[0] in ("-e", "--examples"):
+            self.print_examples()
+            return
 
         if args:
             needle = args[0].lstrip("-")
@@ -677,7 +780,8 @@ class PaperTUI:
                 table.add_row(Text(command), Text(description))
             self.console.print(table)
         self.console.print(
-            "[dim]help -d : 基本概念、处理流程、profile、导航索引[/dim]"
+            "[dim]help -d : 基本概念、处理流程、profile、导航索引[/dim]\n"
+            "[dim]help -e : 具体卷子示例与 DB 字段对应[/dim]"
         )
 
     def print_definition(self) -> None:
@@ -794,7 +898,8 @@ class PaperTUI:
 
         nav = Text()
         nav.append(
-            "open / question 后面的数字，是“上一次列表里的第几条”：\n\n"
+            "open 是统一入口，会自动识别 paper / question / md。\n"
+            "如果给的是数字，就使用“最近一次列表”的序号：\n\n"
         )
         nav.append("papers ...     ", style="bold")
         nav.append("记住 last_paper_ids\n")
@@ -802,22 +907,27 @@ class PaperTUI:
         nav.append("打开第 2 份卷子\n")
         nav.append("open <pdf_id>  ", style="bold")
         nav.append("直接打开指定卷子\n\n")
-        nav.append("question ...   ", style="bold")
-        nav.append("记住 last_question_ids\n")
-        nav.append("question 3     ", style="bold")
-        nav.append("打开第 3 道题\n")
-        nav.append("q 3            ", style="bold")
-        nav.append("同上\n\n")
+        nav.append("打开卷子后     ", style="bold")
+        nav.append("题目表写入 last_question_ids\n")
+        nav.append("open 3         ", style="bold")
+        nav.append("打开当前卷子题目表里的第 3 条\n")
+        nav.append("open <qid>     ", style="bold")
+        nav.append("直接打开指定题目\n\n")
+        nav.append("question / q / jump  ", style="bold")
+        nav.append("兼容别名，等同于 open\n")
+        nav.append("stimulus / sources   ", style="bold")
+        nav.append("查看当前题目的 shared_stem\n")
         nav.append("back           ", style="bold")
         nav.append("回到上一个节点\n")
         nav.append("home           ", style="bold")
         nav.append("回到卷子列表\n")
-        nav.append("jump <id>      ", style="bold")
-        nav.append("自动识别 paper / question / md\n")
         nav.append("tree           ", style="bold")
         nav.append("查看 stimulus -> main -> sub 树\n")
         nav.append("raw            ", style="bold")
-        nav.append("查看完整 JSON")
+        nav.append("查看完整 JSON\n\n")
+        nav.append(
+            "输入框下方会实时显示匹配命令和候选参数（需要 prompt_toolkit）。"
+        )
         self.console.print(
             Panel(nav, title="导航与索引", border_style="magenta")
         )
@@ -837,7 +947,8 @@ class PaperTUI:
         flows.append(
             "  papers --kind QP\n"
             "  open <n|pdf_id>\n"
-            "  question <n|question_id>\n"
+            "  open <n|question_id>\n"
+            "  stimulus\n"
             "  tree\n"
             "  tables\n"
             "  attachments\n\n"
@@ -850,6 +961,120 @@ class PaperTUI:
         )
         self.console.print(
             Panel(flows, title="常用工作流", border_style="blue")
+        )
+
+    def print_examples(self) -> None:
+        demo = Text()
+        demo.append("用 June 2017 (v1) QP 举例：\n\n", style="bold")
+        demo.append("1. 找卷子\n", style="bold cyan")
+        demo.append(
+            '   papers --session "June 2017" --kind QP\n'
+            "   # 输出里会看到：\n"
+            "   #   7cc8cf1a98c4b37f  history  QP  June 2017  v1\n\n"
+        )
+        demo.append("2. 打开卷子\n", style="bold cyan")
+        demo.append(
+            "   open 7cc8cf1a98c4b37f\n"
+            "   open 1                 # 也可以用上一次 papers 列表的序号\n\n"
+        )
+        demo.append("3. 打开主题 / 小题\n", style="bold cyan")
+        demo.append(
+            "   open 2                 # 当前卷子题目表第 2 条 = main Q1\n"
+            "   open 7cc8cf1a98c4b37f:g0006:1        # main Q1\n"
+            "   open 7cc8cf1a98c4b37f:g0006:1-01-a   # Q1(a)\n\n"
+        )
+        demo.append("4. 看题干和 Source\n", style="bold cyan")
+        demo.append(
+            "   raw\n"
+            "   # main Q1: stem = \"Read the sources and then answer both parts...\"\n"
+            "   stimulus\n"
+            "   # 打开 stimulus 节点，完整显示 shared_stem（Source A/B/C/D）\n"
+            "   sources\n"
+            "   # 同上，stimulus 的别名\n\n"
+        )
+        demo.append("5. 查关联和全文\n", style="bold cyan")
+        demo.append(
+            "   parent\n"
+            "   children\n"
+            "   paper\n"
+            "   md\n"
+            "   search Napoleon\n"
+            "   tables\n"
+            "   attachments\n"
+        )
+        self.console.print(
+            Panel(demo, title="示例：从卷子到题目", border_style="cyan")
+        )
+
+        mapping = Text()
+        mapping.append(
+            "试卷里的不同部分，在数据库里对应：\n\n", style="bold"
+        )
+        mapping.append("PDF 文件\n", style="bold cyan")
+        mapping.append(
+            "  papers.pdf_id        sha256 前 16 位\n"
+            "  papers.path          PDF 路径\n"
+            "  papers.kind          QP / MS\n"
+            "  papers.session       June 2017\n"
+            "  papers.variant       v1\n\n"
+        )
+        mapping.append("整份 Markdown\n", style="bold cyan")
+        mapping.append(
+            "  documents.md_id      <pdf_id>:md:<stem>\n"
+            "  documents.md_path    .md 文件\n"
+            "  documents.meta_path  .meta.json\n"
+            "  documents.assets_dir 图片目录\n\n"
+        )
+        mapping.append("Section A / B\n", style="bold cyan")
+        mapping.append("  questions.section\n\n")
+        mapping.append("Source A/B/C/D 文本\n", style="bold cyan")
+        mapping.append(
+            "  questions.shared_stem\n"
+            "  对应 kind = stimulus 的行，也在 main/sub 里冗余保存\n\n"
+        )
+        mapping.append("主题干\n", style="bold cyan")
+        mapping.append(
+            "  questions.stem\n"
+            "  对应 kind = main\n"
+            "  数字题号 1/2/3 存在 questions.number\n\n"
+        )
+        mapping.append("小题 (a)/(b)/(i)/(ii)\n", style="bold cyan")
+        mapping.append(
+            "  questions.stem\n"
+            "  对应 kind = sub\n"
+            "  questions.sub_label = (a)\n"
+            "  questions.parent_id -> 主题的 question_id\n\n"
+        )
+        mapping.append("分值 [15] / [25]\n", style="bold cyan")
+        mapping.append("  questions.marks\n\n")
+        mapping.append("图片 / 图形题\n", style="bold cyan")
+        mapping.append("  questions.attachments\n\n")
+        mapping.append("表格\n", style="bold cyan")
+        mapping.append("  questions.tables")
+        self.console.print(
+            Panel(mapping, title="试卷结构 -> DB 字段", border_style="green")
+        )
+
+        ids = Text()
+        ids.append("question_id 的组成：\n\n", style="bold")
+        ids.append("<pdf_id>:<group_id>:<题目路径>\n\n", style="bold cyan")
+        ids.append(
+            "  7cc8cf1a98c4b37f:g0006:1\n"
+            "  7cc8cf1a98c4b37f:g0006:1-01-a\n"
+            "  7cc8cf1a98c4b37f:g0006:__stimulus__\n\n"
+            "  g0006        第 6 个解析组，通常对应一套 Source + 主题\n"
+            "  1            main question 1\n"
+            "  1-01-a       main 1 的第 1 个小题 (a)\n"
+            "  __stimulus__ 该组的共享材料节点\n\n"
+        )
+        ids.append("数字索引规则：\n", style="bold")
+        ids.append(
+            "  papers 之后：open <n> 打开第 n 份卷子\n"
+            "  打开卷子后：open <n> 打开题目表第 n 条\n"
+            "  search 之后：open <n> 打开搜索结果第 n 条"
+        )
+        self.console.print(
+            Panel(ids, title="ID 与数字索引", border_style="yellow")
         )
 
     def cmd_stats(self, args: List[str]) -> None:
@@ -892,6 +1117,7 @@ class PaperTUI:
         )
         papers = [paperdb.row_to_paper(row, row["question_count"]) for row in rows]
         self.last_paper_ids = [p["pdf_id"] for p in papers]
+        self.last_list = "papers"
 
         table = Table(title="Papers", show_lines=False)
         table.add_column("#", justify="right", style="bold")
@@ -918,13 +1144,27 @@ class PaperTUI:
 
     def cmd_open(self, args: List[str]) -> None:
         if not args:
-            self.console.print("[yellow]usage: open <n|pdf_id>[/yellow]")
+            if self.current_kind == "paper" and self.current_id:
+                self.render_paper(self.current_id)
+                return
+            if self.current_kind == "question" and self.current_id:
+                self.render_question(self.current_id)
+                return
+            self.console.print(
+                "[yellow]usage: open <n|pdf_id|question_id|md_id>[/yellow]"
+            )
             return
-        token = self.resolve_index(args[0], self.last_paper_ids)
-        if token and self.fetch_paper(token):
-            self.navigate("paper", token)
+        resolved = self.resolve_open_ident(args[0])
+        if resolved is None:
+            self.console.print("[red]not found:[/red] %s" % escape(args[0]))
             return
-        self.console.print("[red]paper not found:[/red] %s" % escape(args[0]))
+        kind, ident = resolved
+        if kind == "paper":
+            self.navigate("paper", ident)
+        elif kind == "question":
+            self.navigate("question", ident)
+        else:
+            self.render_md(ident)
 
     def cmd_question(self, args: List[str]) -> None:
         if not args:
@@ -941,38 +1181,8 @@ class PaperTUI:
         self.console.print("[red]question not found:[/red] %s" % escape(args[0]))
 
     def cmd_jump(self, args: List[str]) -> None:
-        if not args:
-            self.console.print("[yellow]usage: jump <id>[/yellow]")
-            return
-        token = args[0]
-        if token.isdigit():
-            if self.current_kind == "question" and self.last_question_ids:
-                candidate = self.resolve_index(token, self.last_question_ids)
-                if candidate and self.fetch_question(candidate):
-                    self.navigate("question", candidate)
-                    return
-            if self.last_paper_ids:
-                candidate = self.resolve_index(token, self.last_paper_ids)
-                if candidate and self.fetch_paper(candidate):
-                    self.navigate("paper", candidate)
-                    return
-            if self.last_question_ids:
-                candidate = self.resolve_index(token, self.last_question_ids)
-                if candidate and self.fetch_question(candidate):
-                    self.navigate("question", candidate)
-                    return
-        if self.fetch_paper(token):
-            self.navigate("paper", token)
-        elif self.fetch_question(token):
-            self.navigate("question", token)
-        else:
-            row = self.conn.execute(
-                "SELECT md_id FROM documents WHERE md_id = ?", (token,)
-            ).fetchone()
-            if row is not None:
-                self.render_md(token)
-            else:
-                self.console.print("[red]not found:[/red] %s" % escape(token))
+        """Alias for open; kept for compatibility."""
+        self.cmd_open(args)
 
     def cmd_paper(self, args: List[str]) -> None:
         pdf_id = args[0] if args else self.current_paper_id()
@@ -995,6 +1205,7 @@ class PaperTUI:
             return
         questions = self.fetch_paper_questions(pdf_id, include_stimulus=True)
         self.last_question_ids = [q["question_id"] for q in questions]
+        self.last_list = "questions"
         by_parent = {}  # type: Dict[Optional[str], List[Dict[str, Any]]]
         for question in questions:
             by_parent.setdefault(question.get("parent_id"), []).append(question)
@@ -1088,6 +1299,7 @@ class PaperTUI:
             return
         questions = self.search(text)
         self.last_question_ids = [q["question_id"] for q in questions]
+        self.last_list = "questions"
         if not questions:
             self.console.print("[yellow]no matches[/yellow]")
             return
@@ -1505,8 +1717,11 @@ class PaperTUI:
                     "这是一个操作 data/papers.db 的命令 REPL。\n\n"
                     "  help       命令总览（按通用 / 查询 / 处理 / 脚本分区）\n"
                     "  help -d    基本概念、处理流程、profile 和导航说明\n"
+                    "  help -e    用具体卷子演示查询与 DB 对应关系\n"
+                    "  open <n|id> 统一入口：自动识别 paper / question / md\n"
                     "  home       卷子列表\n"
-                    "  quit       退出"
+                    "  quit       退出\n\n"
+                    "输入时会实时显示匹配命令和候选参数。"
                 ),
                 title="paper corpus",
                 border_style="cyan",
@@ -1569,23 +1784,215 @@ class PaperTUI:
 
     def run_interactive(self) -> int:
         self.open_db()
-        self.print_welcome()
         try:
-            while True:
-                try:
-                    line = Prompt.ask("[bold cyan]paper_tui[/bold cyan]")
-                except (EOFError, KeyboardInterrupt):
-                    self.console.print()
-                    break
-                if line.strip() in ("quit", "exit", "q!"):
-                    break
-                try:
-                    self.execute(line)
-                except SystemExit:
-                    break
+            if PROMPT_TOOLKIT:
+                return self._run_prompt_toolkit()
+            return self._run_basic_repl()
         finally:
             self.close_db()
+
+    def _run_basic_repl(self) -> int:
+        self.print_welcome()
+        while True:
+            try:
+                line = Prompt.ask("[bold cyan]paper_tui[/bold cyan]")
+            except (EOFError, KeyboardInterrupt):
+                self.console.print()
+                break
+            if line.strip() in ("quit", "exit", "q!"):
+                break
+            try:
+                self.execute(line)
+            except SystemExit:
+                break
         return 0
+
+    def _run_prompt_toolkit(self) -> int:
+        """REPL with live command/arg hints when prompt_toolkit is available."""
+        tui = self
+
+        class TuiCompleter(Completer):  # type: ignore[misc, valid-type]
+            def get_completions(self, document, complete_event):
+                text = document.text_before_cursor
+                word = document.get_word_before_cursor()
+                for candidate in tui.completion_candidates(text):
+                    if candidate.startswith(word):
+                        yield Completion(candidate, start_position=-len(word))
+
+        holder = {}  # type: Dict[str, Any]
+
+        def toolbar():
+            session = holder.get("session")
+            text = session.default_buffer.text if session is not None else ""
+            return FormattedText(
+                [("class:bottom-toolbar", tui.suggest_line(text))]
+            )
+
+        session = PromptSession(
+            completer=TuiCompleter(),
+            complete_while_typing=True,
+            bottom_toolbar=toolbar,
+            history=InMemoryHistory(),
+        )
+        holder["session"] = session
+        self.print_welcome()
+        while True:
+            try:
+                line = session.prompt("paper_tui> ")
+            except (EOFError, KeyboardInterrupt):
+                self.console.print()
+                break
+            if line.strip() in ("quit", "exit", "q!"):
+                break
+            try:
+                self.execute(line)
+            except SystemExit:
+                break
+        return 0
+
+    def _option_list(self, command: str) -> List[str]:
+        options = {
+            "papers": [
+                "--subject",
+                "--kind",
+                "--session",
+                "--syllabus",
+                "--paper-code",
+            ],
+            "pipeline": ["--profile", "--yes", "--all"],
+            "convert": ["--yes", "--all"],
+            "split": ["--profile", "--yes"],
+            "help": ["-d", "--definition"],
+        }
+        return options.get(command, [])
+
+    def completion_candidates(self, text: str) -> List[str]:
+        if not text:
+            return list(COMMAND_NAMES)
+        parts = text.split()
+        if text.endswith(" "):
+            word = ""
+            prior = parts
+        else:
+            word = parts[-1]
+            prior = parts[:-1]
+
+        if not prior:
+            return [c for c in COMMAND_NAMES if c.startswith(word)]
+
+        command = prior[0]
+        if prior and prior[-1] == "--profile":
+            return [v for v in ("history", "cs", "auto") if v.startswith(word)]
+        if prior and prior[-1] == "--kind":
+            return [v for v in ("QP", "MS") if v.upper().startswith(word.upper())]
+
+        options = self._option_list(command)
+        candidates = []  # type: List[str]
+        if word.startswith("-"):
+            candidates.extend(options)
+        else:
+            if command in (
+                "open",
+                "question",
+                "q",
+                "jump",
+                "paper",
+                "tree",
+                "md",
+                "tables",
+                "attachments",
+                "stimulus",
+                "sources",
+                "raw",
+                "process",
+                "pipeline",
+                "convert",
+            ):
+                candidates.extend(self.last_paper_ids)
+                candidates.extend(self.last_question_ids)
+            candidates.extend(options)
+        return [c for c in candidates if c.startswith(word)][:20]
+
+    def suggest_line(self, text: str) -> str:
+        raw = text or ""
+        stripped = raw.strip()
+        trailing = raw.endswith(" ")
+        if not stripped:
+            return (
+                "commands: help  papers  open  stimulus  tree  md  attachments  "
+                "search  sync  pipeline  process  convert  split  run  quit"
+            )
+
+        parts = stripped.split()
+        command = parts[0]
+        if len(parts) == 1 and not trailing:
+            matches = [c for c in COMMAND_NAMES if c.startswith(command)]
+            if matches:
+                return "commands: " + "  ".join(matches[:12])
+            return "unknown command; type help"
+
+        if command == "papers":
+            if "--kind" in parts:
+                return "values: QP  MS"
+            if "--subject" in parts:
+                return "values: history  cs"
+            if "--session" in parts:
+                return "values: June 2021  November 2017  Specimen (2015) ..."
+            return "options: --subject --kind --session --syllabus --paper-code"
+        if command in ("pipeline", "convert"):
+            if "--profile" in parts:
+                return "values: history  cs  auto"
+            return (
+                "options: --profile --yes --all  "
+                "targets: pdf_id/path; recent papers: "
+                + self._sample_ids(self.last_paper_ids)
+            )
+        if command == "split":
+            if "--profile" in parts:
+                return "values: history  cs  auto"
+            return "options: --profile --yes  paths: .md"
+        if command == "run":
+            return (
+                "scripts: pdf_to_md.py  split_questions.py  paperdb.py  "
+                "crawl_pdfs.py"
+            )
+        if command in ("help", "?"):
+            return "args: -d/--definition  <command>"
+        if command in (
+            "open",
+            "question",
+            "q",
+            "jump",
+            "paper",
+            "tree",
+            "md",
+            "tables",
+            "attachments",
+            "stimulus",
+            "sources",
+            "raw",
+            "process",
+        ):
+            if self.last_list == "questions" and self.last_question_ids:
+                return (
+                    "args: <n|id>; recent questions: "
+                    + self._sample_ids(self.last_question_ids)
+                )
+            if self.last_paper_ids:
+                return (
+                    "args: <n|id>; recent papers: "
+                    + self._sample_ids(self.last_paper_ids)
+                )
+            return "args: <n|id>"
+        return "type help for commands; help -d for concepts"
+
+    def _sample_ids(self, values: Sequence[str], limit: int = 3) -> str:
+        if not values:
+            return "(none yet)"
+        return "  ".join(
+            "%d=%s" % (index + 1, value)
+            for index, value in enumerate(values[:limit])
+        )
 
     def run_commands(self, commands: Sequence[str]) -> int:
         self.open_db()

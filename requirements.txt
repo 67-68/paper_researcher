@@ -2,3 +2,4 @@ requests>=2.31
 pymupdf>=1.24,<1.26
 pdfplumber>=0.11,<1
 rich>=13.7
+prompt-toolkit>=3.0
