@@ -57,6 +57,67 @@ DEFAULT_PAPERS_DIR = "data/papers"
 DEFAULT_MD_DIR = "data/md"
 DEFAULT_QUESTIONS_DIR = "data/questions"
 
+HELP_SECTIONS = [
+    (
+        "通用 General",
+        [
+            ("help / ?", "显示命令总览"),
+            ("help -d / help --definition", "显示概念、数据流、profile 说明"),
+            ("help <command>", "显示某条命令的说明"),
+            ("stats", "显示 papers / documents / questions 计数"),
+            ("clear", "清屏"),
+            ("quit / exit", "退出 TUI"),
+        ],
+    ),
+    (
+        "卷子与题目 Browse",
+        [
+            (
+                "papers [--subject S] [--kind QP|MS] [--session S]",
+                "列出卷子；记住序号供 open 使用",
+            ),
+            ("open <n|pdf_id>", "打开卷子"),
+            ("paper [pdf_id]", "跳到当前题所属的卷子"),
+            ("question <n|question_id>", "打开题目；别名 q"),
+            ("jump <id>", "自动识别 paper / question / md 并打开"),
+            ("tree [pdf_id]", "显示 stimulus -> main -> sub 树"),
+            ("md [pdf_id|md_id]", "渲染 Markdown 全文"),
+            ("tables [question_id]", "显示题目关联的表格"),
+            ("attachments [question_id]", "显示题目关联的图片附件"),
+            ("stimulus / sources", "查看当前题目的 shared_stem / Source 文本"),
+            ("parent", "跳到父题或 stimulus"),
+            ("children", "列出子题"),
+            ("next / prev", "在当前卷子内前后移动"),
+            ("search <text>", "搜索主题干 / 题干 / 共享材料"),
+            ("raw [id]", "显示完整 JSON"),
+            ("back", "返回上一个节点"),
+            ("home", "回到卷子列表"),
+        ],
+    ),
+    (
+        "Paper 处理 Pipeline",
+        [
+            (
+                "pipeline [--profile P] [--yes] [--all] [pdf_id|pdf ...]",
+                "convert + split + sync；默认 QP；--all 会连 MS 一起转换/入库，但 MS 不切题",
+            ),
+            ("process [pdf_id]", "处理当前卷子或指定 pdf_id"),
+            ("convert [--yes] [--all] [pdf_id|pdf ...]", "PDF -> Markdown"),
+            ("split [--profile P] [--yes] [md ...]", "Markdown -> questions.json"),
+            ("sync", "Markdown + questions.json -> papers.db"),
+        ],
+    ),
+    (
+        "脚本调用 Run scripts",
+        [
+            ("run <script.py> [args ...]", "直接运行仓库脚本"),
+            ("run pdf_to_md.py --help", "查看 PDF -> Markdown 参数"),
+            ("run split_questions.py --help", "查看切题参数"),
+            ("run paperdb.py --help", "查看数据库查询参数"),
+        ],
+    ),
+]
+
 SCRIPT_DEPS = {
     "pdf_to_md.py": ["pymupdf", "pdfplumber"],
     "crawl_pdfs.py": ["requests"],
@@ -178,17 +239,30 @@ class PaperTUI:
             questions, title="Questions (stimulus + main + sub)"
         )
         if not questions:
-            self.console.print(
-                "[yellow]No questions indexed for this paper yet.[/yellow]"
-            )
-            self.console.print(
-                "[dim]Run: pipeline %s[/dim]" % escape(pdf_id)
-            )
+            if (paper.get("kind") or "").upper() == "MS":
+                self.console.print(
+                    "[yellow]This is a mark scheme (MS).[/yellow]"
+                )
+                self.console.print(
+                    "[dim]split_questions.py currently supports QP only; "
+                    "MS is converted/stored but not split into questions.[/dim]"
+                )
+                self.console.print(
+                    "[dim]Use `md %s` to inspect the Markdown.[/dim]"
+                    % escape(pdf_id)
+                )
+            else:
+                self.console.print(
+                    "[yellow]No questions indexed for this paper yet.[/yellow]"
+                )
+                self.console.print(
+                    "[dim]Run: pipeline %s[/dim]" % escape(pdf_id)
+                )
         self.console.print(
             "[dim]question <n> | tree | md | pipeline <pdf_id> | back | home[/dim]"
         )
 
-    def render_question(self, question_id: str) -> None:
+    def render_question(self, question_id: str, full: bool = False) -> None:
         question = self.fetch_question(question_id)
         if question is None:
             self.console.print(
@@ -216,7 +290,11 @@ class PaperTUI:
             ("assets_dir", question.get("assets_dir")),
         ]
         for index, (key, value) in enumerate(fields):
-            if key in ("stem", "parent_stem", "shared_stem") and value:
+            if (
+                not full
+                and key in ("stem", "parent_stem", "shared_stem")
+                and value
+            ):
                 value = _short(value, 500)
                 if len(str(fields[index][1])) > 500:
                     value += "  (truncated; use raw for full)"
@@ -256,6 +334,12 @@ class PaperTUI:
         self.render_tables(question)
         self.render_attachments(question)
 
+        if question.get("shared_stem") and not full:
+            self.console.print(
+                "[dim]shared_stem is the Source / Passage text; "
+                "use `stimulus` to read it in full.[/dim]"
+            )
+
         warnings = question.get("warnings") or []
         if warnings:
             self.console.print(
@@ -266,8 +350,8 @@ class PaperTUI:
                 )
             )
         self.console.print(
-            "[dim]parent | children | next | prev | tables | attachments | raw | "
-            "paper | md | back[/dim]"
+            "[dim]parent | stimulus | children | next | prev | tables | "
+            "attachments | raw | paper | md | back[/dim]"
         )
 
     def render_documents(self, documents: List[Dict[str, Any]]) -> None:
@@ -449,6 +533,54 @@ class PaperTUI:
             return
         self.navigate("question", question["parent_id"])
 
+    def cmd_stimulus(self, args: List[str]) -> None:
+        """Open the stimulus node and render shared_stem in full."""
+        target = self.current_question_id()
+        if args:
+            target = self.resolve_index(args[0], self.last_question_ids) or args[0]
+        if not target:
+            self.console.print(
+                "[yellow]open a question first, or use: stimulus <question_id>[/yellow]"
+            )
+            return
+        question = self.fetch_question(target)
+        if not question:
+            self.console.print(
+                "[red]question not found:[/red] %s" % escape(target)
+            )
+            return
+
+        if question.get("kind") == "stimulus":
+            stimulus_id = question["question_id"]
+        else:
+            parent_id = question.get("parent_id")
+            if not parent_id:
+                if question.get("shared_stem"):
+                    # No separate stimulus row; render this question in full
+                    # so shared_stem is visible.
+                    if self.current_kind and self.current_id:
+                        self.history.append((self.current_kind, self.current_id))
+                    self.render_question(target, full=True)
+                    return
+                self.console.print("[yellow]this question has no shared_stem[/yellow]")
+                return
+            parent = self.fetch_question(parent_id)
+            if not parent:
+                self.console.print("[red]parent not found[/red]")
+                return
+            stimulus_id = parent_id
+
+        stimulus = self.fetch_question(stimulus_id)
+        if not stimulus:
+            self.console.print("[red]stimulus not found[/red]")
+            return
+        if not stimulus.get("shared_stem"):
+            self.console.print("[yellow]this stimulus has no shared_stem[/yellow]")
+            return
+        if self.current_kind and self.current_id:
+            self.history.append((self.current_kind, self.current_id))
+        self.render_question(stimulus_id, full=True)
+
     def cmd_children(self, args: List[str]) -> None:
         question_id = self.current_question_id()
         if not question_id:
@@ -511,39 +643,214 @@ class PaperTUI:
     # ------------------------------------------------------------------
 
     def cmd_help(self, args: List[str]) -> None:
-        table = Table(title="paper_tui commands", show_lines=False)
-        table.add_column("command", style="cyan", no_wrap=True)
-        table.add_column("what it does")
-        help_rows = [
-            ("help / ?", "show this help"),
-            ("stats", "show database counts"),
-            ("papers [--subject S] [--kind QP] [--session S]", "list papers"),
-            ("open <n|pdf_id>", "open a paper (n = index from the last list)"),
-            ("paper [pdf_id]", "jump to the current question's paper"),
-            ("question <n|question_id>", "open a question"),
-            ("jump <id>", "open a paper, question or Markdown document"),
-            ("tree [pdf_id]", "show the question tree"),
-            ("md [pdf_id|md_id]", "render the Markdown document"),
-            ("tables [question_id]", "show tables for a question"),
-            ("attachments [question_id]", "show attachments for a question"),
-            ("parent", "jump to the parent question"),
-            ("children", "list child questions"),
-            ("next / prev", "move through questions of the current paper"),
-            ("back", "go back in navigation history"),
-            ("home", "list papers"),
-            ("search <text>", "search main/sub question stems"),
-            ("raw [id]", "print raw JSON for a question or paper"),
-            ("sync", "run paperdb.py sync"),
-            ("convert [--all] [pdf ...]", "run pdf_to_md.py"),
-            ("split [--profile history|cs|auto] [md ...]", "run split_questions.py"),
-            ("pipeline [--profile ...] [--all]", "convert + split + sync"),
-            ("run <script.py> [args ...]", "run a repository script directly"),
-            ("clear", "clear the screen"),
-            ("quit / exit", "leave the TUI"),
-        ]
-        for command, description in help_rows:
-            table.add_row(Text(command), Text(description))
-        self.console.print(table)
+        if args and args[0] in ("-d", "--definition"):
+            self.print_definition()
+            return
+
+        if args:
+            needle = args[0].lstrip("-")
+            matches = []  # type: List[Tuple[str, str, str]]
+            for section, items in HELP_SECTIONS:
+                for command, description in items:
+                    if needle in command or needle in command.split()[0]:
+                        matches.append((section, command, description))
+            if not matches:
+                self.console.print(
+                    "[yellow]no help for:[/yellow] %s" % escape(args[0])
+                )
+                self.console.print("[dim]try: help -d[/dim]")
+                return
+            table = Table(title="help %s" % escape(args[0]), show_lines=False)
+            table.add_column("section", style="magenta")
+            table.add_column("command", style="cyan", no_wrap=True)
+            table.add_column("what it does")
+            for section, command, description in matches:
+                table.add_row(Text(section), Text(command), Text(description))
+            self.console.print(table)
+            return
+
+        for section, items in HELP_SECTIONS:
+            table = Table(title=section, show_lines=False, title_justify="left")
+            table.add_column("command", style="cyan", no_wrap=True)
+            table.add_column("what it does")
+            for command, description in items:
+                table.add_row(Text(command), Text(description))
+            self.console.print(table)
+        self.console.print(
+            "[dim]help -d : 基本概念、处理流程、profile、导航索引[/dim]"
+        )
+
+    def print_definition(self) -> None:
+        concepts = Text()
+        concepts.append("PDF\n", style="bold cyan")
+        concepts.append(
+            "  不可变源头。pdf_id = 文件 sha256 的前 16 位。\n"
+            "  文件名会重复，所以用内容哈希而不是文件名当 ID。\n\n"
+        )
+        concepts.append("Markdown\n", style="bold cyan")
+        concepts.append(
+            "  由 pdf_to_md.py 生成：\n"
+            "    <stem>.md           正文，图片以 Markdown 链接出现\n"
+            "    <stem>.assets/      图片附件\n"
+            "    <stem>.meta.json    表格、图片、版面块等元数据\n\n"
+        )
+        concepts.append("questions\n", style="bold cyan")
+        concepts.append(
+            "  由 split_questions.py 生成。层级是：\n"
+            "    stimulus -> main -> sub\n"
+            "  stimulus 是 Source / Passage 共享材料，正文存在 shared_stem；\n"
+            "  main 是题号 1、2、3；\n"
+            "  sub 是 (a)、(b)、(i)、(ii) 等小题。\n"
+            "  每道题可以有题干、分值、选项、表格、attachments、warnings。\n"
+            "  注意：attachments 只表示图片/图形；History 的 Source 文本在\n"
+            "  shared_stem 里，用 `stimulus` 或 `sources` 查看。\n\n"
+        )
+        concepts.append("QP / MS\n", style="bold cyan")
+        concepts.append(
+            "  QP = question paper，用于切题；\n"
+            "  MS = mark scheme，目前只做 PDF -> Markdown 和入库，\n"
+            "       不参与 split_questions.py 切题。\n\n"
+        )
+        concepts.append("papers.db\n", style="bold cyan")
+        concepts.append(
+            "  paperdb.py 建立的派生索引，不是 source of truth。\n"
+            "  源头始终是磁盘上的 PDF / Markdown / questions.json；\n"
+            "  数据库删除后重新 sync 就可以重建。"
+        )
+        self.console.print(
+            Panel(concepts, title="基本概念", border_style="cyan")
+        )
+
+        flow = Text()
+        flow.append("PDF\n", style="bold")
+        flow.append("  -> pdf_to_md.py\n")
+        flow.append("<stem>.md + <stem>.assets/ + <stem>.meta.json\n", style="bold")
+        flow.append("  -> split_questions.py --profile history\n")
+        flow.append("<stem>.questions.json / <stem>.questions.jsonl\n", style="bold")
+        flow.append("  -> paperdb.py sync\n")
+        flow.append("data/papers.db\n", style="bold")
+        flow.append("  papers -> documents -> questions")
+        self.console.print(
+            Panel(flow, title="一次 paper 的处理流程", border_style="green")
+        )
+
+        relations = Text()
+        relations.append("papers\n", style="bold cyan")
+        relations.append(
+            "  pdf_id (主键)\n"
+            "  sha256, path, subject, syllabus, session, variant, kind\n"
+        )
+        relations.append("    | 1 : N\n", style="dim")
+        relations.append("    v\n", style="dim")
+        relations.append("documents\n", style="bold cyan")
+        relations.append(
+            "  md_id (主键)\n"
+            "  pdf_id -> papers.pdf_id\n"
+            "  stem, md_path, meta_path, assets_dir\n"
+        )
+        relations.append("    | 1 : N\n", style="dim")
+        relations.append("    v\n", style="dim")
+        relations.append("questions\n", style="bold cyan")
+        relations.append(
+            "  question_id (主键)\n"
+            "  md_id -> documents.md_id\n"
+            "  pdf_id -> papers.pdf_id\n"
+            "  parent_id -> questions.question_id\n"
+            "  kind = stimulus / main / sub\n"
+            "  stem, parent_stem, shared_stem, marks, tables, attachments"
+        )
+        self.console.print(
+            Panel(relations, title="数据库关系", border_style="green")
+        )
+
+        profiles = Text()
+        profiles.append(
+            "profile 是 split_questions.py 的切题规则集，\n"
+            "只影响 Markdown -> 题目 这一步，不影响 PDF 解析。\n\n"
+        )
+        profiles.append("auto     ", style="bold cyan")
+        profiles.append(
+            "通用规则。先试它；如果题号或小题切得不对，再指定专用 profile。\n"
+        )
+        profiles.append("history  ", style="bold cyan")
+        profiles.append(
+            "AS History 9489。识别 Section A/B、Source A-D、\n"
+            "         (a)/(b)、[15]/[25] 等分值。\n"
+        )
+        profiles.append("cs       ", style="bold cyan")
+        profiles.append(
+            "AS Computer Science 9618。识别编号题、(i)/(ii)、\n"
+            "         表格题、图形填空/逻辑门等附件。\n\n"
+        )
+        profiles.append("用法：\n", style="bold")
+        profiles.append(
+            "  split --profile history\n"
+            "  pipeline --profile history <pdf_id>\n"
+            "  pipeline --profile cs <pdf_id>"
+        )
+        self.console.print(
+            Panel(profiles, title="profile 是什么", border_style="yellow")
+        )
+
+        nav = Text()
+        nav.append(
+            "open / question 后面的数字，是“上一次列表里的第几条”：\n\n"
+        )
+        nav.append("papers ...     ", style="bold")
+        nav.append("记住 last_paper_ids\n")
+        nav.append("open 2         ", style="bold")
+        nav.append("打开第 2 份卷子\n")
+        nav.append("open <pdf_id>  ", style="bold")
+        nav.append("直接打开指定卷子\n\n")
+        nav.append("question ...   ", style="bold")
+        nav.append("记住 last_question_ids\n")
+        nav.append("question 3     ", style="bold")
+        nav.append("打开第 3 道题\n")
+        nav.append("q 3            ", style="bold")
+        nav.append("同上\n\n")
+        nav.append("back           ", style="bold")
+        nav.append("回到上一个节点\n")
+        nav.append("home           ", style="bold")
+        nav.append("回到卷子列表\n")
+        nav.append("jump <id>      ", style="bold")
+        nav.append("自动识别 paper / question / md\n")
+        nav.append("tree           ", style="bold")
+        nav.append("查看 stimulus -> main -> sub 树\n")
+        nav.append("raw            ", style="bold")
+        nav.append("查看完整 JSON")
+        self.console.print(
+            Panel(nav, title="导航与索引", border_style="magenta")
+        )
+
+        flows = Text()
+        flows.append("全量处理\n", style="bold cyan")
+        flows.append("  pipeline\n  pipeline --all\n  pipeline --profile history --yes\n\n")
+        flows.append("单份卷子\n", style="bold cyan")
+        flows.append("  open <pdf_id>\n  process\n  # 或\n  pipeline <pdf_id>\n\n")
+        flows.append("MS（mark scheme）\n", style="bold cyan")
+        flows.append(
+            "  convert <ms_pdf>     # 只转 Markdown\n"
+            "  pipeline --all       # 转换所有 PDF，但只切 QP\n"
+            "  # pipeline <ms_id> 会提示 MS 不切题并停止\n\n"
+        )
+        flows.append("查题\n", style="bold cyan")
+        flows.append(
+            "  papers --kind QP\n"
+            "  open <n|pdf_id>\n"
+            "  question <n|question_id>\n"
+            "  tree\n"
+            "  tables\n"
+            "  attachments\n\n"
+        )
+        flows.append("直接跑脚本\n", style="bold cyan")
+        flows.append(
+            "  run pdf_to_md.py --help\n"
+            "  run split_questions.py --help\n"
+            "  run paperdb.py --help"
+        )
+        self.console.print(
+            Panel(flows, title="常用工作流", border_style="blue")
+        )
 
     def cmd_stats(self, args: List[str]) -> None:
         stats = {
@@ -750,10 +1057,29 @@ class PaperTUI:
         if not question:
             self.console.print("[red]question not found:[/red] %s" % escape(question_id))
             return
-        if not question.get("attachments"):
-            self.console.print("[yellow]no attachments[/yellow]")
+
+        attachments = question.get("attachments") or []
+        if not attachments and question.get("parent_id"):
+            parent = self.fetch_question(question["parent_id"])
+            if parent and parent.get("attachments"):
+                self.console.print(
+                    "[dim]No direct attachments; showing parent stimulus attachments.[/dim]"
+                )
+                attachments = parent["attachments"]
+
+        if not attachments:
+            self.console.print("[yellow]no image attachments[/yellow]")
+            if question.get("shared_stem"):
+                self.console.print(
+                    "[dim]This question has shared_stem text (Source / Passage). "
+                    "In History QP the sources are text, not image attachments.[/dim]"
+                )
+                self.console.print(
+                    "[dim]Use `stimulus` to read shared_stem in full, "
+                    "or `md` for the whole paper.[/dim]"
+                )
             return
-        self.render_attachments(question)
+        self.render_attachments({"attachments": attachments})
 
     def cmd_search(self, args: List[str]) -> None:
         text = " ".join(args).strip()
@@ -883,6 +1209,26 @@ class PaperTUI:
                 pdfs.append(candidate)
         return pdfs
 
+    def _paper_for_path(self, pdf: Path) -> Optional[Dict[str, Any]]:
+        resolved = str(pdf.resolve())
+        row = self.conn.execute(
+            "SELECT pdf_id FROM papers WHERE path = ? OR path = ?",
+            (resolved, str(pdf)),
+        ).fetchone()
+        if row is None:
+            return None
+        return self.fetch_paper(row["pdf_id"])
+
+    def _pdf_kind(self, pdf: Path) -> str:
+        """Return QP / MS for a PDF, preferring the indexed metadata."""
+        paper = self._paper_for_path(pdf)
+        if paper and paper.get("kind"):
+            return str(paper["kind"]).upper()
+        match = paperdb.KIND_RE.search(pdf.name)
+        if match:
+            return match.group(1).upper()
+        return ""
+
     def _mds_for_pdfs(self, pdfs: Sequence[Path]) -> List[Path]:
         wanted = set()  # type: set
         for pdf in pdfs:
@@ -913,8 +1259,8 @@ class PaperTUI:
                 result.append(md_path)
         return result
 
-    def _confirm(self, message: str) -> bool:
-        if self.assume_yes:
+    def _confirm(self, message: str, force_yes: bool = False) -> bool:
+        if force_yes or self.assume_yes:
             return True
         try:
             answer = Prompt.ask(message, choices=["y", "n"], default="n")
@@ -945,19 +1291,22 @@ class PaperTUI:
     def cmd_convert(self, args: List[str]) -> None:
         parser = argparse.ArgumentParser(prog="convert", add_help=False)
         parser.add_argument("--all", action="store_true")
+        parser.add_argument("--yes", action="store_true")
         parser.add_argument("paths", nargs="*")
         namespace = self._parse(parser, args)
         if namespace is None:
             return
-        if namespace.paths:
-            pdfs = [Path(path) for path in namespace.paths]
+        explicit = bool(namespace.paths)
+        if explicit:
+            pdfs = self._resolve_pdf_targets(namespace.paths)
         else:
             pdfs = self._all_pdfs() if namespace.all else self._qp_pdfs()
         if not pdfs:
             self.console.print("[yellow]no PDFs found[/yellow]")
             return
-        if not namespace.paths and not self._confirm(
-            "Convert %d PDF(s) to Markdown?" % len(pdfs)
+        if not explicit and not self._confirm(
+            "Convert %d PDF(s) to Markdown?" % len(pdfs),
+            force_yes=namespace.yes,
         ):
             return
         self._run_script(
@@ -969,6 +1318,7 @@ class PaperTUI:
     def cmd_split(self, args: List[str]) -> None:
         parser = argparse.ArgumentParser(prog="split", add_help=False)
         parser.add_argument("--profile", default="history")
+        parser.add_argument("--yes", action="store_true")
         parser.add_argument("paths", nargs="*")
         namespace = self._parse(parser, args)
         if namespace is None:
@@ -982,7 +1332,8 @@ class PaperTUI:
             return
         if not namespace.paths and not self._confirm(
             "Split %d Markdown file(s) with profile %s?"
-            % (len(mds), namespace.profile)
+            % (len(mds), namespace.profile),
+            force_yes=namespace.yes,
         ):
             return
         self._run_script(
@@ -1001,17 +1352,63 @@ class PaperTUI:
         parser = argparse.ArgumentParser(prog="pipeline", add_help=False)
         parser.add_argument("--profile", default="history")
         parser.add_argument("--all", action="store_true")
+        parser.add_argument("--yes", action="store_true")
+        parser.add_argument(
+            "targets",
+            nargs="*",
+            help="pdf_id, PDF path, or bare PDF filename; default all QP PDFs",
+        )
         namespace = self._parse(parser, args)
         if namespace is None:
             return
-        pdfs = self._all_pdfs() if namespace.all else self._qp_pdfs()
+        explicit = bool(namespace.targets)
+        if explicit:
+            pdfs = self._resolve_pdf_targets(namespace.targets)
+        else:
+            pdfs = self._all_pdfs() if namespace.all else self._qp_pdfs()
         if not pdfs:
             self.console.print("[yellow]no PDFs found[/yellow]")
             return
-        if not self._confirm(
-            "Run full pipeline on %d PDF(s) with profile %s?"
-            % (len(pdfs), namespace.profile)
-        ):
+
+        # split_questions.py is QP-oriented.  MS files can be converted and
+        # stored, but they must not be fed to the question splitter.
+        qp_pdfs = [path for path in pdfs if self._pdf_kind(path) != "MS"]
+        ms_pdfs = [path for path in pdfs if self._pdf_kind(path) == "MS"]
+
+        if explicit and ms_pdfs:
+            self.console.print(
+                "[yellow]MS detected: %s[/yellow]"
+                % ", ".join(path.name for path in ms_pdfs)
+            )
+            self.console.print(
+                "[yellow]split_questions.py currently supports QP only; "
+                "MS will be converted and synced but not split.[/yellow]"
+            )
+            if not qp_pdfs:
+                self.console.print(
+                    "[red]No QP selected; nothing to split.[/red]"
+                )
+                self.console.print(
+                    "[dim]Use the QP PDF, or `convert <ms_pdf>` if you only "
+                    "want Markdown and metadata.[/dim]"
+                )
+                return
+            self.console.print(
+                "[dim]QP will be split; MS will only be converted and synced.[/dim]"
+            )
+
+        if ms_pdfs:
+            confirm_message = (
+                "Run pipeline on %d PDF(s): %d QP, %d MS; MS will only be "
+                "converted/synced, not split. Profile %s?"
+                % (len(pdfs), len(qp_pdfs), len(ms_pdfs), namespace.profile)
+            )
+        else:
+            confirm_message = (
+                "Run full pipeline on %d PDF(s) with profile %s?"
+                % (len(pdfs), namespace.profile)
+            )
+        if not self._confirm(confirm_message, force_yes=namespace.yes):
             return
 
         code = self._run_script(
@@ -1022,23 +1419,26 @@ class PaperTUI:
         if code != 0:
             return
 
-        mds = self._all_mds() if namespace.all else self._qp_mds()
+        mds = self._mds_for_pdfs(qp_pdfs) if qp_pdfs else []
         if not mds:
-            self.console.print("[yellow]no Markdown files produced[/yellow]")
-            return
-        code = self._run_script(
-            "split_questions.py",
-            [
-                "--profile",
-                namespace.profile,
-                "--out",
-                str(self.questions_dir),
-            ]
-            + [str(path) for path in mds],
-            label="split",
-        )
-        if code != 0:
-            return
+            self.console.print(
+                "[yellow]no QP Markdown produced for the selected PDF(s); "
+                "skipping split[/yellow]"
+            )
+        else:
+            code = self._run_script(
+                "split_questions.py",
+                [
+                    "--profile",
+                    namespace.profile,
+                    "--out",
+                    str(self.questions_dir),
+                ]
+                + [str(path) for path in mds],
+                label="split",
+            )
+            if code != 0:
+                return
 
         code = self._run_script(
             "paperdb.py",
@@ -1058,6 +1458,29 @@ class PaperTUI:
         if code == 0:
             self.console.print("[green]pipeline complete[/green]")
             self.cmd_stats([])
+            if explicit and self.current_kind == "paper":
+                current_paper = self.fetch_paper(self.current_id)
+                if current_paper and current_paper.get("path"):
+                    current_path = str(Path(current_paper["path"]).resolve())
+                    wanted = {
+                        str(pdf.resolve())
+                        for pdf in pdfs
+                        if pdf.exists()
+                    }
+                    if current_path in wanted:
+                        self.render_paper(self.current_id)
+
+    def cmd_process(self, args: List[str]) -> None:
+        """Pipeline a single paper; defaults to the currently open paper."""
+        if not args:
+            pdf_id = self.current_paper_id()
+            if not pdf_id:
+                self.console.print(
+                    "[yellow]usage: process <pdf_id> (or open a paper first)[/yellow]"
+                )
+                return
+            args = [pdf_id]
+        self.cmd_pipeline(args)
 
     def cmd_run(self, args: List[str]) -> None:
         if not args:
@@ -1079,9 +1502,11 @@ class PaperTUI:
             Panel(
                 Text(
                     "paper_tui\n\n"
-                    "This is a command REPL over data/papers.db.\n"
-                    "Type 'help' for commands, 'home' for the paper list, "
-                    "'quit' to exit."
+                    "这是一个操作 data/papers.db 的命令 REPL。\n\n"
+                    "  help       命令总览（按通用 / 查询 / 处理 / 脚本分区）\n"
+                    "  help -d    基本概念、处理流程、profile 和导航说明\n"
+                    "  home       卷子列表\n"
+                    "  quit       退出"
                 ),
                 title="paper corpus",
                 border_style="cyan",
@@ -1115,6 +1540,8 @@ class PaperTUI:
             "md": self.cmd_md,
             "tables": self.cmd_tables,
             "attachments": self.cmd_attachments,
+            "stimulus": self.cmd_stimulus,
+            "sources": self.cmd_stimulus,
             "parent": self.cmd_parent,
             "children": self.cmd_children,
             "next": self.cmd_next,
@@ -1127,6 +1554,7 @@ class PaperTUI:
             "convert": self.cmd_convert,
             "split": self.cmd_split,
             "pipeline": self.cmd_pipeline,
+            "process": self.cmd_process,
             "run": self.cmd_run,
             "clear": self.cmd_clear,
         }

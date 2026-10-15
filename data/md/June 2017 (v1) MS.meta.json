@@ -1,0 +1,3642 @@
+{
+  "source_pdf": "/Users/a67_68/projects/paper_researcher/data/papers/June 2017 (v1) MS.pdf",
+  "stem": "June 2017 (v1) MS",
+  "generator": "pdf_to_md.py",
+  "image_link_style": "markdown",
+  "table_format": "md",
+  "pages": 14,
+  "images": [],
+  "tables": [
+    {
+      "id": "tbl-0001",
+      "page": 2,
+      "bbox": [
+        55.931000000000004,
+        60.72000000000003,
+        785.8522222222222,
+        308.52
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Part(a)",
+          "",
+          "",
+          "Generic Levels of Response:",
+          "",
+          "",
+          "Marks",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Level 4:",
+          "",
+          "",
+          "Makes a developed comparison\nMakes a developed comparison between the two sources, recognising points of similarity and difference. Uses knowledge\nto evaluate the sources and shows good contextual awareness.",
+          "",
+          "",
+          "12–15",
+          "",
+          ""
+        ],
+        [
+          "Level 3:",
+          "",
+          "",
+          "Compares views and identifies similarities and differences\nCompares the views expressed in the sources, identifying differences and similarities. Begins to explain and evaluate the\nviews using the sources and knowledge.",
+          "",
+          "",
+          "8–11",
+          "",
+          ""
+        ],
+        [
+          "Level 2:",
+          "",
+          "",
+          "Compares views and identifies similarities and/or differences\nIdentifies relevant similarities or differences between views/sources and the response may be one-sided with only one\naspect explained. Alternatively, both similarities and differences may be mentioned but both aspects lack development.",
+          "",
+          "",
+          "4–7",
+          "",
+          ""
+        ],
+        [
+          "Level 1:",
+          "",
+          "",
+          "Describes content of each source\nDescribes or paraphrases the content of the two sources. Very simple comparisons may be made (e.g. one is from a letter\nand the other is from a speech) but these are not developed.",
+          "",
+          "",
+          "1–3",
+          "",
+          ""
+        ],
+        [
+          "Level 0:",
+          "",
+          "",
+          "No relevant comment on the sources or the issue",
+          "",
+          "",
+          "0",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Part(a) |  |  | Generic Levels of Response: |  |  | Marks |  |\n|  |  |  |  |  |  |  |  |  |\n| Level 4: |  |  | Makes a developed comparison<br>Makes a developed comparison between the two sources, recognising points of similarity and difference. Uses knowledge<br>to evaluate the sources and shows good contextual awareness. |  |  | 12–15 |  |  |\n| Level 3: |  |  | Compares views and identifies similarities and differences<br>Compares the views expressed in the sources, identifying differences and similarities. Begins to explain and evaluate the<br>views using the sources and knowledge. |  |  | 8–11 |  |  |\n| Level 2: |  |  | Compares views and identifies similarities and/or differences<br>Identifies relevant similarities or differences between views/sources and the response may be one-sided with only one<br>aspect explained. Alternatively, both similarities and differences may be mentioned but both aspects lack development. |  |  | 4–7 |  |  |\n| Level 1: |  |  | Describes content of each source<br>Describes or paraphrases the content of the two sources. Very simple comparisons may be made (e.g. one is from a letter<br>and the other is from a speech) but these are not developed. |  |  | 1–3 |  |  |\n| Level 0: |  |  | No relevant comment on the sources or the issue |  |  | 0 |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0002",
+      "page": 3,
+      "bbox": [
+        55.92841935483872,
+        60.72000000000003,
+        785.8545161290323,
+        370.85999999999996
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Part(b)",
+          "",
+          "",
+          "Generic Levels of Response:",
+          "",
+          "",
+          "Marks",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Level 5:",
+          "",
+          "",
+          "Evaluates the sources to reach a sustained judgement\nAnswers are well focused, demonstrating a clear understanding of the sources and the question. Reaches a sustained\njudgement about the extent to which the sources support the statement and weighs the evidence in order to do this.",
+          "",
+          "",
+          "21–25",
+          "",
+          ""
+        ],
+        [
+          "Level 4:",
+          "",
+          "",
+          "Evaluates the sources\nDemonstrates a clear understanding of the sources and the question. Begins to evaluate the material in context,\nconsidering the nature, origin and purpose of the sources in relation to the statement. At the top of this level candidates\nmay begin to reach a judgement but this is not sustained.",
+          "",
+          "",
+          "16–20",
+          "",
+          ""
+        ],
+        [
+          "Level 3:",
+          "",
+          "",
+          "Uses the sources to support and challenge the statement\nMakes valid points from the sources to both challenge and support the statement in the question. These comments may be\nderived from source content or may be about the provenance/nature of the sources.",
+          "",
+          "",
+          "11–15",
+          "",
+          ""
+        ],
+        [
+          "Level 2:",
+          "",
+          "",
+          "Uses the sources to support or challenge the statement\nMakes valid points from the sources to either support the statement in the question or to challenge it. These comments\nmay be derived from source content or may be about the provenance/nature of the sources.",
+          "",
+          "",
+          "6–10",
+          "",
+          ""
+        ],
+        [
+          "Level 1:",
+          "",
+          "",
+          "Does not make valid use of the sources\nDescribes the content of the sources with little attempt to link the material to the question. Alternatively, candidates may\nwrite an essay about the question without reference to the sources.",
+          "",
+          "",
+          "1–5",
+          "",
+          ""
+        ],
+        [
+          "Level 0:",
+          "",
+          "",
+          "No relevant comment on the sources or the issue",
+          "",
+          "",
+          "0",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Part(b) |  |  | Generic Levels of Response: |  |  | Marks |  |\n|  |  |  |  |  |  |  |  |  |\n| Level 5: |  |  | Evaluates the sources to reach a sustained judgement<br>Answers are well focused, demonstrating a clear understanding of the sources and the question. Reaches a sustained<br>judgement about the extent to which the sources support the statement and weighs the evidence in order to do this. |  |  | 21–25 |  |  |\n| Level 4: |  |  | Evaluates the sources<br>Demonstrates a clear understanding of the sources and the question. Begins to evaluate the material in context,<br>considering the nature, origin and purpose of the sources in relation to the statement. At the top of this level candidates<br>may begin to reach a judgement but this is not sustained. |  |  | 16–20 |  |  |\n| Level 3: |  |  | Uses the sources to support and challenge the statement<br>Makes valid points from the sources to both challenge and support the statement in the question. These comments may be<br>derived from source content or may be about the provenance/nature of the sources. |  |  | 11–15 |  |  |\n| Level 2: |  |  | Uses the sources to support or challenge the statement<br>Makes valid points from the sources to either support the statement in the question or to challenge it. These comments<br>may be derived from source content or may be about the provenance/nature of the sources. |  |  | 6–10 |  |  |\n| Level 1: |  |  | Does not make valid use of the sources<br>Describes the content of the sources with little attempt to link the material to the question. Alternatively, candidates may<br>write an essay about the question without reference to the sources. |  |  | 1–5 |  |  |\n| Level 0: |  |  | No relevant comment on the sources or the issue |  |  | 0 |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0003",
+      "page": 4,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        467.40000000000003
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "1(a)",
+          "",
+          "",
+          "To what extent do Sources A and B provide evidence that Napoleon’s views\non Italy had changed greatly between 1856 and 1858?\nDifferences between Sources A and B include:\n• Source A shows Napoleon expecting the settlement of Italy to involve\nAustria, while Source B shows him expecting Austria to be excluded\nfrom Italy.\n• Source A shows Napoleon wanting a peaceful, political settlement of the\nItalian question, while Source B shows him prepared to fight to change\nthe map of Italy.\n• Source A shows Napoleon thinking Italy could become a Papal-led\nconfederation, while Source B shows him accepting a less national\nsolution in the shape of a Kingdom of Northern Italy.\nSimilarities include:\n• Both sources show Napoleon III expecting violence to shape the future\nof Italy, whether by war or revolution.\n• Both show Napoleon III expecting major change in the Italian state\nsystem.\nSource A is a private note written by Napoleon III himself at the end of the\nCrimean war as the peace treaty was being finalised at the Congress of Paris. As\na victorious leader of Europe, he might have had an exaggerated sense of his\nown importance and his role in redrawing the map of Italy. Source B is a\ndiplomatic note to the Piedmontese Prime Minister several weeks before his\nsecret meeting with Napoleon III at Plombières. As an intermediary, Nigra would\ntry to reflect accurately Napoleon’s plans to his political master.",
+          "",
+          "",
+          "15",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n| 1(a) |  |  | To what extent do Sources A and B provide evidence that Napoleon’s views<br>on Italy had changed greatly between 1856 and 1858?<br>Differences between Sources A and B include:<br>• Source A shows Napoleon expecting the settlement of Italy to involve<br>Austria, while Source B shows him expecting Austria to be excluded<br>from Italy.<br>• Source A shows Napoleon wanting a peaceful, political settlement of the<br>Italian question, while Source B shows him prepared to fight to change<br>the map of Italy.<br>• Source A shows Napoleon thinking Italy could become a Papal-led<br>confederation, while Source B shows him accepting a less national<br>solution in the shape of a Kingdom of Northern Italy.<br>Similarities include:<br>• Both sources show Napoleon III expecting violence to shape the future<br>of Italy, whether by war or revolution.<br>• Both show Napoleon III expecting major change in the Italian state<br>system.<br>Source A is a private note written by Napoleon III himself at the end of the<br>Crimean war as the peace treaty was being finalised at the Congress of Paris. As<br>a victorious leader of Europe, he might have had an exaggerated sense of his<br>own importance and his role in redrawing the map of Italy. Source B is a<br>diplomatic note to the Piedmontese Prime Minister several weeks before his<br>secret meeting with Napoleon III at Plombières. As an intermediary, Nigra would<br>try to reflect accurately Napoleon’s plans to his political master. |  |  | 15 |  |  |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0004",
+      "page": 5,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        490.44
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "1(b)",
+          "",
+          "",
+          "‘The motive for both France and Piedmont for going to war in 1859 was to\ndrive Austria out of Italy.’ How far do Sources A to D support this view?\nOne source clearly supports the hypothesis: Source B. It reports Napoleon III as\nwanting Austria out of Italy. This diplomatic memo, presumably confidential, is\nprobably an accurate summary of Napoleon’s III’s plans. Cross-referencing to the\nPlombières treaty agreed a few weeks later confirms the reliability of Source B.\nOne source clearly challenges the hypothesis: Source A. It shows Napoleon III\nneither wanting war against Austria nor wanting Austria out of Italy. Source A is a\nprivate note written by Napoleon III himself at the end of the Crimean war as the\npeace treaty was being finalised at the Congress of Paris. Unusually, its reliability\nis undermined by its own contradictions: in one sentence, he says violent means\nare needed to achieve change, in the next two sentences he talks of change\nbeing accomplished peacefully.\nSource C can be used on both sides of the argument.\n• Source C supports the assertion because it shows Cavour trying to\npersuade Napoleon III to stick to their agreement to fight Austria. If he\ndid so, Austria would be driven out of Italy.\n• Source C challenges the assertion in that it shows Napoleon III wanting\nto postpose the war against Austria. If he did so, Austria would remain in\nItaly.\nSource C was a direct appeal from Cavour, Piedmontese Prime Minister, to\nNapoleon III roughly halfway between the Plombières Agreement agreed by the\ntwo men and the actual war against Austria in 1859. Cross-referencing to Source\nD shows Cavour’s doubts about Napoleon’s commitment to war to be justified\nand thus the source more reliable than Cavour’s opportunist, flexible politics\nmight otherwise suggest.",
+          "",
+          "",
+          "25",
+          "",
+          "",
+          "Note: 1 The question asks about both\nFrance and Piedmont. The assertion\ncould be seen as requiring candidates\nto consider each separately. This is not\nthe case. The key issue is the reason\nwhy they together went to war. Was it\nto eject Austria from Lombardy and\nVenetia, its two Italian provinces, or\nwas it for another reason, e.g. for\ndomestic prestige?\nNote: 2 The question does not ask\nabout the motives for going to war with\nAustria.",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n| 1(b) |  |  | ‘The motive for both France and Piedmont for going to war in 1859 was to<br>drive Austria out of Italy.’ How far do Sources A to D support this view?<br>One source clearly supports the hypothesis: Source B. It reports Napoleon III as<br>wanting Austria out of Italy. This diplomatic memo, presumably confidential, is<br>probably an accurate summary of Napoleon’s III’s plans. Cross-referencing to the<br>Plombières treaty agreed a few weeks later confirms the reliability of Source B.<br>One source clearly challenges the hypothesis: Source A. It shows Napoleon III<br>neither wanting war against Austria nor wanting Austria out of Italy. Source A is a<br>private note written by Napoleon III himself at the end of the Crimean war as the<br>peace treaty was being finalised at the Congress of Paris. Unusually, its reliability<br>is undermined by its own contradictions: in one sentence, he says violent means<br>are needed to achieve change, in the next two sentences he talks of change<br>being accomplished peacefully.<br>Source C can be used on both sides of the argument.<br>• Source C supports the assertion because it shows Cavour trying to<br>persuade Napoleon III to stick to their agreement to fight Austria. If he<br>did so, Austria would be driven out of Italy.<br>• Source C challenges the assertion in that it shows Napoleon III wanting<br>to postpose the war against Austria. If he did so, Austria would remain in<br>Italy.<br>Source C was a direct appeal from Cavour, Piedmontese Prime Minister, to<br>Napoleon III roughly halfway between the Plombières Agreement agreed by the<br>two men and the actual war against Austria in 1859. Cross-referencing to Source<br>D shows Cavour’s doubts about Napoleon’s commitment to war to be justified<br>and thus the source more reliable than Cavour’s opportunist, flexible politics<br>might otherwise suggest. |  |  | 25 |  |  | Note: 1 The question asks about both<br>France and Piedmont. The assertion<br>could be seen as requiring candidates<br>to consider each separately. This is not<br>the case. The key issue is the reason<br>why they together went to war. Was it<br>to eject Austria from Lombardy and<br>Venetia, its two Italian provinces, or<br>was it for another reason, e.g. for<br>domestic prestige?<br>Note: 2 The question does not ask<br>about the motives for going to war with<br>Austria. |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0005",
+      "page": 6,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        465.18
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "Source D can be used on both sides of the argument:\n• Source D supports the assertion because the King of Piedmont,\nCavour and the French army want to go to war against Austria.\n• Source D challenges the assertion because in France only the army is\nin favour. This must mean that Napoleon III is against.\nSource D is written by an Englishman in Italy in the months before the long-\nanticipated war against Austria. Cross-referencing to Source C shows Cavour\nworking hard to ‘drag France into war’, helping to confirm the reliability of Source\nD. The war itself shows they must have succeeded. The harm to Cavour’s\nreputation in England can be questioned because (a) the journalist is in Rome\nand (b) presumably he counts himself as one of the ‘thinking people in – or in this\ncase from – England. Thus, the reliability of Source D can be argued either way.\nNote: The Context of War with Austria in 1859\nEvents in the late 1840s made it clear that Italy would not unite itself, let alone\ndrive out the Austrians, without international support. Piedmont’s involvement in\nthe Crimean War had raised its international standing and it felt that it was owed\nfavours by both France and Britain for its (limited) military involvement on their\nside against Russia. While Napoleon III was sympathetic to Cavour’s ideas, he\nwas also anxious for glory and for French expansion into Nice and Savoy. In\naddition, though, he had to be wary of Catholic opinion in France, sympathetic to\nthe Papacy, which by this time was against both Italian unification and any war\nbetween Catholic states. The Orsini Bomb plot of January 1858, an attempt by an\nItalian nationalist to assassinate Napoleon III, paradoxically made the French\nEmperor more sympathetic to the Italian cause. Thus a few months later\nNapoleon and Cavour agreed to advance the Italian cause by provoking Austria\ninto war.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Note: 3 ‘Their’ in the third line of Source\nD refers to the King of Piedmont, Victor\nEmmanuel, and Cavour, and NOT to\nNapoleon III and Cavour.",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  | Source D can be used on both sides of the argument:<br>• Source D supports the assertion because the King of Piedmont,<br>Cavour and the French army want to go to war against Austria.<br>• Source D challenges the assertion because in France only the army is<br>in favour. This must mean that Napoleon III is against.<br>Source D is written by an Englishman in Italy in the months before the long-<br>anticipated war against Austria. Cross-referencing to Source C shows Cavour<br>working hard to ‘drag France into war’, helping to confirm the reliability of Source<br>D. The war itself shows they must have succeeded. The harm to Cavour’s<br>reputation in England can be questioned because (a) the journalist is in Rome<br>and (b) presumably he counts himself as one of the ‘thinking people in – or in this<br>case from – England. Thus, the reliability of Source D can be argued either way.<br>Note: The Context of War with Austria in 1859<br>Events in the late 1840s made it clear that Italy would not unite itself, let alone<br>drive out the Austrians, without international support. Piedmont’s involvement in<br>the Crimean War had raised its international standing and it felt that it was owed<br>favours by both France and Britain for its (limited) military involvement on their<br>side against Russia. While Napoleon III was sympathetic to Cavour’s ideas, he<br>was also anxious for glory and for French expansion into Nice and Savoy. In<br>addition, though, he had to be wary of Catholic opinion in France, sympathetic to<br>the Papacy, which by this time was against both Italian unification and any war<br>between Catholic states. The Orsini Bomb plot of January 1858, an attempt by an<br>Italian nationalist to assassinate Napoleon III, paradoxically made the French<br>Emperor more sympathetic to the Italian cause. Thus a few months later<br>Napoleon and Cavour agreed to advance the Italian cause by provoking Austria<br>into war. |  |  |  |  |  | Note: 3 ‘Their’ in the third line of Source<br>D refers to the King of Piedmont, Victor<br>Emmanuel, and Cavour, and NOT to<br>Napoleon III and Cavour. |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0006",
+      "page": 7,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        430.2
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "2(a)",
+          "",
+          "",
+          "To what extent do Sources C and D agree about President Monroe’s attitude\ntowards the Missouri Compromise?\nDifferences between Sources C and D include:\n• While Source C states that Monroe advised firmness and decision,\nSource D sees Monroe as vacillating over whether to veto the\nCompromise\n• Source C shows that Monroe might well object to the Compromise, as it\nattempted to restrict state sovereignty - while Source D shows him\nsigning the Compromise.\nSimilarities include:\n• Both see Monroe as close to vetoing the Compromise\n• Both see Monroe as vacillating [depending upon which part of Source C\nis used]\n• Both see Monroe as objecting to the Compromise’s limits on state power\n• Both mention the possible impact of the 1820 presidential election.\nSource C was written before Monroe signed the Compromise, Source D was\nwritten long after. Source C was written to influence opinion in Virginia. Source D\nwas written by someone presumably very familiar with the Kansas-Nebraska Act\nof 1854, a very controversial Act which repealed the Missouri Compromise.\nTherefore, she would probably want to write a partial account rather than a true\nhistory.",
+          "",
+          "",
+          "15",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n| 2(a) |  |  | To what extent do Sources C and D agree about President Monroe’s attitude<br>towards the Missouri Compromise?<br>Differences between Sources C and D include:<br>• While Source C states that Monroe advised firmness and decision,<br>Source D sees Monroe as vacillating over whether to veto the<br>Compromise<br>• Source C shows that Monroe might well object to the Compromise, as it<br>attempted to restrict state sovereignty - while Source D shows him<br>signing the Compromise.<br>Similarities include:<br>• Both see Monroe as close to vetoing the Compromise<br>• Both see Monroe as vacillating [depending upon which part of Source C<br>is used]<br>• Both see Monroe as objecting to the Compromise’s limits on state power<br>• Both mention the possible impact of the 1820 presidential election.<br>Source C was written before Monroe signed the Compromise, Source D was<br>written long after. Source C was written to influence opinion in Virginia. Source D<br>was written by someone presumably very familiar with the Kansas-Nebraska Act<br>of 1854, a very controversial Act which repealed the Missouri Compromise.<br>Therefore, she would probably want to write a partial account rather than a true<br>history. |  |  | 15 |  |  |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0007",
+      "page": 8,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        490.44
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "2(b)",
+          "",
+          "",
+          "How far do Sources A to D support the assertion that the Missouri\nCompromise was in fact a victory for the North?\nSource A, from the Missouri Compromise itself, can be used on both sides of the\nargument:\n• Source A supports the assertion in that it mentions the 36°30’ dividing\nline between free and unfree states. The state of Missouri excepted, no\nslave states can be established north of that line in the lands bought\nfrom France seventeen years before.\n• Source A challenges the assertion in that it mentions the fugitive slave\nlaw which still applies in the lands above 36°30 line.\nThe best way of evaluating Source A in relation to the question is by using\ncontextual knowledge. Slavery was definitely prohibited north of 36°30’ from 1820\nonwards – until 1854 at least. The fugitive slave law, which benefited the South,\ndepended upon the co-operation of the authorities in the North. Source A is only\npartly accurate in conveying the legal reality. Thus, it is not wholly reliable.\nSource B challenges the assertion in that it argues that the Missouri\nCompromise, and especially its geographical dividing line, will risk conflict\nbetween free and unfree states and thus threaten the very existence of the USA.\nNo one will gain from agreeing the Missouri Compromise.\nThis is a letter written by a leading Founding Father and thus authoritative, if very\npessimistic. He was also a slave-owner, if one who took the view that\nemancipation would eventually come. Thus, his slave-holding could be used\neither way, to decide the source is unreliable – because pro-South – or reliable\nbecause he could recognise arguments on both sides. What cannot be used as\npart of the evaluation process is his expectations for the future, however accurate\nthey might be.",
+          "",
+          "",
+          "25",
+          "",
+          "",
+          "Note: 4 Some candidates will equate\n‘the Union’ with the North, probably\nbased on divisions in the civil war,\nwhen the North was equated with the\nUnion. Source B distinguishes between\nthe two.",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n| 2(b) |  |  | How far do Sources A to D support the assertion that the Missouri<br>Compromise was in fact a victory for the North?<br>Source A, from the Missouri Compromise itself, can be used on both sides of the<br>argument:<br>• Source A supports the assertion in that it mentions the 36°30’ dividing<br>line between free and unfree states. The state of Missouri excepted, no<br>slave states can be established north of that line in the lands bought<br>from France seventeen years before.<br>• Source A challenges the assertion in that it mentions the fugitive slave<br>law which still applies in the lands above 36°30 line.<br>The best way of evaluating Source A in relation to the question is by using<br>contextual knowledge. Slavery was definitely prohibited north of 36°30’ from 1820<br>onwards – until 1854 at least. The fugitive slave law, which benefited the South,<br>depended upon the co-operation of the authorities in the North. Source A is only<br>partly accurate in conveying the legal reality. Thus, it is not wholly reliable.<br>Source B challenges the assertion in that it argues that the Missouri<br>Compromise, and especially its geographical dividing line, will risk conflict<br>between free and unfree states and thus threaten the very existence of the USA.<br>No one will gain from agreeing the Missouri Compromise.<br>This is a letter written by a leading Founding Father and thus authoritative, if very<br>pessimistic. He was also a slave-owner, if one who took the view that<br>emancipation would eventually come. Thus, his slave-holding could be used<br>either way, to decide the source is unreliable – because pro-South – or reliable<br>because he could recognise arguments on both sides. What cannot be used as<br>part of the evaluation process is his expectations for the future, however accurate<br>they might be. |  |  | 25 |  |  | Note: 4 Some candidates will equate<br>‘the Union’ with the North, probably<br>based on divisions in the civil war,<br>when the North was equated with the<br>Union. Source B distinguishes between<br>the two. |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0008",
+      "page": 9,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        425.7
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "Source C also supports the assertion in that it argues that Monroe might veto a\nstates’ rights bill. To stop such a bill would be disastrous for the South. In\naddition, the possibility of the South dividing would also mean a victory for the\nNorth; the South must remain united.\nWritten by a Southern politician a few weeks before the Missouri Compromise\nwas signed and while Monroe’s attitude was unclear, this is probably an attempt\nto rally Southern support in order to influence the content of the Compromise.\nCross-referencing to Source D shows that the fear of a veto was not unfounded.\nDespite this, Source C is unreliable because it is from a party politician seeking to\ngain political support.\nSource D largely supports the assertion. It shows Monroe signing the\nCompromise, despite his doubts about its constitutionality, Source A tells us that\nthe Compromise was, on balance, a victory for the North. If Monroe signs the bill,\nthen he is helping the North to gain the quantifiable benefits of several new free\nstates while the South gains only the unquantifiable benefit of the extension of the\nFugitive Slave Act.\nThe provenance of the source raises doubts about its reliability. The authorship\nsuggests a likely partiality while the title suggests the book focuses more on the\nlink between the two Compromises on inclusion of new states, those of 1820 and\n1850, rather than on the Missouri Compromise itself. Cross referencing to Source\nC shows that Monroe issuing veto was a matter of debate in 1820, which\nsuggests some reliability. Thus, the reliability of Source D is open to detailed\ndiscussion.",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "Note: 5 In line three of Source D, ‘it’\nrefers to the veto, not the Compromise.\nThis is an important distinction to make.\nSource D is not saying that the\nCompromise risked civil war.",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  | Source C also supports the assertion in that it argues that Monroe might veto a<br>states’ rights bill. To stop such a bill would be disastrous for the South. In<br>addition, the possibility of the South dividing would also mean a victory for the<br>North; the South must remain united.<br>Written by a Southern politician a few weeks before the Missouri Compromise<br>was signed and while Monroe’s attitude was unclear, this is probably an attempt<br>to rally Southern support in order to influence the content of the Compromise.<br>Cross-referencing to Source D shows that the fear of a veto was not unfounded.<br>Despite this, Source C is unreliable because it is from a party politician seeking to<br>gain political support.<br>Source D largely supports the assertion. It shows Monroe signing the<br>Compromise, despite his doubts about its constitutionality, Source A tells us that<br>the Compromise was, on balance, a victory for the North. If Monroe signs the bill,<br>then he is helping the North to gain the quantifiable benefits of several new free<br>states while the South gains only the unquantifiable benefit of the extension of the<br>Fugitive Slave Act.<br>The provenance of the source raises doubts about its reliability. The authorship<br>suggests a likely partiality while the title suggests the book focuses more on the<br>link between the two Compromises on inclusion of new states, those of 1820 and<br>1850, rather than on the Missouri Compromise itself. Cross referencing to Source<br>C shows that Monroe issuing veto was a matter of debate in 1820, which<br>suggests some reliability. Thus, the reliability of Source D is open to detailed<br>discussion. |  |  |  |  |  | Note: 5 In line three of Source D, ‘it’<br>refers to the veto, not the Compromise.<br>This is an important distinction to make.<br>Source D is not saying that the<br>Compromise risked civil war. |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0009",
+      "page": 10,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        324.54
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "Note: The Context of the Missouri Compromise of 1820.\nThe 1820 Missouri Compromise was a response to the need to convert more US\nterritory into states, while retaining the numerical balance between free and slave\nstates. It resulted in the inclusion of Missouri, which chose to be a slave state, as\nwell as the free state of Maine. Crucial to the Compromise was the exclusion of\nslavery from any lands gained from France in 1803 north of latitude 36°30’, which\nwas a huge area of land to the north-west of the Mississippi. The only exception\nagreed by Congress was Missouri itself, most of its southern border being drawn\nat 36°. The Compromise successfully balanced the interests of northern and\nsouthern states. It proved quite durable, lasting until the 1850s, when the USA\nfaced the problems of including the new lands gained from Mexico in 1848 as\nwell as Texas. In terms of sectional politics, the South – and especially the state\nof Virginia – dominated the early politics of the USA. Five of the first six\nPresidents, including Monroe, came from Virginia. The party divisions of the late\n1810s and early 1820s were relatively minor. The period of Monroe’s two\npresidencies, 1817–25, is often equated with what was called at the time the Era\nof Good Feelings. Monroe was re-elected unopposed in 1820. The only sectional\ndispute of the time was the debate concerning the admission of Missouri itself",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  | Note: The Context of the Missouri Compromise of 1820.<br>The 1820 Missouri Compromise was a response to the need to convert more US<br>territory into states, while retaining the numerical balance between free and slave<br>states. It resulted in the inclusion of Missouri, which chose to be a slave state, as<br>well as the free state of Maine. Crucial to the Compromise was the exclusion of<br>slavery from any lands gained from France in 1803 north of latitude 36°30’, which<br>was a huge area of land to the north-west of the Mississippi. The only exception<br>agreed by Congress was Missouri itself, most of its southern border being drawn<br>at 36°. The Compromise successfully balanced the interests of northern and<br>southern states. It proved quite durable, lasting until the 1850s, when the USA<br>faced the problems of including the new lands gained from Mexico in 1848 as<br>well as Texas. In terms of sectional politics, the South – and especially the state<br>of Virginia – dominated the early politics of the USA. Five of the first six<br>Presidents, including Monroe, came from Virginia. The party divisions of the late<br>1810s and early 1820s were relatively minor. The period of Monroe’s two<br>presidencies, 1817–25, is often equated with what was called at the time the Era<br>of Good Feelings. Monroe was re-elected unopposed in 1820. The only sectional<br>dispute of the time was the debate concerning the admission of Missouri itself |  |  |  |  |  |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0010",
+      "page": 11,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        428.7
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "3(a)",
+          "",
+          "",
+          "Compare and contrast Sources A and B as evidence of Communist\nattitudes towards participation in the League of Nations.\nDifferences between A and B concerning communist participation in the League\nof Nations include:\n• While Source A is opposed to Soviet participation, Source B accepts it.\n• While Source A sees the League as approving preparations for\n[imperialist] war, Source B sees it as helping to prevent war preparations\nby Japan and Germany.\nSimilarities include:\n• Both sources see war as likely.\n• Both see the League as hiding dubious practices via camouflage [A] or\ndeceptions [B].\nSource A is a [public?] speech, made by the leader of the USSR at a time when it\nfaced few, if any threats. Stalin speaks in general and ideological terms. There\nare no references to specific events or countries. Source B is a magazine article\nwritten by American communists in 1934, when the USSR, the leader of the\ncommunist world, was facing direct threats on its western and eastern borders. Its\nlanguage is less generalised, less ideological. It has some specific examples. Its\nportrayal of the League of Nations is likely to be more reliable than that of Source\nA. At least, its statements can be more easily tested by reference to contextual\nknowledge than can Source A’s.",
+          "",
+          "",
+          "15",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n| 3(a) |  |  | Compare and contrast Sources A and B as evidence of Communist<br>attitudes towards participation in the League of Nations.<br>Differences between A and B concerning communist participation in the League<br>of Nations include:<br>• While Source A is opposed to Soviet participation, Source B accepts it.<br>• While Source A sees the League as approving preparations for<br>[imperialist] war, Source B sees it as helping to prevent war preparations<br>by Japan and Germany.<br>Similarities include:<br>• Both sources see war as likely.<br>• Both see the League as hiding dubious practices via camouflage [A] or<br>deceptions [B].<br>Source A is a [public?] speech, made by the leader of the USSR at a time when it<br>faced few, if any threats. Stalin speaks in general and ideological terms. There<br>are no references to specific events or countries. Source B is a magazine article<br>written by American communists in 1934, when the USSR, the leader of the<br>communist world, was facing direct threats on its western and eastern borders. Its<br>language is less generalised, less ideological. It has some specific examples. Its<br>portrayal of the League of Nations is likely to be more reliable than that of Source<br>A. At least, its statements can be more easily tested by reference to contextual<br>knowledge than can Source A’s. |  |  | 15 |  |  |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0011",
+      "page": 12,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        526.92
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "3(b)",
+          "",
+          "",
+          "‘The Soviet Union did not believe that the League of Nations could\nencourage peace and security.’ How far do Sources A to D support this\nview?\nSource A supports the assertion. It argues that the League actually allows for\nwar among the capitalist powers. The Source maintains that the League acts as a\ncamouflage for the aggressive policies of these powers.\nSource A is a speech by Stalin, the Soviet leader, to a group of foreign delegates\nin 1927, the tenth anniversary of the Bolshevik Revolution. He will want to stress\nthe superiority of communism over capitalism. Thus, it is unreliable. This\nevaluation is supported by contextual knowledge. In 1927, the leading capitalist\npowers were disarming rather than rearming.\nSource D also supports the assertion in that it sees the League as, from the\nstart, a feeble and failing institution, dominated as it was by France and Britain.\nThere was some hope when the USSR joined but that hope had gone now it was\nbeing thrown out.\nSource D comes from the official Soviet newspaper reporting after the League of\nNations had expelled the USSR. Thus, it is bound to be very critical of the\nLeague. Several of its critical assertions are not supported by contextual\nknowledge: it is extremely unreliable.\nThe remaining sources can be interpreted as either challenging the assertion or\nsupporting it.\nSource B supports the assertion in that it argues that the League remained\nimperialist: the departure from the League of Germany and Japan ‘little alters its\nimperialist character’.\nSource B challenges the assertion in that it argues that joining the League might\nenable the USSR maintain peace and [collective] security against Germany and\nJapan.",
+          "",
+          "",
+          "25",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n| 3(b) |  |  | ‘The Soviet Union did not believe that the League of Nations could<br>encourage peace and security.’ How far do Sources A to D support this<br>view?<br>Source A supports the assertion. It argues that the League actually allows for<br>war among the capitalist powers. The Source maintains that the League acts as a<br>camouflage for the aggressive policies of these powers.<br>Source A is a speech by Stalin, the Soviet leader, to a group of foreign delegates<br>in 1927, the tenth anniversary of the Bolshevik Revolution. He will want to stress<br>the superiority of communism over capitalism. Thus, it is unreliable. This<br>evaluation is supported by contextual knowledge. In 1927, the leading capitalist<br>powers were disarming rather than rearming.<br>Source D also supports the assertion in that it sees the League as, from the<br>start, a feeble and failing institution, dominated as it was by France and Britain.<br>There was some hope when the USSR joined but that hope had gone now it was<br>being thrown out.<br>Source D comes from the official Soviet newspaper reporting after the League of<br>Nations had expelled the USSR. Thus, it is bound to be very critical of the<br>League. Several of its critical assertions are not supported by contextual<br>knowledge: it is extremely unreliable.<br>The remaining sources can be interpreted as either challenging the assertion or<br>supporting it.<br>Source B supports the assertion in that it argues that the League remained<br>imperialist: the departure from the League of Germany and Japan ‘little alters its<br>imperialist character’.<br>Source B challenges the assertion in that it argues that joining the League might<br>enable the USSR maintain peace and [collective] security against Germany and<br>Japan. |  |  | 25 |  |  |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0012",
+      "page": 13,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        489.0
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "Source B’s analysis of the situation in 1934 can be supported by contextual\nknowledge. It also has few illusions about the League, which it maintains is still\npro-imperialist. Finally, it finishes by criticising the USSR for its hypocrisy, an\nunusual line for a communist journal to take. Thus, it is more reliable than not.\nSource C supports the assertion in that it says that the League could not uphold\npeace, as shown by the failure of the Disarmament Conference.\nSource C challenges the assertion in that it says that the League could uphold\npeace in the future [now that the USSR has joined].\nSource C is a speech by the Soviet representative to the League of Nations in\n1934, the year when the USSR joined the League. It is critical of the League in\nthe past, more optimistic about its future – not unsurprisingly. Given the speaker,\nthe audience and the event, this is a very unreliable source.\nContext\nIn the wake of the 1917 revolution, the USSR, the first and only Marxist state of\nthe time, was neither invited to the Paris peace talks nor accepted as a member\nof the League of Nations. In the 1920s, as the League established itself, the\nUSSR criticised it on ideological grounds. Soviet sources claimed that the League\nof Nations had been established simply to enhance the power of Britain and\nFrance, the two dominant imperialist powers. By 1934, circumstances had\nchanged. The USSR faced the challenge of Nazi Germany to the west and\nimperialist Japan to the east, both expansionist powers. The withdrawal of Japan\nand Germany, in 1933 and 1934 respectively, undermined the reputation of the\nLeague of Nations. These withdrawals helped decide Stalin to join the League for\nreasons of security. The Soviet Union remained a member of the League until\n1940, consistently arguing for a more proactive approach to issues such as\ndisarmament and opposition to aggressive actions (e.g. over the Italian invasion\nof Abyssinia).",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  | Source B’s analysis of the situation in 1934 can be supported by contextual<br>knowledge. It also has few illusions about the League, which it maintains is still<br>pro-imperialist. Finally, it finishes by criticising the USSR for its hypocrisy, an<br>unusual line for a communist journal to take. Thus, it is more reliable than not.<br>Source C supports the assertion in that it says that the League could not uphold<br>peace, as shown by the failure of the Disarmament Conference.<br>Source C challenges the assertion in that it says that the League could uphold<br>peace in the future [now that the USSR has joined].<br>Source C is a speech by the Soviet representative to the League of Nations in<br>1934, the year when the USSR joined the League. It is critical of the League in<br>the past, more optimistic about its future – not unsurprisingly. Given the speaker,<br>the audience and the event, this is a very unreliable source.<br>Context<br>In the wake of the 1917 revolution, the USSR, the first and only Marxist state of<br>the time, was neither invited to the Paris peace talks nor accepted as a member<br>of the League of Nations. In the 1920s, as the League established itself, the<br>USSR criticised it on ideological grounds. Soviet sources claimed that the League<br>of Nations had been established simply to enhance the power of Britain and<br>France, the two dominant imperialist powers. By 1934, circumstances had<br>changed. The USSR faced the challenge of Nazi Germany to the west and<br>imperialist Japan to the east, both expansionist powers. The withdrawal of Japan<br>and Germany, in 1933 and 1934 respectively, undermined the reputation of the<br>League of Nations. These withdrawals helped decide Stalin to join the League for<br>reasons of security. The Soviet Union remained a member of the League until<br>1940, consistently arguing for a more proactive approach to issues such as<br>disarmament and opposition to aggressive actions (e.g. over the Italian invasion<br>of Abyssinia). |  |  |  |  |  |  |  |",
+      "format": "md"
+    },
+    {
+      "id": "tbl-0013",
+      "page": 14,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        147.48000000000002
+      ],
+      "data": [
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "Question",
+          "",
+          "",
+          "Answer",
+          "",
+          "",
+          "Marks",
+          "",
+          "Guidance",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "",
+          "",
+          "",
+          "By the late 1930s, it was clear that the League of Nations had failed in its primary\naim to preserve peace and security, most notably with the outbreak of World War\nII in 1939. In December 1939, the Soviet Union was expelled from the League of\nNations following its invasion of Finland",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "markdown": "|  |  |  |  |  |  |  |  |  |  |  |\n| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |\n|  | Question |  |  | Answer |  |  | Marks |  | Guidance |  |\n|  |  |  |  |  |  |  |  |  |  |  |\n|  |  |  | By the late 1930s, it was clear that the League of Nations had failed in its primary<br>aim to preserve peace and security, most notably with the outbreak of World War<br>II in 1939. In December 1939, the Soviet Union was expelled from the League of<br>Nations following its invasion of Finland |  |  |  |  |  |  |  |",
+      "format": "md"
+    }
+  ],
+  "blocks": [
+    {
+      "id": "blk-0001",
+      "page": 1,
+      "bbox": [
+        128.82000732421875,
+        87.62279510498047,
+        428.4186096191406,
+        111.31392669677734
+      ],
+      "kind": "text",
+      "text": "**Cambridge International Examinations **\nCambridge International Advanced Subsidiary and Advanced Level** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0002",
+      "page": 1,
+      "bbox": [
+        56.70000076293945,
+        139.5828094482422,
+        541.6712036132812,
+        164.95394897460938
+      ],
+      "kind": "text",
+      "text": "**HISTORY **\n**9389/11 **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0003",
+      "page": 1,
+      "bbox": [
+        56.70001220703125,
+        171.22645568847656,
+        541.404296875,
+        182.40878295898438
+      ],
+      "kind": "text",
+      "text": "Paper 1\n**May/June 2017**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0004",
+      "page": 1,
+      "bbox": [
+        56.70001220703125,
+        188.68128967285156,
+        133.95042419433594,
+        199.86361694335938
+      ],
+      "kind": "text",
+      "text": "MARK SCHEME",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0005",
+      "page": 1,
+      "bbox": [
+        56.70001220703125,
+        206.1962432861328,
+        144.48626708984375,
+        217.37857055664062
+      ],
+      "kind": "text",
+      "text": "Maximum Mark: 40",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0006",
+      "page": 1,
+      "bbox": [
+        271.32000732421875,
+        262.58282470703125,
+        326.941650390625,
+        274.83648681640625
+      ],
+      "kind": "text",
+      "text": "**Published **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0007",
+      "page": 1,
+      "bbox": [
+        56.697601318359375,
+        290.602783203125,
+        538.624755859375,
+        497.16339111328125
+      ],
+      "kind": "text",
+      "text": "This mark scheme is published as an aid to teachers and candidates, to indicate the requirements of the\nexamination. It shows the basis on which Examiners were instructed to award marks. It does not indicate the\ndetails of the discussions that took place at an Examiners’ meeting before marking began, which would have\nconsidered the acceptability of alternative answers.\nMark schemes should be read in conjunction with the question paper and the Principal Examiner Report for\nTeachers.\nCambridge will not enter into discussions about these mark schemes.\nCambridge is publishing the mark schemes for the May/June 2017 series for most Cambridge IGCSE<sup>®</sup>,\nCambridge International A and AS Level and Cambridge Pre-U components, and some Cambridge O Level\ncomponents.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0008",
+      "page": 1,
+      "bbox": [
+        190.01617431640625,
+        725.9465942382812,
+        541.6712036132812,
+        756.392822265625
+      ],
+      "kind": "text",
+      "text": "® IGCSE is a registered trademark.\nThis document consists of **14** printed pages.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0009",
+      "page": 2,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0010",
+      "page": 2,
+      "bbox": [
+        55.931000000000004,
+        60.72000000000003,
+        785.8522222222222,
+        308.52
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0001",
+      "image_id": null
+    },
+    {
+      "id": "blk-0011",
+      "page": 2,
+      "bbox": [
+        216.01708984375,
+        136.17356872558594,
+        228.27076721191406,
+        716.8526000976562
+      ],
+      "kind": "text",
+      "text": "aspect explained. Alternatively, both similarities and differences may be mentioned but both aspects lack development.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0012",
+      "page": 2,
+      "bbox": [
+        203.35714721679688,
+        141.0879364013672,
+        215.61082458496094,
+        716.8526000976562
+      ],
+      "kind": "text",
+      "text": "Identifies relevant similarities or differences between views/sources and the response may be one-sided with only one",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0013",
+      "page": 2,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0014",
+      "page": 2,
+      "bbox": [
+        190.76309204101562,
+        394.0389709472656,
+        203.0167694091797,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 2: **\n**Compares views and identifies similarities and/or differences **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0015",
+      "page": 2,
+      "bbox": [
+        116.4712142944336,
+        404.406005859375,
+        128.72488403320312,
+        716.8526000976562
+      ],
+      "kind": "text",
+      "text": "to evaluate the sources and shows good contextual awareness.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0016",
+      "page": 2,
+      "bbox": [
+        141.02310180664062,
+        408.099853515625,
+        153.2767791748047,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 3: **\n**Compares views and identifies similarities and differences **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0017",
+      "page": 2,
+      "bbox": [
+        265.7571105957031,
+        419.16326904296875,
+        278.0107727050781,
+        716.8526000976562
+      ],
+      "kind": "text",
+      "text": "and the other is from a speech) but these are not developed.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0018",
+      "page": 2,
+      "bbox": [
+        166.21121215820312,
+        516.8634033203125,
+        178.4648895263672,
+        716.8526000976562
+      ],
+      "kind": "text",
+      "text": "views using the sources and knowledge.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0019",
+      "page": 2,
+      "bbox": [
+        240.5030975341797,
+        537.7816772460938,
+        252.75677490234375,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 1:**\n**Describes content of each source **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0020",
+      "page": 2,
+      "bbox": [
+        91.2831039428711,
+        548.1507568359375,
+        103.53678131103516,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 4:**\n**Makes a developed comparison **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0021",
+      "page": 3,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0022",
+      "page": 3,
+      "bbox": [
+        55.92841935483872,
+        60.72000000000003,
+        785.8545161290323,
+        370.85999999999996
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0002",
+      "image_id": null
+    },
+    {
+      "id": "blk-0023",
+      "page": 3,
+      "bbox": [
+        278.4171142578125,
+        267.4450988769531,
+        290.6707763671875,
+        716.8416137695312
+      ],
+      "kind": "text",
+      "text": "may be derived from source content or may be about the provenance/nature of the sources.** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0024",
+      "page": 3,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0025",
+      "page": 3,
+      "bbox": [
+        228.6112060546875,
+        306.5707702636719,
+        240.86488342285156,
+        716.8416137695312
+      ],
+      "kind": "text",
+      "text": "derived from source content or may be about the provenance/nature of the sources.** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0026",
+      "page": 3,
+      "bbox": [
+        328.1571044921875,
+        387.3079528808594,
+        340.4107666015625,
+        716.8526000976562
+      ],
+      "kind": "text",
+      "text": "write an essay about the question without reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0027",
+      "page": 3,
+      "bbox": [
+        203.423095703125,
+        414.2763977050781,
+        228.2708282470703,
+        754.1659545898438
+      ],
+      "kind": "text",
+      "text": "**Uses the sources to support and challenge the statement **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0028",
+      "page": 3,
+      "bbox": [
+        253.16310119628906,
+        422.82977294921875,
+        278.0108337402344,
+        754.1659545898438
+      ],
+      "kind": "text",
+      "text": "**Uses the sources to support or challenge the statement **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0029",
+      "page": 3,
+      "bbox": [
+        91.2831039428711,
+        429.4851379394531,
+        116.1308364868164,
+        754.1659545898438
+      ],
+      "kind": "text",
+      "text": "**Evaluates the sources to reach a sustained judgement **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0030",
+      "page": 3,
+      "bbox": [
+        178.87115478515625,
+        435.60443115234375,
+        191.1248321533203,
+        716.8416137695312
+      ],
+      "kind": "text",
+      "text": "may begin to reach a judgement but this is not sustained.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0031",
+      "page": 3,
+      "bbox": [
+        302.9031066894531,
+        507.20379638671875,
+        315.1567687988281,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 1:**\n**Does not make valid use of the sources **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0032",
+      "page": 3,
+      "bbox": [
+        141.02310180664062,
+        597.6334838867188,
+        165.87083435058594,
+        754.1659545898438
+      ],
+      "kind": "text",
+      "text": "**Evaluates the sources **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0033",
+      "page": 3,
+      "bbox": [
+        91.2831039428711,
+        730.5927734375,
+        103.53678131103516,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 5:**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0034",
+      "page": 3,
+      "bbox": [
+        141.02310180664062,
+        730.5927734375,
+        153.2767791748047,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 4:**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0035",
+      "page": 3,
+      "bbox": [
+        203.423095703125,
+        730.6004638671875,
+        215.67677307128906,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 3: **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0036",
+      "page": 3,
+      "bbox": [
+        253.16310119628906,
+        730.6004638671875,
+        265.4167785644531,
+        774.6295166015625
+      ],
+      "kind": "text",
+      "text": "**Level 2: **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0037",
+      "page": 4,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0038",
+      "page": 4,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        467.40000000000003
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0003",
+      "image_id": null
+    },
+    {
+      "id": "blk-0039",
+      "page": 4,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0040",
+      "page": 4,
+      "bbox": [
+        411.1363830566406,
+        361.8947448730469,
+        423.3900451660156,
+        715.3036499023438
+      ],
+      "kind": "text",
+      "text": "own importance and his role in redrawing the map of Italy. Source B is a",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0041",
+      "page": 4,
+      "bbox": [
+        449.0503234863281,
+        405.3780517578125,
+        461.3039855957031,
+        715.3036499023438
+      ],
+      "kind": "text",
+      "text": "try to reflect accurately Napoleon’s plans to his political master.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0042",
+      "page": 4,
+      "bbox": [
+        257.8336181640625,
+        416.6981506347656,
+        270.0872802734375,
+        672.8277587890625
+      ],
+      "kind": "text",
+      "text": "solution in the shape of a Kingdom of Northern Italy.** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0043",
+      "page": 4,
+      "bbox": [
+        103.94892883300781,
+        432.2298583984375,
+        116.20260620117188,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**on Italy had changed greatly between 1856 and 1858? **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0044",
+      "page": 4,
+      "bbox": [
+        129.2029266357422,
+        465.97442626953125,
+        141.45660400390625,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**Differences between Sources A and B include:  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0045",
+      "page": 4,
+      "bbox": [
+        321.8580017089844,
+        486.9432373046875,
+        334.1116638183594,
+        672.8277587890625
+      ],
+      "kind": "text",
+      "text": "of Italy, whether by war or revolution.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0046",
+      "page": 4,
+      "bbox": [
+        219.1949920654297,
+        588.4801025390625,
+        231.44866943359375,
+        672.8387451171875
+      ],
+      "kind": "text",
+      "text": "the map of Italy. ** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0047",
+      "page": 4,
+      "bbox": [
+        283.2193908691406,
+        608.3428955078125,
+        295.4730529785156,
+        715.3146362304688
+      ],
+      "kind": "text",
+      "text": "**Similarities include: **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0048",
+      "page": 4,
+      "bbox": [
+        180.50148010253906,
+        618.4340209960938,
+        192.75515747070312,
+        672.8497314453125
+      ],
+      "kind": "text",
+      "text": "from Italy. ** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0049",
+      "page": 4,
+      "bbox": [
+        347.8915710449219,
+        631.84130859375,
+        360.1452331542969,
+        672.8277587890625
+      ],
+      "kind": "text",
+      "text": "system.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0050",
+      "page": 5,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0051",
+      "page": 5,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        490.44
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0004",
+      "image_id": null
+    },
+    {
+      "id": "blk-0052",
+      "page": 5,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0053",
+      "page": 5,
+      "bbox": [
+        293.58453369140625,
+        448.79510498046875,
+        305.83819580078125,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "Source C can be used on both sides of the argument.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0054",
+      "page": 5,
+      "bbox": [
+        344.8830871582031,
+        460.1033020019531,
+        357.1367492675781,
+        672.8497314453125
+      ],
+      "kind": "text",
+      "text": "did so, Austria would be driven out of Italy.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0055",
+      "page": 5,
+      "bbox": [
+        268.2646484375,
+        556.3634033203125,
+        280.518310546875,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "being accomplished peacefully.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0056",
+      "page": 5,
+      "bbox": [
+        472.13031005859375,
+        587.541015625,
+        484.38397216796875,
+        715.3256225585938
+      ],
+      "kind": "text",
+      "text": "might otherwise suggest.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0057",
+      "page": 5,
+      "bbox": [
+        383.57659912109375,
+        646.5711669921875,
+        395.83026123046875,
+        672.8497314453125
+      ],
+      "kind": "text",
+      "text": "Italy.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0058",
+      "page": 6,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0059",
+      "page": 6,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        465.18
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0005",
+      "image_id": null
+    },
+    {
+      "id": "blk-0060",
+      "page": 6,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0061",
+      "page": 6,
+      "bbox": [
+        421.5674133300781,
+        361.320556640625,
+        433.8210754394531,
+        715.343505859375
+      ],
+      "kind": "text",
+      "text": "Emperor more sympathetic to the Italian cause. Thus a few months later",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0062",
+      "page": 6,
+      "bbox": [
+        155.97215270996094,
+        403.8743896484375,
+        168.225830078125,
+        672.8676147460938
+      ],
+      "kind": "text",
+      "text": "in favour. This must mean that Napoleon III is against.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0063",
+      "page": 6,
+      "bbox": [
+        91.22310638427734,
+        448.80645751953125,
+        103.4767837524414,
+        752.9094848632812
+      ],
+      "kind": "text",
+      "text": "Source D can be used on both sides of the argument:",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0064",
+      "page": 6,
+      "bbox": [
+        282.5057067871094,
+        473.9844055175781,
+        294.7593688964844,
+        715.343505859375
+      ],
+      "kind": "text",
+      "text": "**Note: The Context of War with Austria in 1859 **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0065",
+      "page": 6,
+      "bbox": [
+        446.8214111328125,
+        670.7202758789062,
+        459.0750732421875,
+        715.343505859375
+      ],
+      "kind": "text",
+      "text": "into war.** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0066",
+      "page": 7,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0067",
+      "page": 7,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        430.2
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0006",
+      "image_id": null
+    },
+    {
+      "id": "blk-0068",
+      "page": 7,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0069",
+      "page": 7,
+      "bbox": [
+        91.22310638427734,
+        314.4934387207031,
+        103.54266357421875,
+        762.6895141601562
+      ],
+      "kind": "text",
+      "text": "2(a)\n**To what extent do Sources C and D agree about President Monroe’s attitude **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0070",
+      "page": 7,
+      "bbox": [
+        192.84298706054688,
+        318.8717346191406,
+        206.28250122070312,
+        694.1041259765625
+      ],
+      "kind": "text",
+      "text": "•\n**Source C** shows that Monroe might well object to the Compromise, as it",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0071",
+      "page": 7,
+      "bbox": [
+        361.2761535644531,
+        319.8011779785156,
+        373.5298156738281,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "written long after. Source C was written to influence opinion in Virginia. Source D",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0072",
+      "page": 7,
+      "bbox": [
+        282.84600830078125,
+        320.8106384277344,
+        296.2855529785156,
+        694.0931396484375
+      ],
+      "kind": "text",
+      "text": "•\nBoth see Monroe as vacillating [depending upon which part of Source C",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0073",
+      "page": 7,
+      "bbox": [
+        373.93609619140625,
+        321.5189514160156,
+        386.18975830078125,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "was written by someone presumably very familiar with the Kansas-Nebraska Act",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0074",
+      "page": 7,
+      "bbox": [
+        399.1900939941406,
+        327.76348876953125,
+        411.4437561035156,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "Therefore, she would probably want to write a partial account rather than a true",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0075",
+      "page": 7,
+      "bbox": [
+        348.6162109375,
+        340.0339660644531,
+        360.869873046875,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "Source C was written before Monroe signed the Compromise, Source D was",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0076",
+      "page": 7,
+      "bbox": [
+        322.2641906738281,
+        343.3403015136719,
+        335.7037353515625,
+        694.0931396484375
+      ],
+      "kind": "text",
+      "text": "•\nBoth mention the possible impact of the 1820 presidential election.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0077",
+      "page": 7,
+      "bbox": [
+        154.14947509765625,
+        343.3698425292969,
+        167.5889892578125,
+        694.1041259765625
+      ],
+      "kind": "text",
+      "text": "•\nWhile **Source C** states that Monroe advised firmness and decision,",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0078",
+      "page": 7,
+      "bbox": [
+        206.5350341796875,
+        345.2327575683594,
+        218.78871154785156,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "attempted to restrict state sovereignty - while **Source D** shows him",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0079",
+      "page": 7,
+      "bbox": [
+        386.5960388183594,
+        347.3539733886719,
+        398.8497009277344,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "of 1854, a very controversial Act which repealed the Missouri Compromise.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0080",
+      "page": 7,
+      "bbox": [
+        167.84152221679688,
+        367.8140563964844,
+        180.09519958496094,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "**Source D** sees Monroe as vacillating over whether to veto the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0081",
+      "page": 7,
+      "bbox": [
+        269.4613952636719,
+        408.1129455566406,
+        282.90093994140625,
+        694.0931396484375
+      ],
+      "kind": "text",
+      "text": "•\nBoth see Monroe as close to vetoing the Compromise",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0082",
+      "page": 7,
+      "bbox": [
+        129.21389770507812,
+        465.97442626953125,
+        141.4675750732422,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**Differences between Sources C and D include:  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0083",
+      "page": 7,
+      "bbox": [
+        103.94892883300781,
+        522.1399536132812,
+        116.20260620117188,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**towards the Missouri Compromise?  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0084",
+      "page": 7,
+      "bbox": [
+        219.19497680664062,
+        545.11669921875,
+        231.4486541748047,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "signing the Compromise.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0085",
+      "page": 7,
+      "bbox": [
+        180.50146484375,
+        604.40380859375,
+        192.75514221191406,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "Compromise",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0086",
+      "page": 7,
+      "bbox": [
+        244.5148468017578,
+        605.3035278320312,
+        256.7685241699219,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "**Similarities include:  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0087",
+      "page": 7,
+      "bbox": [
+        296.5380859375,
+        628.8272705078125,
+        308.791748046875,
+        672.8497314453125
+      ],
+      "kind": "text",
+      "text": "is used]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0088",
+      "page": 7,
+      "bbox": [
+        411.85003662109375,
+        676.8194580078125,
+        424.10369873046875,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "history.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0089",
+      "page": 8,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0090",
+      "page": 8,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        490.44
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0007",
+      "image_id": null
+    },
+    {
+      "id": "blk-0091",
+      "page": 8,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0092",
+      "page": 8,
+      "bbox": [
+        231.77806091308594,
+        414.7221984863281,
+        244.03173828125,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "law which still applies in the lands above 36°30 line.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0093",
+      "page": 8,
+      "bbox": [
+        370.9056701660156,
+        429.781494140625,
+        383.1593322753906,
+        715.3256225585938
+      ],
+      "kind": "text",
+      "text": "No one will gain from agreeing the Missouri Compromise.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0094",
+      "page": 8,
+      "bbox": [
+        103.94892883300781,
+        458.03387451171875,
+        116.20260620117188,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**Compromise was in fact a victory for the North?  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0095",
+      "page": 8,
+      "bbox": [
+        205.74449157714844,
+        486.3797302246094,
+        217.9981689453125,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "from France seventeen years before.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0096",
+      "page": 8,
+      "bbox": [
+        472.11932373046875,
+        640.0883178710938,
+        484.37298583984375,
+        715.3256225585938
+      ],
+      "kind": "text",
+      "text": "they might be.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0097",
+      "page": 8,
+      "bbox": [
+        141.79698181152344,
+        659.7313232421875,
+        154.0506591796875,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "argument:",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0098",
+      "page": 9,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0099",
+      "page": 9,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        425.7
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0008",
+      "image_id": null
+    },
+    {
+      "id": "blk-0100",
+      "page": 9,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0101",
+      "page": 9,
+      "bbox": [
+        293.58453369140625,
+        314.8617858886719,
+        305.83819580078125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "states while the South gains only the unquantifiable benefit of the extension of the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0102",
+      "page": 9,
+      "bbox": [
+        205.0308074951172,
+        316.1536560058594,
+        217.28448486328125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Despite this, Source C is unreliable because it is from a party politician seeking to",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0103",
+      "page": 9,
+      "bbox": [
+        369.4783020019531,
+        316.7533264160156,
+        394.39190673828125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "1850, rather than on the Missouri Compromise itself. Cross referencing to Source\nC shows that Monroe issuing veto was a matter of debate in 1820, which",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0104",
+      "page": 9,
+      "bbox": [
+        356.818359375,
+        318.5568542480469,
+        369.072021484375,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "link between the two Compromises on inclusion of new states, those of 1820 and",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0105",
+      "page": 9,
+      "bbox": [
+        268.2646484375,
+        318.5898132324219,
+        280.518310546875,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "the Compromise was, on balance, a victory for the North. If Monroe signs the bill,",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0106",
+      "page": 9,
+      "bbox": [
+        91.22310638427734,
+        319.8002014160156,
+        103.4767837524414,
+        752.9094848632812
+      ],
+      "kind": "text",
+      "text": "**Source C also supports **the assertion in that it argues that Monroe might veto a",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0107",
+      "page": 9,
+      "bbox": [
+        255.6046905517578,
+        322.1278991699219,
+        267.8583679199219,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Compromise, despite his doubts about its constitutionality, Source A tells us that",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0108",
+      "page": 9,
+      "bbox": [
+        192.37086486816406,
+        323.4480895996094,
+        204.62454223632812,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Cross-referencing to Source D shows that the fear of a veto was not unfounded.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0109",
+      "page": 9,
+      "bbox": [
+        167.1168670654297,
+        324.0611267089844,
+        179.37054443359375,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "was signed and while Monroe’s attitude was unclear, this is probably an attempt",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0110",
+      "page": 9,
+      "bbox": [
+        344.1584167480469,
+        325.8723449707031,
+        356.4120788574219,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "suggests a likely partiality while the title suggests the book focuses more on the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0111",
+      "page": 9,
+      "bbox": [
+        280.9245910644531,
+        326.5018005371094,
+        293.1782531738281,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "then he is helping the North to gain the quantifiable benefits of several new free",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0112",
+      "page": 9,
+      "bbox": [
+        331.49847412109375,
+        327.70904541015625,
+        343.75213623046875,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "The provenance of the source raises doubts about its reliability. The authorship",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0113",
+      "page": 9,
+      "bbox": [
+        154.45692443847656,
+        334.46533203125,
+        166.71060180664062,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Written by a Southern politician a few weeks before the Missouri Compromise",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0114",
+      "page": 9,
+      "bbox": [
+        116.47710418701172,
+        335.10028076171875,
+        128.73077392578125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "addition, the possibility of the South dividing would also mean a victory for the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0115",
+      "page": 9,
+      "bbox": [
+        179.71092224121094,
+        336.3468933105469,
+        191.964599609375,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "to rally Southern support in order to influence the content of the Compromise.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0116",
+      "page": 9,
+      "bbox": [
+        394.7322998046875,
+        341.25909423828125,
+        406.9859619140625,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "suggests some reliability. Thus, the reliability of Source D is open to detailed",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0117",
+      "page": 9,
+      "bbox": [
+        103.88304901123047,
+        357.7298278808594,
+        116.13672637939453,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "states’ rights bill. To stop such a bill would be disastrous for the South. In",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0118",
+      "page": 9,
+      "bbox": [
+        243.01063537597656,
+        366.1612548828125,
+        255.26431274414062,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "**Source D largely supports** the assertion. It shows Monroe signing the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0119",
+      "page": 9,
+      "bbox": [
+        129.1370391845703,
+        529.4700927734375,
+        141.39071655273438,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "North; the South must remain united.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0120",
+      "page": 9,
+      "bbox": [
+        217.6907501220703,
+        609.0088500976562,
+        229.94442749023438,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "gain political support.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0121",
+      "page": 9,
+      "bbox": [
+        306.2444763183594,
+        618.152099609375,
+        318.4981384277344,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Fugitive Slave Act.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0122",
+      "page": 9,
+      "bbox": [
+        407.3922424316406,
+        657.8928833007812,
+        419.6459045410156,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "discussion.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0123",
+      "page": 10,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0124",
+      "page": 10,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        324.54
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0009",
+      "image_id": null
+    },
+    {
+      "id": "blk-0125",
+      "page": 10,
+      "bbox": [
+        66.8031005859375,
+        131.60801696777344,
+        79.05677795410156,
+        776.7294921875
+      ],
+      "kind": "text",
+      "text": "**Question **\n**Answer  **\n**Marks **\n**Guidance **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0126",
+      "page": 10,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0127",
+      "page": 10,
+      "bbox": [
+        154.45692443847656,
+        317.2267150878906,
+        166.71060180664062,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "slavery from any lands gained from France in 1803 north of latitude 36°30’, which",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0128",
+      "page": 10,
+      "bbox": [
+        116.47710418701172,
+        317.9122009277344,
+        128.73077392578125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "territory into states, while retaining the numerical balance between free and slave",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0129",
+      "page": 10,
+      "bbox": [
+        293.58453369140625,
+        319.1095275878906,
+        305.83819580078125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "of Good Feelings. Monroe was re-elected unopposed in 1820. The only sectional",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0130",
+      "page": 10,
+      "bbox": [
+        129.1370391845703,
+        319.7816467285156,
+        141.39071655273438,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "states. It resulted in the inclusion of Missouri, which chose to be a slave state, as",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0131",
+      "page": 10,
+      "bbox": [
+        103.88304901123047,
+        320.5581970214844,
+        116.13672637939453,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "The 1820 Missouri Compromise was a response to the need to convert more US",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0132",
+      "page": 10,
+      "bbox": [
+        268.2646484375,
+        320.9535827636719,
+        293.1782531738281,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "1810s and early 1820s were relatively minor. The period of Monroe’s two\npresidencies, 1817–25, is often equated with what was called at the time the Era",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0133",
+      "page": 10,
+      "bbox": [
+        179.71092224121094,
+        321.0821838378906,
+        191.964599609375,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "agreed by Congress was Missouri itself, most of its southern border being drawn",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0134",
+      "page": 10,
+      "bbox": [
+        255.6046905517578,
+        323.4031677246094,
+        267.8583679199219,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Presidents, including Monroe, came from Virginia. The party divisions of the late",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0135",
+      "page": 10,
+      "bbox": [
+        230.35069274902344,
+        324.0699768066406,
+        242.6043701171875,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "well as Texas. In terms of sectional politics, the South – and especially the state",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0136",
+      "page": 10,
+      "bbox": [
+        167.1168670654297,
+        324.6344909667969,
+        179.37054443359375,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "was a huge area of land to the north-west of the Mississippi. The only exception",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0137",
+      "page": 10,
+      "bbox": [
+        141.79698181152344,
+        327.79461669921875,
+        154.0506591796875,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "well as the free state of Maine. Crucial to the Compromise was the exclusion of",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0138",
+      "page": 10,
+      "bbox": [
+        205.0308074951172,
+        332.69036865234375,
+        217.28448486328125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "southern states. It proved quite durable, lasting until the 1850s, when the USA",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0139",
+      "page": 10,
+      "bbox": [
+        306.2444763183594,
+        335.08154296875,
+        318.4981384277344,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "dispute of the time was the debate concerning the admission of Missouri itself** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0140",
+      "page": 10,
+      "bbox": [
+        217.6907501220703,
+        336.29644775390625,
+        229.94442749023438,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "faced the problems of including the new lands gained from Mexico in 1848 as",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0141",
+      "page": 10,
+      "bbox": [
+        192.37086486816406,
+        342.3092041015625,
+        204.62454223632812,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "at 36°. The Compromise successfully balanced the interests of northern and",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0142",
+      "page": 10,
+      "bbox": [
+        243.01063537597656,
+        366.9302062988281,
+        255.26431274414062,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "of Virginia – dominated the early politics of the USA. Five of the first six",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0143",
+      "page": 10,
+      "bbox": [
+        91.22310638427734,
+        418.8689880371094,
+        103.54266357421875,
+        752.9094848632812
+      ],
+      "kind": "text",
+      "text": "**Note: The** **Context of the Missouri Compromise of 1820.  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0144",
+      "page": 11,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0145",
+      "page": 11,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        428.7
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0010",
+      "image_id": null
+    },
+    {
+      "id": "blk-0146",
+      "page": 11,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0147",
+      "page": 11,
+      "bbox": [
+        359.7719421386719,
+        314.8603210449219,
+        372.0256042480469,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "communist world, was facing direct threats on its western and eastern borders. Its",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0148",
+      "page": 11,
+      "bbox": [
+        129.1370391845703,
+        315.4645080566406,
+        141.39071655273438,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**Differences between A and B **concerning communist participation in the League",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0149",
+      "page": 11,
+      "bbox": [
+        309.19805908203125,
+        316.7727355957031,
+        321.45172119140625,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "Source A is a [public?] speech, made by the leader of the USSR at a time when it",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0150",
+      "page": 11,
+      "bbox": [
+        385.0918273925781,
+        318.0008239746094,
+        397.3454895019531,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "portrayal of the League of Nations is likely to be more reliable than that of Source",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0151",
+      "page": 11,
+      "bbox": [
+        372.431884765625,
+        322.1682434082031,
+        384.685546875,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "language is less generalised, less ideological. It has some specific examples. Its",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0152",
+      "page": 11,
+      "bbox": [
+        334.5179443359375,
+        323.3600158691406,
+        346.7716064453125,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "are no references to specific events or countries. Source B is a magazine article",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0153",
+      "page": 11,
+      "bbox": [
+        166.79844665527344,
+        325.6601257324219,
+        180.2379608154297,
+        694.1041259765625
+      ],
+      "kind": "text",
+      "text": "•\nWhile Source A is opposed to Soviet participation, Source B accepts it.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0154",
+      "page": 11,
+      "bbox": [
+        270.18609619140625,
+        326.1830139160156,
+        283.6256408691406,
+        694.0931396484375
+      ],
+      "kind": "text",
+      "text": "•\nBoth see the League as hiding dubious practices via camouflage [A] or",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0155",
+      "page": 11,
+      "bbox": [
+        397.75177001953125,
+        330.1471252441406,
+        410.00543212890625,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "A. At least, its statements can be more easily tested by reference to contextual",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0156",
+      "page": 11,
+      "bbox": [
+        321.8580017089844,
+        331.38848876953125,
+        334.1116638183594,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "faced few, if any threats. Stalin speaks in general and ideological terms. There",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0157",
+      "page": 11,
+      "bbox": [
+        347.11199951171875,
+        344.75823974609375,
+        359.36566162109375,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "written by American communists in 1934, when the USSR, the leader of the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0158",
+      "page": 11,
+      "bbox": [
+        91.22310638427734,
+        362.0078430175781,
+        103.54266357421875,
+        762.6895141601562
+      ],
+      "kind": "text",
+      "text": "3(a)\n**Compare and contrast Sources A and B as evidence of Communist **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0159",
+      "page": 11,
+      "bbox": [
+        180.1830596923828,
+        363.5907287597656,
+        193.62257385253906,
+        694.1041259765625
+      ],
+      "kind": "text",
+      "text": "•\nWhile Source A sees the League as approving preparations for",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0160",
+      "page": 11,
+      "bbox": [
+        103.94892883300781,
+        418.3139953613281,
+        116.20260620117188,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**attitudes towards participation in the League of Nations. **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0161",
+      "page": 11,
+      "bbox": [
+        256.8014831542969,
+        515.7756958007812,
+        270.24102783203125,
+        694.0931396484375
+      ],
+      "kind": "text",
+      "text": "•\nBoth sources see war as likely. ** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0162",
+      "page": 11,
+      "bbox": [
+        206.53504943847656,
+        549.3115844726562,
+        218.78872680664062,
+        672.8607177734375
+      ],
+      "kind": "text",
+      "text": "by Japan and Germany.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0163",
+      "page": 11,
+      "bbox": [
+        410.4117126464844,
+        555.14306640625,
+        422.6653747558594,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "knowledge than can Source A’s.** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0164",
+      "page": 11,
+      "bbox": [
+        283.878173828125,
+        593.9601440429688,
+        296.1318359375,
+        672.8497314453125
+      ],
+      "kind": "text",
+      "text": "deceptions [B]*. *** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0165",
+      "page": 11,
+      "bbox": [
+        231.8549346923828,
+        605.3035278320312,
+        244.10861206054688,
+        715.3366088867188
+      ],
+      "kind": "text",
+      "text": "**Similarities include:  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0166",
+      "page": 11,
+      "bbox": [
+        141.79698181152344,
+        618.79541015625,
+        154.0506591796875,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "of Nations include:",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0167",
+      "page": 12,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0168",
+      "page": 12,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        526.92
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0011",
+      "image_id": null
+    },
+    {
+      "id": "blk-0169",
+      "page": 12,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0170",
+      "page": 12,
+      "bbox": [
+        243.01063537597656,
+        493.4327697753906,
+        255.26431274414062,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "powers were disarming rather than rearming.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0171",
+      "page": 12,
+      "bbox": [
+        369.4783020019531,
+        529.6038208007812,
+        381.7319641113281,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "knowledge:  it is extremely unreliable.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0172",
+      "page": 12,
+      "bbox": [
+        457.96612548828125,
+        605.333251953125,
+        470.21978759765625,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "imperialist character’.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0173",
+      "page": 12,
+      "bbox": [
+        306.2444763183594,
+        627.8870849609375,
+        318.4981384277344,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "being thrown out.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0174",
+      "page": 12,
+      "bbox": [
+        407.3922424316406,
+        646.2471313476562,
+        419.6459045410156,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "supporting it.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0175",
+      "page": 12,
+      "bbox": [
+        508.60589599609375,
+        676.2384033203125,
+        520.8595581054688,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "Japan.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0176",
+      "page": 12,
+      "bbox": [
+        116.5429916381836,
+        678.6900634765625,
+        128.79666137695312,
+        715.3475952148438
+      ],
+      "kind": "text",
+      "text": "**view?  **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0177",
+      "page": 13,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0178",
+      "page": 13,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        489.0
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0012",
+      "image_id": null
+    },
+    {
+      "id": "blk-0179",
+      "page": 13,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0180",
+      "page": 13,
+      "bbox": [
+        167.1168670654297,
+        398.6295471191406,
+        179.37054443359375,
+        715.3545532226562
+      ],
+      "kind": "text",
+      "text": "peace, as shown by the failure of the Disarmament Conference.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0181",
+      "page": 13,
+      "bbox": [
+        268.2646484375,
+        422.4312438964844,
+        280.518310546875,
+        715.3545532226562
+      ],
+      "kind": "text",
+      "text": "the audience and the event, this is a very unreliable source.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0182",
+      "page": 13,
+      "bbox": [
+        205.0308074951172,
+        459.1920471191406,
+        217.28448486328125,
+        715.3545532226562
+      ],
+      "kind": "text",
+      "text": "peace in the future [now that the USSR has joined].",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0183",
+      "page": 13,
+      "bbox": [
+        470.6260681152344,
+        643.25537109375,
+        482.8797302246094,
+        715.3545532226562
+      ],
+      "kind": "text",
+      "text": "of Abyssinia).",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0184",
+      "page": 13,
+      "bbox": [
+        293.6504211425781,
+        671.386962890625,
+        305.9040832519531,
+        715.3545532226562
+      ],
+      "kind": "text",
+      "text": "**Context **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0185",
+      "page": 14,
+      "bbox": [
+        21.41189956665039,
+        59.706268310546875,
+        46.482601165771484,
+        452.84417724609375
+      ],
+      "kind": "text",
+      "text": "**PUBLISHED**\nMay/June 2017",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0186",
+      "page": 14,
+      "bbox": [
+        56.974636363636364,
+        60.72000000000003,
+        784.8671818181817,
+        147.48000000000002
+      ],
+      "kind": "table",
+      "text": "",
+      "table_id": "tbl-0013",
+      "image_id": null
+    },
+    {
+      "id": "blk-0187",
+      "page": 14,
+      "bbox": [
+        66.8031005859375,
+        131.60801696777344,
+        79.05677795410156,
+        776.7294921875
+      ],
+      "kind": "text",
+      "text": "**Question **\n**Answer  **\n**Marks **\n**Guidance **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0188",
+      "page": 14,
+      "bbox": [
+        21.41189956665039,
+        290.5195617675781,
+        33.756778717041016,
+        779.6694946289062
+      ],
+      "kind": "text",
+      "text": "9389/11\nCambridge International AS/A Level – Mark Scheme",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0189",
+      "page": 14,
+      "bbox": [
+        91.22310638427734,
+        318.0604553222656,
+        103.4767837524414,
+        752.9094848632812
+      ],
+      "kind": "text",
+      "text": "By the late 1930s, it was clear that the League of Nations had failed in its primary",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0190",
+      "page": 14,
+      "bbox": [
+        103.88304901123047,
+        318.6656799316406,
+        116.13672637939453,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "aim to preserve peace and security, most notably with the outbreak of World War",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0191",
+      "page": 14,
+      "bbox": [
+        116.47710418701172,
+        321.5501403808594,
+        128.73077392578125,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "II in 1939. In December 1939, the Soviet Union was expelled from the League of",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0192",
+      "page": 14,
+      "bbox": [
+        129.1370391845703,
+        520.297119140625,
+        141.39071655273438,
+        715.3544921875
+      ],
+      "kind": "text",
+      "text": "Nations following its invasion of Finland* *",
+      "table_id": null,
+      "image_id": null
+    }
+  ]
+}

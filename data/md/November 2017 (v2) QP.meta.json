@@ -1,0 +1,1272 @@
+{
+  "source_pdf": "/Users/a67_68/projects/paper_researcher/data/papers/November 2017 (v2) QP.pdf",
+  "stem": "November 2017 (v2) QP",
+  "generator": "pdf_to_md.py",
+  "image_link_style": "markdown",
+  "table_format": "md",
+  "pages": 8,
+  "images": [],
+  "tables": [],
+  "blocks": [
+    {
+      "id": "blk-0001",
+      "page": 1,
+      "bbox": [
+        126.85040283203125,
+        83.38008880615234,
+        452.1753234863281,
+        114.42210388183594
+      ],
+      "kind": "text",
+      "text": "**Cambridge International Examinations**\nCambridge International Advanced Subsidiary and Advanced Level",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0002",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        157.07614135742188,
+        538.5745849609375,
+        175.1161346435547
+      ],
+      "kind": "text",
+      "text": "**HISTORY**\n**9389/12**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0003",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        175.23513793945312,
+        538.5728149414062,
+        191.6351318359375
+      ],
+      "kind": "text",
+      "text": "Paper 1 Document Question\n**October/November 2017**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0004",
+      "page": 1,
+      "bbox": [
+        508.02288818359375,
+        192.23513793945312,
+        538.5828857421875,
+        208.6351318359375
+      ],
+      "kind": "text",
+      "text": "**1 hour**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0005",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        209.60513305664062,
+        218.42787170410156,
+        225.6351318359375
+      ],
+      "kind": "text",
+      "text": "No Additional Materials are required.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0006",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        236.82516479492188,
+        230.5928955078125,
+        253.22515869140625
+      ],
+      "kind": "text",
+      "text": "**READ THESE INSTRUCTIONS FIRST**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0007",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        259.1951599121094,
+        541.333740234375,
+        287.22515869140625
+      ],
+      "kind": "text",
+      "text": "An answer booklet is provided inside this question paper. You should follow the instructions on the front cover\nof the answer booklet. If you need additional answer paper ask the invigilator for a continuation booklet.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0008",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        292.8251647949219,
+        213.43289184570312,
+        345.22515869140625
+      ],
+      "kind": "text",
+      "text": "This paper contains **three** sections:\nSection A: European Option\nSection B: American Option\nSection C: International Option",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0009",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        350.8251647949219,
+        308.83087158203125,
+        367.22515869140625
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question from **one** section only.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0010",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        373.1951599121094,
+        358.5227966308594,
+        389.22515869140625
+      ],
+      "kind": "text",
+      "text": "The marks are given in brackets [ ] at the end of each part question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0011",
+      "page": 1,
+      "bbox": [
+        143.37750244140625,
+        735.9378051757812,
+        451.8974914550781,
+        752.3378295898438
+      ],
+      "kind": "text",
+      "text": "This document consists of **7** printed pages, **1** blank page and **1** Insert.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0012",
+      "page": 2,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**2**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0013",
+      "page": 2,
+      "bbox": [
+        224.50489807128906,
+        58.501243591308594,
+        370.7829895019531,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**Section A: European Option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0014",
+      "page": 2,
+      "bbox": [
+        140.31089782714844,
+        84.5052719116211,
+        454.953857421875,
+        102.54527282714844
+      ],
+      "kind": "text",
+      "text": "**Liberalism and Nationalism in Italy and Germany, 1815–1871**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0015",
+      "page": 2,
+      "bbox": [
+        216.243896484375,
+        110.5093002319336,
+        379.0274353027344,
+        128.54930114746094
+      ],
+      "kind": "text",
+      "text": "**Piedmont and the Crimean War**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0016",
+      "page": 2,
+      "bbox": [
+        49.604888916015625,
+        149.50430297851562,
+        375.552490234375,
+        167.54429626464844
+      ],
+      "kind": "text",
+      "text": "**1 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0017",
+      "page": 2,
+      "bbox": [
+        72.2868881225586,
+        175.50833129882812,
+        120.16988372802734,
+        193.54832458496094
+      ],
+      "kind": "text",
+      "text": "**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0018",
+      "page": 2,
+      "bbox": [
+        72.2868881225586,
+        201.9193572998047,
+        526.0699462890625,
+        297.5644226074219
+      ],
+      "kind": "text",
+      "text": "Piedmontese statesmen feel that if they enter the war with us against Russia, then at the\npeace at the end of the war they will get Lombardy and Venice. This will place 70 000 good\nItalian bayonets at the service of a common Italian cause. Italy will be tranquillised. The\nquestions of Tuscany, Rome and Naples would gradually but surely be resolved. These states\nwould find their safety lies in granting such reforms as would disarm the revolutionary spirits;\nand if not, Piedmont with the additional 5 million inhabitants would be strong enough to crush\nany revolution in Italy.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0019",
+      "page": 2,
+      "bbox": [
+        125.1858901977539,
+        305.75946044921875,
+        522.9899291992188,
+        323.5684509277344
+      ],
+      "kind": "text",
+      "text": "*Sir James Hudson, British Minister in Turin, to the British Foreign Secretary, 1854.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0020",
+      "page": 2,
+      "bbox": [
+        72.2868881225586,
+        344.5234680175781,
+        120.5768814086914,
+        362.5634460449219
+      ],
+      "kind": "text",
+      "text": "**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0021",
+      "page": 2,
+      "bbox": [
+        72.28340148925781,
+        370.77020263671875,
+        526.0546264648438,
+        518.543212890625
+      ],
+      "kind": "text",
+      "text": "•\nThe Piedmontese Government wishes to join up to the offensive and defensive Treaty\nof April 10 between the governments of France and Great Britain against Russia. It\nundertakes to furnish a contingent of 15 000 men, on conditions to be fixed, of which the\nfirst is a loan to Piedmont of 2 million British pounds to be paid after the war.\n•\nBritain and France declare that they will, at the Peace Congress, take into consideration\nthe services rendered to the coalition and the sacrifices made in men and money by\nPiedmont.\n•\nBy the treaty the government of Piedmont enters the European Concert, takes part in the\nnegotiations, sits at the Congress held for the peace and restoring of European stability.\n•\n[Secret Article] Britain and France will, upon the re-establishment of peace, take into\nconsideration the state of Italy.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0022",
+      "page": 2,
+      "bbox": [
+        130.0216064453125,
+        526.7382202148438,
+        522.9691772460938,
+        544.5472412109375
+      ],
+      "kind": "text",
+      "text": "*The Terms of the Agreement between Piedmont, France and Great Britain, 1854.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0023",
+      "page": 2,
+      "bbox": [
+        72.28260803222656,
+        565.502197265625,
+        120.57260131835938,
+        583.542236328125
+      ],
+      "kind": "text",
+      "text": "**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0024",
+      "page": 2,
+      "bbox": [
+        72.28260803222656,
+        591.9132690429688,
+        526.0392456054688,
+        687.5582275390625
+      ],
+      "kind": "text",
+      "text": "The Piedmontese government regrets that the Congress did not concern itself with the affairs\nof Italy, especially as Piedmont’s intervention was critical to the outcome of the war. Disturbed\nwithin by revolutionary passions, foreign occupation and threatened by a possible extension\nof Austrian power, Italy’s position is uncertain. This state of things should interest England and\nFrance on account of the sympathy they have for Piedmont and the real danger it presents\nfor Europe. Piedmont is the only state in Italy able to contain the revolutionary spirit and\nAustrian influence.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0025",
+      "page": 2,
+      "bbox": [
+        121.45260620117188,
+        695.7532348632812,
+        526.0546875,
+        713.562255859375
+      ],
+      "kind": "text",
+      "text": "*The Government of Piedmont’s note to England and France on the Treaty of Paris, *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0026",
+      "page": 2,
+      "bbox": [
+        461.84759521484375,
+        708.7551879882812,
+        522.985595703125,
+        726.564208984375
+      ],
+      "kind": "text",
+      "text": "*March 1856.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0027",
+      "page": 3,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**3**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0028",
+      "page": 3,
+      "bbox": [
+        72.28317260742188,
+        58.502586364746094,
+        120.57316589355469,
+        76.54258728027344
+      ],
+      "kind": "text",
+      "text": "**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0029",
+      "page": 3,
+      "bbox": [
+        72.28317260742188,
+        84.91361236572266,
+        526.0682983398438,
+        180.55870056152344
+      ],
+      "kind": "text",
+      "text": "As a result of my strong requests and with the support of the British Foreign Secretary I have\nhad a meeting with the Emperor Napoleon and the British Foreign Secretary. The Emperor\nshowed a sincere desire to do something for Italy. He realised that the Peace Congress had\nbeen too silent on Italy. He recognised the terrible state of the territories governed by the\nPope. He was ready to propose the revision of all the treaties of 1815. The British Foreign\nSecretary fully supported him, and the position of the Roman States would go before the\nCongress. It is not a great achievement, but it has cost me and my country a great deal.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0030",
+      "page": 3,
+      "bbox": [
+        237.45916748046875,
+        188.75372314453125,
+        522.9752807617188,
+        206.56272888183594
+      ],
+      "kind": "text",
+      "text": "*Cavour to the Foreign Secretary of Piedmont, March 1856.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0031",
+      "page": 3,
+      "bbox": [
+        72.28317260742188,
+        227.51773071289062,
+        385.9294738769531,
+        245.55772399902344
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0032",
+      "page": 3,
+      "bbox": [
+        49.601173400878906,
+        253.52175903320312,
+        548.72412109375,
+        271.5617370605469
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(a) **To what extent do Sources A and B agree on the reasons for Piedmont’s entering the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0033",
+      "page": 3,
+      "bbox": [
+        117.63616943359375,
+        266.9307556152344,
+        545.668212890625,
+        284.5637512207031
+      ],
+      "kind": "text",
+      "text": "Crimean War?\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0034",
+      "page": 3,
+      "bbox": [
+        49.6011962890625,
+        292.5278015136719,
+        548.7185668945312,
+        310.5677795410156
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(b) **‘The cause of Italian unification gained from Piedmont’s involvement in the Crimean",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0035",
+      "page": 3,
+      "bbox": [
+        117.63619232177734,
+        305.9367980957031,
+        545.668212890625,
+        323.5697937011719
+      ],
+      "kind": "text",
+      "text": "War.’ How far do Sources A to D support this view?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0036",
+      "page": 4,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**4**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0037",
+      "page": 4,
+      "bbox": [
+        224.8031005859375,
+        58.501243591308594,
+        370.47613525390625,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**Section B: American Option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0038",
+      "page": 4,
+      "bbox": [
+        195.43310546875,
+        84.5052719116211,
+        399.8241882324219,
+        102.54527282714844
+      ],
+      "kind": "text",
+      "text": "**The Origins of the Civil War, 1846–1861**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0039",
+      "page": 4,
+      "bbox": [
+        212.3621063232422,
+        110.5093002319336,
+        382.9061584472656,
+        128.54930114746094
+      ],
+      "kind": "text",
+      "text": "**The Dred Scott Judgement, 1857**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0040",
+      "page": 4,
+      "bbox": [
+        49.606109619140625,
+        149.50430297851562,
+        375.5537109375,
+        167.54429626464844
+      ],
+      "kind": "text",
+      "text": "**2 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0041",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        175.50833129882812,
+        122.82760620117188,
+        193.54832458496094
+      ],
+      "kind": "text",
+      "text": "**Source A **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0042",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        201.9193572998047,
+        526.074462890625,
+        336.5704650878906
+      ],
+      "kind": "text",
+      "text": "The slave-owning oligarchy which breeds men and women for the market, planned to introduce\non 4 March 1857, a federal conspiracy to include the executive power, the legislative power\nand the judicial power of the Republic. Through the Supreme Court of the United States\nthey reckoned, with great cunning, on a conquest of all the subordinate courts of law in the\nlaw-abiding North. To this end the appeal of the case of Dred Scott had been prepared. Its\ndecision was certain and ready long ago. But its influence was saved until the inauguration of\nthe new pro-slavery administration of James Buchanan. The people will, from the hour of this\nDred decision, roll back this mixed conspiracy till, through a reorganised federal judiciary and\na republicanised executive, they can administer justice and good government for the whole\nnation.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0043",
+      "page": 4,
+      "bbox": [
+        217.47711181640625,
+        344.7654724121094,
+        522.994384765625,
+        362.574462890625
+      ],
+      "kind": "text",
+      "text": "*From the Albany (New York) ‘Evening Journal’, 11 March 1857.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0044",
+      "page": 4,
+      "bbox": [
+        72.28810119628906,
+        383.52947998046875,
+        123.63609313964844,
+        401.5694580078125
+      ],
+      "kind": "text",
+      "text": "**Source B **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0045",
+      "page": 4,
+      "bbox": [
+        72.28810119628906,
+        409.9404602050781,
+        526.066650390625,
+        518.5875854492188
+      ],
+      "kind": "text",
+      "text": "Since its decision in the Dred Scott case, the Supreme Court of the United States has been\nassailed with the venom of vipers and repeatedly abused. In the insanity of their anger and\nagony, the Abolitionists are uttering curses deep and loud, tearing their hair, indulging in all\nsorts of grimaces and throwing themselves into every sort of contortion. Some means must\nbe devised to cool the passions of those who are affected by it. The decision in the Dred\nScott case must be a *finality*, so far as the federal legislation on the institution of slavery is\nconcerned. Congress must conform. Abolitionism must now unmask and wage its warfare\nopenly against the government or bow to its decision and pass off the stage.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0046",
+      "page": 4,
+      "bbox": [
+        247.46310424804688,
+        526.7825317382812,
+        526.0435180664062,
+        544.591552734375
+      ],
+      "kind": "text",
+      "text": "*From the ‘Richmond Enquirer’ (Virginia), 13 March 1857. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0047",
+      "page": 4,
+      "bbox": [
+        72.28810119628906,
+        565.5465087890625,
+        123.63609313964844,
+        583.5865478515625
+      ],
+      "kind": "text",
+      "text": "**Source C **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0048",
+      "page": 4,
+      "bbox": [
+        72.28810119628906,
+        591.9575805664062,
+        526.0853881835938,
+        739.610595703125
+      ],
+      "kind": "text",
+      "text": "In the Dred Scott case it is solemnly decided that the Missouri Compromise was\nunconstitutional and that Congress had no constitutional authority to legislate upon the\nsubject of slavery in the territories. Resistance to that decision is resistance to the constitution.\nBut what is the talk of the Black Republican organs on this subject? The *New York Tribune*\ndeclares that the Supreme Court decision is entitled to ‘no more weight than would be the\njudgement of a majority in a Washington bar-room’. We may smile at the madness with which\nthese organs assail the decision of the Supreme Court. It is the last dying fit of sectionalism.\nSectionalism is virtually dead, crushed by the popular verdict of the presidential election. The\ndecision of the Supreme Court has left nothing alive in Republicanism, and has placed the\nDemocratic Party above all competition as the constitutional, national, Union party of the\ncountry.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0049",
+      "page": 4,
+      "bbox": [
+        275.4031066894531,
+        747.8055419921875,
+        522.9801025390625,
+        765.6145629882812
+      ],
+      "kind": "text",
+      "text": "*From the ‘New Hampshire Patriot’, 18 March 1857.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0050",
+      "page": 5,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**5**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0051",
+      "page": 5,
+      "bbox": [
+        72.28317260742188,
+        58.502586364746094,
+        120.57316589355469,
+        76.54258728027344
+      ],
+      "kind": "text",
+      "text": "**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0052",
+      "page": 5,
+      "bbox": [
+        72.28317260742188,
+        84.91361236572266,
+        449.3400573730469,
+        102.54661560058594
+      ],
+      "kind": "text",
+      "text": "Study the Dred Scott decision. That decision may be reduced to three points.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0053",
+      "page": 5,
+      "bbox": [
+        72.28317260742188,
+        110.91764068603516,
+        526.0597534179688,
+        167.5566864013672
+      ],
+      "kind": "text",
+      "text": "The first is that a negro cannot be a citizen. The second is that the United States Constitution\nprotects slavery in all the United States territories. The third point is that the voluntary bringing\nof Dred Scott into Illinois by his master, and holding him there a long time as a slave, did not\nmake him free.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0054",
+      "page": 5,
+      "bbox": [
+        72.28317260742188,
+        175.92771911621094,
+        526.0584716796875,
+        258.5707702636719
+      ],
+      "kind": "text",
+      "text": "Whether this shall be an entire slave nation is the issue before us. Every incident only\nconsolidates the opposing sides and brings them more and more distinctly face to face. The\nconflict will be a severe one. To give victory to justice, not bloody bullets but peaceful ballots\nonly are necessary. Thanks to our good old Constitution and organisation under it, these\nalone are necessary. It only needs that every right-thinking man shall go to the polls and,\nwithout fear or prejudice, vote as he thinks.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0055",
+      "page": 5,
+      "bbox": [
+        128.5811767578125,
+        266.76580810546875,
+        522.94873046875,
+        284.5747985839844
+      ],
+      "kind": "text",
+      "text": "*From a speech by Abraham Lincoln to an unspecified audience, December 1857.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0056",
+      "page": 5,
+      "bbox": [
+        72.28317260742188,
+        305.5298156738281,
+        385.9294738769531,
+        323.5697937011719
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0057",
+      "page": 5,
+      "bbox": [
+        49.601173400878906,
+        331.5338134765625,
+        548.7415771484375,
+        349.57379150390625
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(a) **To what extent do Sources A and B agree on the impact of the Dred Scott judgement on",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0058",
+      "page": 5,
+      "bbox": [
+        117.63616943359375,
+        344.94281005859375,
+        545.668212890625,
+        362.5758056640625
+      ],
+      "kind": "text",
+      "text": "the issue of slavery?\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0059",
+      "page": 5,
+      "bbox": [
+        49.6011962890625,
+        370.5398254394531,
+        548.7228393554688,
+        388.5798034667969
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(b) **‘The Dred Scott judgement was a huge setback for the abolitionist cause.’ How far do",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0060",
+      "page": 5,
+      "bbox": [
+        117.63619232177734,
+        383.9488220214844,
+        545.668212890625,
+        401.5818176269531
+      ],
+      "kind": "text",
+      "text": "Sources A to D support this assertion?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0061",
+      "page": 6,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**6**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0062",
+      "page": 6,
+      "bbox": [
+        216.66580200195312,
+        58.501243591308594,
+        378.6299133300781,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**Section C: International Option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0063",
+      "page": 6,
+      "bbox": [
+        142.44879150390625,
+        84.5052719116211,
+        452.8226623535156,
+        102.54527282714844
+      ],
+      "kind": "text",
+      "text": "**The Search for International Peace and Security, 1919–1945**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0064",
+      "page": 6,
+      "bbox": [
+        124.82678985595703,
+        110.5093002319336,
+        470.4743957519531,
+        128.54930114746094
+      ],
+      "kind": "text",
+      "text": "**President Woodrow Wilson and proposals for a League of Nations**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0065",
+      "page": 6,
+      "bbox": [
+        49.608795166015625,
+        149.50430297851562,
+        375.556396484375,
+        167.54429626464844
+      ],
+      "kind": "text",
+      "text": "**3 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0066",
+      "page": 6,
+      "bbox": [
+        72.2907943725586,
+        175.50833129882812,
+        122.83029174804688,
+        193.54832458496094
+      ],
+      "kind": "text",
+      "text": "**Source A **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0067",
+      "page": 6,
+      "bbox": [
+        72.2907943725586,
+        201.9193572998047,
+        526.0737915039062,
+        362.5744934082031
+      ],
+      "kind": "text",
+      "text": "I am in favour of the League of Nations Covenant, of which our gallant and noble President\nis the proposer. I believe Mr Wilson will be able to accomplish the fulfilment of the Covenant\ndespite all opposition. The League of Nations idea is a very delicate matter to handle, and no\none but our President, who possesses the necessary qualities, could really be at the head\nof it. The abuse and discredit given to our President by Lodge, Borah and the like would\nmake one imagine that these men lack intelligence. They know the Covenant is good for\nhumanity; they should boost the League instead of criticising it. Their criticism of every move\nPresident Wilson makes implies that they are foolish or influenced by political motives. The\nLeague of Nations will alleviate all unrest, discontent and anxiety, and will make the world\nsafe for democracy. The League would promote commerce, civilisation and brotherly love. I\nsincerely hope our President sees his way clear, and happy will I be the day the Covenant is\naccomplished and put into operation.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0068",
+      "page": 6,
+      "bbox": [
+        294.9088134765625,
+        370.7695007324219,
+        526.0529174804688,
+        388.5784912109375
+      ],
+      "kind": "text",
+      "text": "*Letter to an American newspaper, March 1919. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0069",
+      "page": 6,
+      "bbox": [
+        72.29080200195312,
+        409.53350830078125,
+        123.6387939453125,
+        427.573486328125
+      ],
+      "kind": "text",
+      "text": "**Source B **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0070",
+      "page": 6,
+      "bbox": [
+        72.29080200195312,
+        435.9444885253906,
+        526.0684204101562,
+        557.5936279296875
+      ],
+      "kind": "text",
+      "text": "We trusted our policies in the hands of President Wilson; now look where they are today. As far\nas I can see, Senators of both parties are against the present plans for a League of Nations.\nMr Wilson is simply playing politics.  My idea would be for President Wilson to hasten peace\nnegotiations, then come home where he belongs and let those foreign countries sort out their\nown treaties. Then, after everything is settled, if he still has the desire, let him go across and\ndraw up plans for a League of Nations. How could a League of Nations be a success until all\nthose treaties are settled up? To my mind, inefficiency has been the by-word of Mr Wilson’s\nadministration and, to break up this inefficiency, the Senators have been forced to be a little\nstronger headed than the President.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0071",
+      "page": 6,
+      "bbox": [
+        294.9088134765625,
+        565.7886352539062,
+        522.9949340820312,
+        583.59765625
+      ],
+      "kind": "text",
+      "text": "*Letter to an American newspaper, March 1919.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0072",
+      "page": 6,
+      "bbox": [
+        72.29080200195312,
+        604.5526123046875,
+        120.58079528808594,
+        622.5926513671875
+      ],
+      "kind": "text",
+      "text": "**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0073",
+      "page": 6,
+      "bbox": [
+        72.29080200195312,
+        630.963623046875,
+        526.0496215820312,
+        661.5986328125
+      ],
+      "kind": "text",
+      "text": "Opinions sent into our offices show a greater support for the League of Nations than appears\nin opinions gathered in the streets:",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0074",
+      "page": 6,
+      "bbox": [
+        72.28340148925781,
+        669.770263671875,
+        526.061279296875,
+        778.5452270507812
+      ],
+      "kind": "text",
+      "text": "•\n1191 are in favour of the League as proposed in Paris, while 303 oppose the plan.\n•\nAt the University of Pennsylvania, balloting on the proposed plan for a League shows\n106 to be in favour and 79 against.\n•\nA poll being taken in fourteen cities shows 63 662 supporting the League of Nations plan\nand 21 624 opposing.\n•\nOne of the most interesting ballots taken so far was recorded at a New York theatrical\nperformance attended by soldiers of the 27th Division. 102 of these veterans voted in\nfavour of the plan for a League of Nations while 130 opposed.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0075",
+      "page": 7,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**7**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0076",
+      "page": 7,
+      "bbox": [
+        72.28350067138672,
+        59.25663375854492,
+        526.0568237304688,
+        116.02964782714844
+      ],
+      "kind": "text",
+      "text": "•\nA poll in New York currently shows 37 760 to be in favour of the proposed League and\n16 900 to be opposed.\n•\nIn some cities, notably Los Angeles, Dallas, Houston and Rochester, the plan for a\nLeague of Nations is leading by ten to one.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0077",
+      "page": 7,
+      "bbox": [
+        293.0856018066406,
+        124.22467803955078,
+        522.9921875,
+        142.03367614746094
+      ],
+      "kind": "text",
+      "text": "*Article in an American newspaper, March 1919.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0078",
+      "page": 7,
+      "bbox": [
+        72.28260803222656,
+        162.98867797851562,
+        120.57260131835938,
+        181.02867126464844
+      ],
+      "kind": "text",
+      "text": "**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0079",
+      "page": 7,
+      "bbox": [
+        80.50530242919922,
+        569.218505859375,
+        526.0503540039062,
+        587.0275268554688
+      ],
+      "kind": "text",
+      "text": "*Cartoon published in an American newspaper to mark President Wilson’s return to the USA *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0080",
+      "page": 7,
+      "bbox": [
+        416.6213073730469,
+        582.2205200195312,
+        522.9913330078125,
+        600.029541015625
+      ],
+      "kind": "text",
+      "text": "*from Paris, July 1919.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0081",
+      "page": 7,
+      "bbox": [
+        72.28829956054688,
+        620.9844970703125,
+        385.9346008300781,
+        639.0245361328125
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0082",
+      "page": 7,
+      "bbox": [
+        49.606300354003906,
+        646.988525390625,
+        548.6984252929688,
+        665.028564453125
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(a) **Compare and contrast the views expressed in Sources A and B regarding President",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0083",
+      "page": 7,
+      "bbox": [
+        117.64129638671875,
+        660.3975219726562,
+        545.67333984375,
+        678.030517578125
+      ],
+      "kind": "text",
+      "text": "Wilson’s proposals for a League of Nations.\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0084",
+      "page": 7,
+      "bbox": [
+        49.6063232421875,
+        685.9945068359375,
+        548.7171630859375,
+        704.0345458984375
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(b) **‘On his return home from Paris in 1919, President Wilson had every reason to believe",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0085",
+      "page": 7,
+      "bbox": [
+        117.64131927490234,
+        699.4035034179688,
+        548.7216186523438,
+        730.0385131835938
+      ],
+      "kind": "text",
+      "text": "that the USA would join the League of Nations.’ How far do Sources A to D support this\nview?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0086",
+      "page": 8,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**8**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0087",
+      "page": 8,
+      "bbox": [
+        261.6809997558594,
+        58.501243591308594,
+        333.5945739746094,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**BLANK PAGE**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0088",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        698.327392578125,
+        547.6215209960938,
+        727.5524291992188
+      ],
+      "kind": "text",
+      "text": "Permission to reproduce items where third-party owned material protected by copyright is included has been sought and cleared where possible. Every\nreasonable effort has been made by the publisher (UCLES) to trace copyright holders, but if any items requiring clearance have unwittingly been included, the\npublisher will be pleased to make amends at the earliest possible opportunity.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0089",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        734.3284301757812,
+        547.59326171875,
+        763.5534057617188
+      ],
+      "kind": "text",
+      "text": "To avoid the issue of disclosure of answer-related information to candidates, all copyright acknowledgements are reproduced online in the Cambridge International\nExaminations Copyright Acknowledgements Booklet. This is produced for each series of examinations and is freely available to download at www.cie.org.uk after\nthe live examination series.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0090",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        770.3294067382812,
+        547.5838012695312,
+        790.5524291992188
+      ],
+      "kind": "text",
+      "text": "Cambridge International Examinations is part of the Cambridge Assessment Group. Cambridge Assessment is the brand name of University of Cambridge Local\nExaminations Syndicate (UCLES), which is itself a department of the University of Cambridge.",
+      "table_id": null,
+      "image_id": null
+    }
+  ]
+}

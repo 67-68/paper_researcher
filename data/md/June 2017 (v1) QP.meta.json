@@ -1,0 +1,1272 @@
+{
+  "source_pdf": "/Users/a67_68/projects/paper_researcher/data/papers/June 2017 (v1) QP.pdf",
+  "stem": "June 2017 (v1) QP",
+  "generator": "pdf_to_md.py",
+  "image_link_style": "markdown",
+  "table_format": "md",
+  "pages": 8,
+  "images": [],
+  "tables": [],
+  "blocks": [
+    {
+      "id": "blk-0001",
+      "page": 1,
+      "bbox": [
+        126.85040283203125,
+        83.38008880615234,
+        452.1753234863281,
+        114.42210388183594
+      ],
+      "kind": "text",
+      "text": "**Cambridge International Examinations**\nCambridge International Advanced Subsidiary and Advanced Level",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0002",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        157.07614135742188,
+        538.5810546875,
+        175.1161346435547
+      ],
+      "kind": "text",
+      "text": "**HISTORY**\n**9389/11**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0003",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        175.23513793945312,
+        538.5728759765625,
+        191.6351318359375
+      ],
+      "kind": "text",
+      "text": "Paper 1 Document Question\n**May/June 2017**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0004",
+      "page": 1,
+      "bbox": [
+        508.0229187011719,
+        192.23513793945312,
+        538.5829467773438,
+        208.6351318359375
+      ],
+      "kind": "text",
+      "text": "**1 hour**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0005",
+      "page": 1,
+      "bbox": [
+        56.69293212890625,
+        209.60513305664062,
+        218.4279022216797,
+        225.6351318359375
+      ],
+      "kind": "text",
+      "text": "No Additional Materials are required.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0006",
+      "page": 1,
+      "bbox": [
+        56.69293212890625,
+        236.82516479492188,
+        230.59292602539062,
+        253.22515869140625
+      ],
+      "kind": "text",
+      "text": "**READ THESE INSTRUCTIONS FIRST**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0007",
+      "page": 1,
+      "bbox": [
+        56.69293212890625,
+        259.1951599121094,
+        541.3338012695312,
+        287.22515869140625
+      ],
+      "kind": "text",
+      "text": "An answer booklet is provided inside this question paper. You should follow the instructions on the front cover\nof the answer booklet. If you need additional answer paper ask the invigilator for a continuation booklet.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0008",
+      "page": 1,
+      "bbox": [
+        56.69293212890625,
+        292.8251647949219,
+        213.43292236328125,
+        345.22515869140625
+      ],
+      "kind": "text",
+      "text": "This paper contains **three** sections:\nSection A: European Option\nSection B: American Option\nSection C: International Option",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0009",
+      "page": 1,
+      "bbox": [
+        56.69293212890625,
+        350.8251647949219,
+        308.8309020996094,
+        367.22515869140625
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question from **one** section only.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0010",
+      "page": 1,
+      "bbox": [
+        56.69293212890625,
+        373.1951599121094,
+        358.5228271484375,
+        389.22515869140625
+      ],
+      "kind": "text",
+      "text": "The marks are given in brackets [ ] at the end of each part question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0011",
+      "page": 1,
+      "bbox": [
+        143.37750244140625,
+        735.9378051757812,
+        451.8974914550781,
+        752.3378295898438
+      ],
+      "kind": "text",
+      "text": "This document consists of **7** printed pages, **1** blank page and **1** Insert.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0012",
+      "page": 2,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**2**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0013",
+      "page": 2,
+      "bbox": [
+        224.5050048828125,
+        58.501243591308594,
+        370.7830810546875,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**Section A: European Option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0014",
+      "page": 2,
+      "bbox": [
+        140.31100463867188,
+        84.5052719116211,
+        454.9539794921875,
+        102.54527282714844
+      ],
+      "kind": "text",
+      "text": "**Liberalism and Nationalism in Italy and Germany, 1815–1871**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0015",
+      "page": 2,
+      "bbox": [
+        222.85501098632812,
+        110.5093002319336,
+        372.4088439941406,
+        128.54930114746094
+      ],
+      "kind": "text",
+      "text": "**The War with Austria of 1859**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0016",
+      "page": 2,
+      "bbox": [
+        49.605010986328125,
+        136.51333618164062,
+        375.5526123046875,
+        154.55332946777344
+      ],
+      "kind": "text",
+      "text": "**1 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0017",
+      "page": 2,
+      "bbox": [
+        49.605010986328125,
+        175.50833129882812,
+        120.17000579833984,
+        193.54832458496094
+      ],
+      "kind": "text",
+      "text": "** **\n**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0018",
+      "page": 2,
+      "bbox": [
+        72.2870101928711,
+        201.9193572998047,
+        548.7532348632812,
+        297.5644226074219
+      ],
+      "kind": "text",
+      "text": "The area that is the greatest threat to European peace is Italy because its political structure is\nunsatisfactory. Either a revolution or a war is needed to alter its structure – two fatal extremes.\nNonetheless, an Italian confederation might be set up under the nominal leadership of the\nPope. An assembly, appointed by the various Italian states, could meet in Rome and discuss\nmatters of common interest, without any change to the existing borders. Austria, by reason of its\nterritories in the north, would be a member of the Italian confederation. Each state would have one\nrepresentative for every one million inhabitants.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0019",
+      "page": 2,
+      "bbox": [
+        345.1200256347656,
+        305.75946044921875,
+        545.650146484375,
+        323.5684509277344
+      ],
+      "kind": "text",
+      "text": "*Napoleon III, Memorandum, March 1856.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0020",
+      "page": 2,
+      "bbox": [
+        49.60504150390625,
+        344.5234680175781,
+        120.57703399658203,
+        362.5634460449219
+      ],
+      "kind": "text",
+      "text": "** **\n**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0021",
+      "page": 2,
+      "bbox": [
+        72.28704071044922,
+        370.9344482421875,
+        548.755615234375,
+        427.573486328125
+      ],
+      "kind": "text",
+      "text": "The Emperor’s answer to your proposal confirms the three key points, the marriage between\nPrince Napoleon and Princess Clotilde [Victor Emmanuel’s daughter], war against Austria, and the\nKingdom of North Italy. Ultimately he thinks that Austria will be driven out of Italy and the war must\nbe justified in the eyes of the people so it is indispensable that a convincing motive be found.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0022",
+      "page": 2,
+      "bbox": [
+        201.22903442382812,
+        435.76849365234375,
+        545.667724609375,
+        453.5774841308594
+      ],
+      "kind": "text",
+      "text": "*Nigra, Cavour’s personal representative in Paris, to Cavour, May 1858.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0023",
+      "page": 2,
+      "bbox": [
+        49.60502624511719,
+        474.5325012207031,
+        120.57701873779297,
+        492.5724792480469
+      ],
+      "kind": "text",
+      "text": "** **\n**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0024",
+      "page": 2,
+      "bbox": [
+        72.28702545166016,
+        500.9435119628906,
+        548.7354736328125,
+        596.5885620117188
+      ],
+      "kind": "text",
+      "text": "Postponing the war, as your Majesty is suggesting, would have grave disadvantages. After the\nCongress of Paris we were able to persuade the National Society to put its hopes on Piedmont,\nupheld and encouraged by France. These hopes have survived for three years and have made\neven the fiercest hotheads contain their passion. But can these hopes be maintained for another\nyear? Once wearied by fruitless waiting they may turn to the senseless agitation of the Mazzinians.\nWith any revolutionary activity in Italy, the plan, so admirably built up by your Majesty, would be\nruined.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0025",
+      "page": 2,
+      "bbox": [
+        345.0980224609375,
+        604.7835693359375,
+        545.650146484375,
+        622.5925903320312
+      ],
+      "kind": "text",
+      "text": "*Cavour to Napoleon III, September 1858.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0026",
+      "page": 3,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**3**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0027",
+      "page": 3,
+      "bbox": [
+        49.601165771484375,
+        58.502586364746094,
+        120.57315826416016,
+        76.54258728027344
+      ],
+      "kind": "text",
+      "text": "** **\n**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0028",
+      "page": 3,
+      "bbox": [
+        72.28316497802734,
+        84.91361236572266,
+        548.73388671875,
+        167.5566864013672
+      ],
+      "kind": "text",
+      "text": "The King and Cavour are determined to drag France into a war with Austria. The great design\nwhich Piedmont places above all other considerations is her own territorial expansion and the\ncreation of a strong monarchy in the north of Italy. This dominates all their thinking. In pursuit of\nthis favourite scheme Cavour has damaged his prestige amongst thinking people in England and\nelsewhere. He has declined in the estimation of the French public and they see him as a vulgar\naggressor. Only in the French army is there any support for a war.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0029",
+      "page": 3,
+      "bbox": [
+        122.50916290283203,
+        175.751708984375,
+        545.6351928710938,
+        193.5607147216797
+      ],
+      "kind": "text",
+      "text": "*An unpublished report to London, by an English journalist based in Rome, March 1859.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0030",
+      "page": 3,
+      "bbox": [
+        49.601165771484375,
+        214.51571655273438,
+        385.9261779785156,
+        232.5557098388672
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0031",
+      "page": 3,
+      "bbox": [
+        49.61216735839844,
+        240.51974487304688,
+        548.728515625,
+        258.5597229003906
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(a) **To what extent do Sources A and B provide evidence that Napoleon’s views on Italy had",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0032",
+      "page": 3,
+      "bbox": [
+        117.64716339111328,
+        253.9287567138672,
+        545.67919921875,
+        271.5617370605469
+      ],
+      "kind": "text",
+      "text": "changed greatly between 1856 and 1858?\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0033",
+      "page": 3,
+      "bbox": [
+        49.6121826171875,
+        279.5257873535156,
+        548.7274169921875,
+        297.5657653808594
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(b) **‘The motive for both France and Piedmont for going to war in 1859 was to drive Austria",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0034",
+      "page": 3,
+      "bbox": [
+        117.64717864990234,
+        292.9347839355469,
+        545.67919921875,
+        310.5677795410156
+      ],
+      "kind": "text",
+      "text": "out of Italy.’ How far do Sources A to D support this view?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0035",
+      "page": 4,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**4**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0036",
+      "page": 4,
+      "bbox": [
+        224.8031005859375,
+        58.501243591308594,
+        370.47613525390625,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**Section B: American Option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0037",
+      "page": 4,
+      "bbox": [
+        195.43310546875,
+        84.5052719116211,
+        399.8241882324219,
+        102.54527282714844
+      ],
+      "kind": "text",
+      "text": "**The Origins of the Civil War, 1846–1861**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0038",
+      "page": 4,
+      "bbox": [
+        213.2751007080078,
+        110.5093002319336,
+        381.9931335449219,
+        128.54930114746094
+      ],
+      "kind": "text",
+      "text": "**The Missouri Compromise, 1820**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0039",
+      "page": 4,
+      "bbox": [
+        49.606109619140625,
+        149.50430297851562,
+        375.5537109375,
+        167.54429626464844
+      ],
+      "kind": "text",
+      "text": "**2 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0040",
+      "page": 4,
+      "bbox": [
+        49.606109619140625,
+        175.50833129882812,
+        122.82760620117188,
+        193.54832458496094
+      ],
+      "kind": "text",
+      "text": "** **\n**Source A **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0041",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        201.9193572998047,
+        548.7003784179688,
+        245.55638122558594
+      ],
+      "kind": "text",
+      "text": "An Act to authorise the people of the Missouri Territory to form a constitution and state government,\nand for the admission of such state into the Union on an equal footing with the original states, and\nto prohibit slavery in certain territories.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0042",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        253.9274139404297,
+        548.7608642578125,
+        323.5684509277344
+      ],
+      "kind": "text",
+      "text": "SECTION 8: Be it further enacted that in all the territory ceded by France under the name of\nLouisiana, which lies north of thirty six degrees and thirty minutes north latitude, not included within\nthe state contemplated by this Act, slavery and involuntary servitude shall be forever prohibited.\nProvided always that any person escaping into this territory from whom labour is lawfully claimed\nin any state or territory of the United States such fugitive may lawfully be reclaimed.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0043",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        331.939453125,
+        195.8048553466797,
+        349.57244873046875
+      ],
+      "kind": "text",
+      "text": "Approved March 6 1820.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0044",
+      "page": 4,
+      "bbox": [
+        240.610107421875,
+        357.7674560546875,
+        548.709228515625,
+        375.5764465332031
+      ],
+      "kind": "text",
+      "text": "*From the Act of Congress known as the Missouri Compromise. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0045",
+      "page": 4,
+      "bbox": [
+        49.606109619140625,
+        396.5314636230469,
+        123.63610076904297,
+        414.5714416503906
+      ],
+      "kind": "text",
+      "text": "** **\n**Source B **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0046",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        422.94244384765625,
+        548.7378540039062,
+        557.5936279296875
+      ],
+      "kind": "text",
+      "text": "I thank you, dear sir, for the copy you have been so kind as to send me of the letter to your\nconstituents on the Missouri question. I had, for a long time, ceased to read newspapers or pay\nany attention to public affairs, content to be a passenger in the boat to the shore from which I am\nnot distant, but this momentous question, like a fire bell in the night, awakened me and filled me\nwith terror. I considered it at once as the death knell of the Union. A geographical line coinciding\nwith a marked principle, moral and political, once conceived and held up to the angry passions\nof men, will never be obliterated and every new irritation will mark it deeper and deeper. I regret\nthat I am now to die in the belief that the useless sacrifice of themselves by the generation of ‘76\nto acquire self-government and happiness to their country is to be thrown away by the unwise\npassions of their sons and that my only consolation is to be that I live not to weep over it.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0047",
+      "page": 4,
+      "bbox": [
+        49.606109619140625,
+        565.78857421875,
+        548.7201538085938,
+        583.5975952148438
+      ],
+      "kind": "text",
+      "text": "* *\n*From a letter from Thomas Jefferson to John Holmes, Massachusetts politician, 22 April 1820. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0048",
+      "page": 4,
+      "bbox": [
+        49.606109619140625,
+        604.5525512695312,
+        120.5781021118164,
+        622.5925903320312
+      ],
+      "kind": "text",
+      "text": "** **\n**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0049",
+      "page": 4,
+      "bbox": [
+        72.2881088256836,
+        631.8655395507812,
+        548.7368774414062,
+        724.892578125
+      ],
+      "kind": "text",
+      "text": "Of the President’s views, I know nothing. But this I do know, that he has not disguised or concealed\nhis opinion on the subject of the attempt to make a constitution for Missouri. I think I report him\nfaithfully when I understood him as advising ‘mildness and firmness and decision’. I trust this\nmay be no cause for a division of sentiment in Virginia as to his re-election for the Missouri Crisis\nhas arrived which demands unanimity on the part of the South. I am afraid that he might put his\nveto on any Bill which attempts to restrict a territory about to become a state in the exercise of its\nsovereign power.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0050",
+      "page": 4,
+      "bbox": [
+        155.37110900878906,
+        734.8035278320312,
+        548.705810546875,
+        752.612548828125
+      ],
+      "kind": "text",
+      "text": "*From a letter from John Tyler, US Representative for Virginia, 12 February 1820. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0051",
+      "page": 5,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**5**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0052",
+      "page": 5,
+      "bbox": [
+        49.601165771484375,
+        58.502586364746094,
+        120.57315826416016,
+        76.54258728027344
+      ],
+      "kind": "text",
+      "text": "** **\n**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0053",
+      "page": 5,
+      "bbox": [
+        72.28316497802734,
+        84.91361236572266,
+        548.7361450195312,
+        167.5566864013672
+      ],
+      "kind": "text",
+      "text": "President Monroe approved and signed the Bill on the sixth day of March 1820. The president at\nfirst believed the Bill to be unconstitutional and in the draft of a veto message which he did not send\nto Congress, lest it might cause a civil war, he used this language – ‘that the proposed restriction\nto territories which are to be admitted to the Union, if not a direct violation of the constitution, is\nrepugnant to its principle’. What other motive may have influenced him is not easy to determine\nbut a Presidential election was approaching.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0054",
+      "page": 5,
+      "bbox": [
+        99.92616271972656,
+        175.751708984375,
+        548.68212890625,
+        206.56272888183594
+      ],
+      "kind": "text",
+      "text": "*From ‘The True History of the Missouri Compromise and Its Repeal’, published in 1899.*\n*The author of this source was married to the Senator who replaced Henry Clay on his death *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0055",
+      "page": 5,
+      "bbox": [
+        506.5081787109375,
+        201.7557373046875,
+        548.7042236328125,
+        219.5647430419922
+      ],
+      "kind": "text",
+      "text": "*in 1852. *",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0056",
+      "page": 5,
+      "bbox": [
+        49.5902099609375,
+        240.51974487304688,
+        385.91412353515625,
+        258.5597229003906
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0057",
+      "page": 5,
+      "bbox": [
+        49.60121154785156,
+        267.6567687988281,
+        548.7493286132812,
+        283.40875244140625
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(a) **To what extent do Sources C and D agree about President Monroe’s attitude towards the",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0058",
+      "page": 5,
+      "bbox": [
+        117.6362075805664,
+        280.83477783203125,
+        545.668212890625,
+        295.84979248046875
+      ],
+      "kind": "text",
+      "text": "Missouri Compromise?\n[15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0059",
+      "page": 5,
+      "bbox": [
+        49.6011962890625,
+        305.5298156738281,
+        548.727294921875,
+        323.5697937011719
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(b) **How far do Sources A to D support the assertion that the Missouri Compromise was in",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0060",
+      "page": 5,
+      "bbox": [
+        117.63619232177734,
+        318.9388122558594,
+        545.668212890625,
+        336.5718078613281
+      ],
+      "kind": "text",
+      "text": "fact a victory for the North?\n[25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0061",
+      "page": 6,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**6**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0062",
+      "page": 6,
+      "bbox": [
+        216.6658935546875,
+        58.501243591308594,
+        378.6300048828125,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**Section C: International Option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0063",
+      "page": 6,
+      "bbox": [
+        142.44888305664062,
+        84.5052719116211,
+        452.82275390625,
+        102.54527282714844
+      ],
+      "kind": "text",
+      "text": "**The Search for International Peace and Security, 1919–1945**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0064",
+      "page": 6,
+      "bbox": [
+        182.4338836669922,
+        110.5093002319336,
+        412.8619689941406,
+        128.54930114746094
+      ],
+      "kind": "text",
+      "text": "**The Soviet Union and the League of Nations**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0065",
+      "page": 6,
+      "bbox": [
+        49.60888671875,
+        149.50430297851562,
+        375.5564880371094,
+        167.54429626464844
+      ],
+      "kind": "text",
+      "text": "**3 **\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0066",
+      "page": 6,
+      "bbox": [
+        49.60888671875,
+        188.49929809570312,
+        120.17388153076172,
+        206.53929138183594
+      ],
+      "kind": "text",
+      "text": "** **\n**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0067",
+      "page": 6,
+      "bbox": [
+        72.29088592529297,
+        214.9103240966797,
+        548.7548217773438,
+        336.5594177246094
+      ],
+      "kind": "text",
+      "text": "The Soviet Union is not a member of the League of Nations and does not participate in its work. The\nSoviet Union is not prepared to share the responsibility for the imperialist policy of the League of\nNations, for the ‘mandates’ which are distributed by the League for the exploitation and oppression\nof colonial countries, for the war preparations which are approved by the League, preparations\nwhich must inevitably lead to imperialist war. The Soviet Union does not participate in the work\nof the League because the Soviet Union is fighting with all its energy against all preparations\nfor imperialist war. The Soviet Union is not prepared to become a part of that camouflage for\nimperialist ambitions represented by the League of Nations. The League is the meeting place of\nimperialist leaders who settle their business there behind the scenes.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0068",
+      "page": 6,
+      "bbox": [
+        235.035888671875,
+        344.7544250488281,
+        545.6430053710938,
+        362.56341552734375
+      ],
+      "kind": "text",
+      "text": "*From a speech by Stalin, speaking to foreign delegates in 1927.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0069",
+      "page": 6,
+      "bbox": [
+        49.60888671875,
+        383.5184326171875,
+        120.58087921142578,
+        401.55841064453125
+      ],
+      "kind": "text",
+      "text": "** **\n**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0070",
+      "page": 6,
+      "bbox": [
+        72.29088592529297,
+        409.9294128417969,
+        548.7470092773438,
+        544.58056640625
+      ],
+      "kind": "text",
+      "text": "The Soviet Union is about to join the League of Nations. The latest turn in Soviet diplomacy, which\nmarks such a sharp departure from former days, is being justified in the Russian governmental\npress. Japan has quit the League; Germany has quit the League – which eliminates from its ranks\nthe two most direct enemies of the Soviet Union. The departure of Germany and Japan from\nthe League changes its political complexion, however little it alters its imperialist character. For\nRussia, joining the League is a major change of policy. Faced on the eastern and western fronts\nby two powerful enemies whose immediate aim is military attack, the Soviet Union hopes to take\nadvantage of their leaving the League by joining with those who have remained within it. But what\na price is being paid! It means that the Soviet Union will be helping to cover up all the misdeeds,\ncrimes, hypocrisies and deceptions of the League.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0071",
+      "page": 6,
+      "bbox": [
+        255.869873046875,
+        552.7755737304688,
+        545.6539306640625,
+        570.5845947265625
+      ],
+      "kind": "text",
+      "text": "*From an article in an American communist magazine, 1934.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0072",
+      "page": 6,
+      "bbox": [
+        49.60888671875,
+        591.53955078125,
+        120.58087921142578,
+        609.57958984375
+      ],
+      "kind": "text",
+      "text": "** **\n**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0073",
+      "page": 6,
+      "bbox": [
+        72.29088592529297,
+        617.9505615234375,
+        548.7459106445312,
+        739.5995483398438
+      ],
+      "kind": "text",
+      "text": "The organisation of peace! Could there be a more urgent task for the cooperation of all nations?\nVery little has been done so far to encourage peace. Once it was believed that war could be\naverted by resolutions and declarations. Now, everybody knows that the exponents of war are\nnot to be intimidated by paper obstacles. We are now confronted with the task of averting war\nby more effective means, especially since the failure of the Disarmament Conference, on which\nsuch high hopes were placed. It is quite clear that peace and security cannot be organised simply\nby promises and assurances. I am aware that the League does not possess the means for the\ncomplete abolition of war. I am, however, convinced that, with the determination and cooperation\nof all its members, a great deal could be done to prevent war.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0074",
+      "page": 6,
+      "bbox": [
+        218.11788940429688,
+        747.7944946289062,
+        545.6640014648438,
+        765.603515625
+      ],
+      "kind": "text",
+      "text": "*Litvinov, first delegate of the Soviet Union to the League of Nations,*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0075",
+      "page": 6,
+      "bbox": [
+        296.17388916015625,
+        760.7965087890625,
+        545.6836547851562,
+        778.6055297851562
+      ],
+      "kind": "text",
+      "text": "*addressing the League of Nations’ Assembly, 1934.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0076",
+      "page": 7,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**7**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0077",
+      "page": 7,
+      "bbox": [
+        49.606300354003906,
+        58.501243591308594,
+        120.57829284667969,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "** **\n**Source D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0078",
+      "page": 7,
+      "bbox": [
+        72.28829956054688,
+        84.91226959228516,
+        548.7359008789062,
+        219.5634002685547
+      ],
+      "kind": "text",
+      "text": "The League of Nations is twenty years old but, judging by outward appearance, it could be two\nthousand years old. Dishonourably born, dishonourably buried will be the fate of the League of\nNations. The League is the child of the criminal Versailles Treaty. It was created to strengthen\nAnglo-French power in Europe. With the expulsion of the Soviet Union, the League simply\nconfirmed its political and moral bankruptcy. Soviet proposals for disarmament were ignored by\nthe League. Small countries cried in vain for help from the League. Under the strict supervision\nof its Anglo-French masters, the League did nothing. The weakness of the League became more\nand more evident. If there was still any authority left, it was only because the Soviet Union was\na member. She gave some lease of life to this failing institution. The League couldn’t act as the\ninstrument of peace. The expulsion of the Soviet Union is clear proof of this.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0079",
+      "page": 7,
+      "bbox": [
+        226.68429565429688,
+        227.7584228515625,
+        545.6513671875,
+        258.5694274902344
+      ],
+      "kind": "text",
+      "text": "*From an article in the Soviet newspaper ‘Pravda’, 1940.*\n*[Note: The Soviet Union was expelled from the League of Nations*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0080",
+      "page": 7,
+      "bbox": [
+        348.7732849121094,
+        253.762451171875,
+        545.6403198242188,
+        271.5714416503906
+      ],
+      "kind": "text",
+      "text": "*following its invasion of Finland in 1939.]*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0081",
+      "page": 7,
+      "bbox": [
+        49.606292724609375,
+        292.5264587402344,
+        385.9302062988281,
+        310.5664367675781
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0082",
+      "page": 7,
+      "bbox": [
+        49.61729431152344,
+        318.53045654296875,
+        548.7259521484375,
+        336.5704345703125
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(a) **Compare and contrast Sources A and B as evidence of communist attitudes towards",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0083",
+      "page": 7,
+      "bbox": [
+        117.65229034423828,
+        331.939453125,
+        545.684326171875,
+        349.57244873046875
+      ],
+      "kind": "text",
+      "text": "participation in the League of Nations.\n [15]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0084",
+      "page": 7,
+      "bbox": [
+        49.6173095703125,
+        357.5364685058594,
+        548.7347412109375,
+        375.5764465332031
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n**(b) **‘The Soviet Union did not believe that the League of Nations could encourage peace and",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0085",
+      "page": 7,
+      "bbox": [
+        117.65230560302734,
+        370.9454650878906,
+        545.684326171875,
+        388.5784606933594
+      ],
+      "kind": "text",
+      "text": "security.’ How far do Sources A to D support this view?\n [25]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0086",
+      "page": 8,
+      "bbox": [
+        294.5788879394531,
+        34.768943786621094,
+        300.69488525390625,
+        52.80894470214844
+      ],
+      "kind": "text",
+      "text": "**8**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0087",
+      "page": 8,
+      "bbox": [
+        261.6809997558594,
+        58.501243591308594,
+        333.5945739746094,
+        76.54124450683594
+      ],
+      "kind": "text",
+      "text": "**BLANK PAGE**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0088",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        698.327392578125,
+        547.6215209960938,
+        727.5524291992188
+      ],
+      "kind": "text",
+      "text": "Permission to reproduce items where third-party owned material protected by copyright is included has been sought and cleared where possible. Every\nreasonable effort has been made by the publisher (UCLES) to trace copyright holders, but if any items requiring clearance have unwittingly been included, the\npublisher will be pleased to make amends at the earliest possible opportunity.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0089",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        734.3284301757812,
+        547.59326171875,
+        763.5534057617188
+      ],
+      "kind": "text",
+      "text": "To avoid the issue of disclosure of answer-related information to candidates, all copyright acknowledgements are reproduced online in the Cambridge International\nExaminations Copyright Acknowledgements Booklet. This is produced for each series of examinations and is freely available to download at www.cie.org.uk after\nthe live examination series.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0090",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        770.3294067382812,
+        547.5838012695312,
+        790.5524291992188
+      ],
+      "kind": "text",
+      "text": "Cambridge International Examinations is part of the Cambridge Assessment Group. Cambridge Assessment is the brand name of University of Cambridge Local\nExaminations Syndicate (UCLES), which is itself a department of the University of Cambridge.",
+      "table_id": null,
+      "image_id": null
+    }
+  ]
+}
