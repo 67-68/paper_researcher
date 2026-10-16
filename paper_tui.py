@@ -18,6 +18,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shlex
 import shutil
 import subprocess
@@ -32,6 +33,7 @@ if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
 try:
+    from rich.columns import Columns
     from rich.console import Console
     from rich.markdown import Markdown
     from rich.markup import escape
@@ -81,6 +83,7 @@ HELP_SECTIONS = [
             ("help -e / help --examples", "用具体卷子演示查询与 DB 对应关系"),
             ("help <command>", "显示某条命令的说明"),
             ("stats", "显示 papers / documents / questions 计数"),
+            ("verbose [on|off]", "开启/关闭详细模式；非 verbose 只显示最小命令集"),
             ("clear", "清屏"),
             ("quit / exit", "退出 TUI"),
         ],
@@ -174,6 +177,19 @@ COMMAND_NAMES = [
     "exit",
 ]
 
+# Commands shown when verbose mode is off.
+MINIMAL_COMMANDS = [
+    "help",
+    "papers",
+    "open",
+    "md",
+    "search",
+    "back",
+    "pipeline",
+    "verbose",
+    "quit",
+]
+
 SCRIPT_DEPS = {
     "pdf_to_md.py": ["pymupdf", "pdfplumber"],
     "crawl_pdfs.py": ["requests"],
@@ -186,6 +202,13 @@ def _short(value: Any, length: int = 90) -> str:
     if len(text) > length:
         return text[: length - 3] + "..."
     return text
+
+
+def _normalize_for_match(value: Any) -> str:
+    text = "" if value is None else str(value)
+    text = text.replace("**", "").replace("__", "").replace("*", "")
+    text = re.sub(r"\s+", " ", text)
+    return text.strip().lower()
 
 
 class PaperTUI:
@@ -211,6 +234,7 @@ class PaperTUI:
         self.last_paper_ids = []  # type: List[str]
         self.last_question_ids = []  # type: List[str]
         self.last_list = ""  # "papers" | "questions"
+        self.verbose = False
         self.uv = shutil.which("uv")
 
     # ------------------------------------------------------------------
@@ -485,32 +509,349 @@ class PaperTUI:
             )
         self.console.print(table)
 
-    def render_md(self, ident: str) -> None:
+    def _resolve_md(
+        self, ident: str
+    ) -> Tuple[Optional[Dict[str, Any]], Optional[Dict[str, Any]]]:
         paper = self.fetch_paper(ident)
-        md_path = None
-        title = ident
         if paper:
             docs = self.fetch_documents(paper["pdf_id"])
-            if docs:
-                md_path = docs[0].get("md_path")
-                title = docs[0].get("md_id") or paper["pdf_id"]
-        else:
-            row = self.conn.execute(
-                "SELECT * FROM documents WHERE md_id = ?", (ident,)
-            ).fetchone()
-            if row is not None:
-                md_path = row["md_path"]
-                title = row["md_id"]
-        if not md_path:
+            return paper, (docs[0] if docs else None)
+        row = self.conn.execute(
+            "SELECT * FROM documents WHERE md_id = ?", (ident,)
+        ).fetchone()
+        if row is not None:
+            document = dict(row)
+            return self.fetch_paper(document["pdf_id"]), document
+        return None, None
+
+    def render_md(self, ident: str) -> None:
+        paper, document = self._resolve_md(ident)
+        if not document or not document.get("md_path"):
             self.console.print("[red]markdown not found for:[/red] %s" % escape(ident))
             return
-        path = Path(md_path)
+        path = Path(document["md_path"])
         if not path.exists():
-            self.console.print("[red]markdown file is missing:[/red] %s" % escape(str(path)))
+            self.console.print(
+                "[red]markdown file is missing:[/red] %s" % escape(str(path))
+            )
             return
+        title = document.get("md_id") or ident
         self.console.print(
             Panel(Markdown(path.read_text(encoding="utf-8")), title=str(title))
         )
+
+    def render_md_structure_check(self, ident: str, clean: bool = False) -> None:
+        paper, document = self._resolve_md(ident)
+        if not paper or not document or not document.get("md_path"):
+            self.console.print(
+                "[red]markdown not found for:[/red] %s" % escape(ident)
+            )
+            return
+        path = Path(document["md_path"])
+        if not path.exists():
+            self.console.print(
+                "[red]markdown file is missing:[/red] %s" % escape(str(path))
+            )
+            return
+
+        text = path.read_text(encoding="utf-8")
+        raw_lines = text.splitlines()
+        flat_parts = []  # type: List[str]
+        line_map = []  # type: List[int]
+        for index, line in enumerate(raw_lines):
+            normalized = _normalize_for_match(line)
+            if not normalized:
+                continue
+            if flat_parts:
+                flat_parts.append(" ")
+                line_map.append(index + 1)
+            flat_parts.append(normalized)
+            line_map.extend([index + 1] * len(normalized))
+        flat_text = "".join(flat_parts)
+
+        def find_line(needle: str) -> Tuple[Optional[int], str]:
+            normalized = _normalize_for_match(needle)
+            if not normalized:
+                return None, ""
+            position = -1
+            for length in (60, 40, 24, 12):
+                position = flat_text.find(normalized[:length])
+                if position >= 0:
+                    break
+            if position < 0:
+                return None, ""
+            line_no = line_map[position]
+            start = line_no - 1
+            if not raw_lines[start].strip():
+                for next_index in range(line_no, len(raw_lines)):
+                    if raw_lines[next_index].strip():
+                        start = next_index
+                        break
+            snippet_lines = []  # type: List[str]
+            for next_index in range(start, min(start + 10, len(raw_lines))):
+                text = raw_lines[next_index].strip()
+                if not text:
+                    continue
+                if snippet_lines and (
+                    re.match(r"^\*\*\(\w+\)", text)
+                    or re.match(r"^\*\*\d+", text)
+                    or text.startswith("<!--")
+                ):
+                    break
+                snippet_lines.append(text)
+            return line_no, " ".join(snippet_lines)
+
+        def find_line_in_range(
+            needle: str, start_line: int, end_line: int
+        ) -> Tuple[Optional[int], str]:
+            normalized = _normalize_for_match(needle)
+            if not normalized:
+                return None, ""
+            prefix = normalized[:60]
+            for index in range(
+                max(0, start_line - 1), min(len(raw_lines), end_line)
+            ):
+                window_parts = []  # type: List[str]
+                line_numbers = []  # type: List[int]
+                for next_index in range(index, min(index + 5, len(raw_lines))):
+                    text = _normalize_for_match(raw_lines[next_index])
+                    if not text:
+                        continue
+                    window_parts.append(text)
+                    line_numbers.append(next_index + 1)
+                window = " ".join(window_parts)
+                position = window.find(prefix)
+                if position < 0:
+                    continue
+                offset = 0
+                match_line = line_numbers[0]
+                for part, line_no in zip(window_parts, line_numbers):
+                    if offset <= position < offset + len(part):
+                        match_line = line_no
+                        break
+                    offset += len(part) + 1
+                snippet_lines = []  # type: List[str]
+                for next_index in range(
+                    match_line - 1, min(match_line + 9, len(raw_lines))
+                ):
+                    text = raw_lines[next_index].strip()
+                    if not text:
+                        continue
+                    if snippet_lines and (
+                        re.match(r"^\*\*\(\w+\)", text)
+                        or re.match(r"^\*\*\d+", text)
+                        or text.startswith("<!--")
+                    ):
+                        break
+                    snippet_lines.append(text)
+                return match_line, " ".join(snippet_lines)
+            return None, ""
+
+        questions = self.fetch_paper_questions(
+            paper["pdf_id"], include_stimulus=True
+        )
+        matches = {}  # type: Dict[str, Tuple[Optional[int], str]]
+        for question in questions:
+            if question.get("kind") == "stimulus":
+                needle = question.get("shared_stem") or ""
+            else:
+                needle = question.get("stem") or question.get("parent_stem") or ""
+            matches[question["question_id"]] = find_line(needle)
+
+        group_order = []  # type: List[str]
+        groups = {}  # type: Dict[str, List[Dict[str, Any]]]
+        for question in questions:
+            group_id = question.get("group_id") or ""
+            if group_id not in groups:
+                groups[group_id] = []
+                group_order.append(group_id)
+            groups[group_id].append(question)
+
+        # Main questions often share the same generic stem
+        # ("Read the sources and then answer...").  Re-locate them inside
+        # their own group range so line numbers are not all the same.
+        for group_id in group_order:
+            group_questions = groups[group_id]
+            known_lines = [
+                matches[q["question_id"]][0]
+                for q in group_questions
+                if q.get("kind") in ("stimulus", "sub")
+                and matches[q["question_id"]][0] is not None
+            ]
+            if not known_lines:
+                continue
+            group_start = min(known_lines)
+            group_end = max(known_lines)
+            for question in group_questions:
+                if question.get("kind") != "main":
+                    continue
+                line_no, _ = matches[question["question_id"]]
+                if line_no is None or not (
+                    group_start - 3 <= line_no <= group_end + 3
+                ):
+                    matches[question["question_id"]] = find_line_in_range(
+                        question.get("stem")
+                        or question.get("parent_stem")
+                        or "",
+                        group_start,
+                        group_end,
+                    )
+
+        self.console.print(
+            Panel(
+                Text("左侧 = DB 结构，右侧 = Markdown 中对应内容"),
+                title="结构检查",
+                border_style="cyan",
+            )
+        )
+        for group_id in group_order:
+            group_questions = groups[group_id]
+            stimulus = [q for q in group_questions if q.get("kind") == "stimulus"]
+            mains = [q for q in group_questions if q.get("kind") == "main"]
+            subs_by_parent = {}  # type: Dict[str, List[Dict[str, Any]]]
+            for question in group_questions:
+                if question.get("kind") == "sub" and question.get("parent_id"):
+                    subs_by_parent.setdefault(question["parent_id"], []).append(
+                        question
+                    )
+
+            left = Text()
+            right = Text()
+            title = "Group %s" % group_id
+            if stimulus:
+                first = stimulus[0]
+                line_no, snippet = matches.get(first["question_id"], (None, ""))
+                left.append("Stimulus\n", style="bold cyan")
+                left.append(
+                    "  shared_stem: %s\n"
+                    % _short(first.get("shared_stem"), 80)
+                )
+                right.append(
+                    "line %s: %s\n"
+                    % (line_no if line_no is not None else "-", _short(snippet, 500))
+                )
+            for main in mains:
+                title = "Question %s" % (main.get("number") or "?")
+                line_no, snippet = matches.get(main["question_id"], (None, ""))
+                left.append("%s\n" % title, style="bold green")
+                if main.get("marks") is not None:
+                    left.append("  marks: %s\n" % main["marks"])
+                left.append("  stem: %s\n" % _short(main.get("stem"), 80))
+                right.append(
+                    "line %s: %s\n"
+                    % (line_no if line_no is not None else "-", _short(snippet, 500)),
+                    style="bold",
+                )
+                for sub in subs_by_parent.get(main["question_id"], []):
+                    sub_line, sub_snippet = matches.get(
+                        sub["question_id"], (None, "")
+                    )
+                    left.append(
+                        "  %s  %s  %s\n"
+                        % (
+                            sub.get("sub_label") or "",
+                            (
+                                "[%s]" % sub["marks"]
+                                if sub.get("marks") is not None
+                                else ""
+                            ),
+                            _short(sub.get("stem"), 70),
+                        )
+                    )
+                    right.append(
+                        "line %s: %s\n"
+                        % (
+                            sub_line if sub_line is not None else "-",
+                            _short(sub_snippet, 500),
+                        )
+                    )
+            total_width = self.console.width or 100
+            panel_width = max(24, (total_width - 6) // 2)
+            self.console.print(
+                Columns(
+                    [
+                        Panel(
+                            left,
+                            title=title,
+                            border_style="green",
+                            width=panel_width,
+                        ),
+                        Panel(
+                            right,
+                            title="Markdown",
+                            border_style="blue",
+                            width=panel_width,
+                        ),
+                    ],
+                    expand=False,
+                    equal=False,
+                )
+            )
+            self.console.print()
+
+        boilerplate_patterns = [
+            r"<!--\s*page:",
+            r"<!--\s*table:",
+            r"\bPMT\b",
+            r"Cambridge International",
+            r"©\s*UCLES",
+            r"\[Turn over\]",
+            r"BLANK PAGE",
+            r"\bDC\s*\(",
+            r"^\d{4}/\d{2}/",
+            r"^\d{6,}$",
+        ]
+        extras = []  # type: List[Tuple[int, str]]
+        for index, line in enumerate(raw_lines):
+            stripped = line.strip()
+            if not stripped:
+                continue
+            if any(re.search(pattern, stripped) for pattern in boilerplate_patterns):
+                extras.append((index + 1, stripped))
+        if extras:
+            extra_table = Table(title="多余的声明 / boilerplate", show_lines=False)
+            extra_table.add_column("line", justify="right")
+            extra_table.add_column("content", overflow="fold")
+            for line_no, content in extras[:200]:
+                extra_table.add_row(Text(str(line_no)), Text(_short(content, 120)))
+            self.console.print(extra_table)
+        else:
+            self.console.print("[green]no boilerplate lines detected[/green]")
+
+        missing = [
+            question_id
+            for question_id, (line_no, _) in matches.items()
+            if line_no is None
+        ]
+        self.console.print(
+            "[dim]questions: %d, matched: %d, missing: %d, boilerplate: %d[/dim]"
+            % (
+                len(questions),
+                len(questions) - len(missing),
+                len(missing),
+                len(extras),
+            )
+        )
+
+        if clean:
+            cleaned = []
+            for index, line in enumerate(raw_lines):
+                stripped = line.strip()
+                if not stripped:
+                    cleaned.append(line)
+                    continue
+                if any(
+                    re.search(pattern, stripped) for pattern in boilerplate_patterns
+                ):
+                    continue
+                cleaned.append(line)
+            clean_path = path.with_name(path.stem + ".clean.md")
+            clean_path.write_text(
+                "\n".join(cleaned).rstrip() + "\n", encoding="utf-8"
+            )
+            self.console.print(
+                "[green]wrote[/green] %s" % escape(str(clean_path))
+            )
 
     def render_raw(self, ident: str) -> None:
         question = self.fetch_question(ident)
@@ -742,6 +1083,55 @@ class PaperTUI:
     # commands
     # ------------------------------------------------------------------
 
+    def visible_commands(self) -> List[str]:
+        if self.verbose:
+            return list(COMMAND_NAMES)
+        return [name for name in MINIMAL_COMMANDS if name in COMMAND_NAMES]
+
+    def visible_help_sections(self) -> List[Tuple[str, List[Tuple[str, str]]]]:
+        if self.verbose:
+            return HELP_SECTIONS
+        return [
+            (
+                "非 verbose 命令集（输入 verbose on 查看全部）",
+                [
+                    ("help / ?", "显示本命令集"),
+                    ("papers [--kind QP|MS] [--session S]", "列出卷子"),
+                    ("open <n|id>", "统一导航：paper / question / md"),
+                    ("md [--verbose] [--clean] [id]", "渲染 Markdown；--verbose 结构检查"),
+                    ("search <text>", "搜索题目"),
+                    ("back", "返回上一个节点"),
+                    ("pipeline [--profile P] [--yes] [id]", "卷子 -> 题目全流程"),
+                    ("verbose on|off", "开启/关闭详细模式"),
+                    ("quit / exit", "退出 TUI"),
+                ],
+            )
+        ]
+
+    def cmd_verbose(self, args: List[str]) -> None:
+        if args:
+            value = args[0].strip().lower()
+            if value in ("on", "true", "1", "yes"):
+                self.verbose = True
+            elif value in ("off", "false", "0", "no"):
+                self.verbose = False
+            else:
+                self.console.print(
+                    "[yellow]usage: verbose [on|off][/yellow]"
+                )
+                return
+        else:
+            self.verbose = not self.verbose
+        state = "on" if self.verbose else "off"
+        self.console.print(
+            "[green]verbose %s[/green]" % state
+            + (
+                "  (all commands visible)"
+                if self.verbose
+                else "  (minimal command set visible; use `verbose on` for all)"
+            )
+        )
+
     def cmd_help(self, args: List[str]) -> None:
         if args and args[0] in ("-d", "--definition"):
             self.print_definition()
@@ -753,7 +1143,7 @@ class PaperTUI:
         if args:
             needle = args[0].lstrip("-")
             matches = []  # type: List[Tuple[str, str, str]]
-            for section, items in HELP_SECTIONS:
+            for section, items in self.visible_help_sections():
                 for command, description in items:
                     if needle in command or needle in command.split()[0]:
                         matches.append((section, command, description))
@@ -772,17 +1162,22 @@ class PaperTUI:
             self.console.print(table)
             return
 
-        for section, items in HELP_SECTIONS:
+        for section, items in self.visible_help_sections():
             table = Table(title=section, show_lines=False, title_justify="left")
             table.add_column("command", style="cyan", no_wrap=True)
             table.add_column("what it does")
             for command, description in items:
                 table.add_row(Text(command), Text(description))
             self.console.print(table)
-        self.console.print(
-            "[dim]help -d : 基本概念、处理流程、profile、导航索引[/dim]\n"
-            "[dim]help -e : 具体卷子示例与 DB 字段对应[/dim]"
-        )
+        if self.verbose:
+            self.console.print(
+                "[dim]help -d : 基本概念、处理流程、profile、导航索引[/dim]\n"
+                "[dim]help -e : 具体卷子示例与 DB 字段对应[/dim]"
+            )
+        else:
+            self.console.print(
+                "[dim]verbose on 显示全部命令；help -d / help -e 仍可直接使用[/dim]"
+            )
 
     def print_definition(self) -> None:
         concepts = Text()
@@ -998,6 +1393,8 @@ class PaperTUI:
             "   children\n"
             "   paper\n"
             "   md\n"
+            "   md --verbose         # 结构检查：左 DB 结构 -> 右 Markdown 内容\n"
+            "   md --verbose --clean # 清理 boilerplate，写出 .clean.md\n"
             "   search Napoleon\n"
             "   tables\n"
             "   attachments\n"
@@ -1234,11 +1631,23 @@ class PaperTUI:
         return "%s %s%s%s  %s" % (kind, number, sub, mark_text, stem)
 
     def cmd_md(self, args: List[str]) -> None:
-        ident = args[0] if args else self.current_paper_id()
-        if not ident:
-            self.console.print("[yellow]usage: md <pdf_id|md_id>[/yellow]")
+        parser = argparse.ArgumentParser(prog="md", add_help=False)
+        parser.add_argument("--verbose", action="store_true")
+        parser.add_argument("--clean", action="store_true")
+        parser.add_argument("ident", nargs="?")
+        namespace = self._parse(parser, args)
+        if namespace is None:
             return
-        self.render_md(ident)
+        ident = namespace.ident or self.current_paper_id()
+        if not ident:
+            self.console.print(
+                "[yellow]usage: md [--verbose] [--clean] <pdf_id|md_id>[/yellow]"
+            )
+            return
+        if namespace.verbose or namespace.clean:
+            self.render_md_structure_check(ident, clean=namespace.clean)
+        else:
+            self.render_md(ident)
 
     def _resolve_question_arg(self, args: List[str]) -> Optional[str]:
         if args:
@@ -1721,7 +2130,7 @@ class PaperTUI:
                     "  open <n|id> 统一入口：自动识别 paper / question / md\n"
                     "  home       卷子列表\n"
                     "  quit       退出\n\n"
-                    "输入时会实时显示匹配命令和候选参数。"
+                    "输入时会在输入行上方实时显示匹配命令和候选参数。"
                 ),
                 title="paper corpus",
                 border_style="cyan",
@@ -1744,6 +2153,7 @@ class PaperTUI:
         commands = {
             "help": self.cmd_help,
             "?": self.cmd_help,
+            "verbose": self.cmd_verbose,
             "stats": self.cmd_stats,
             "papers": self.cmd_papers,
             "open": self.cmd_open,
@@ -1794,6 +2204,7 @@ class PaperTUI:
     def _run_basic_repl(self) -> int:
         self.print_welcome()
         while True:
+            self.console.print("[dim]%s[/dim]" % self.suggest_line(""))
             try:
                 line = Prompt.ask("[bold cyan]paper_tui[/bold cyan]")
             except (EOFError, KeyboardInterrupt):
@@ -1821,24 +2232,38 @@ class PaperTUI:
 
         holder = {}  # type: Dict[str, Any]
 
-        def toolbar():
+        def dynamic_prompt():
             session = holder.get("session")
             text = session.default_buffer.text if session is not None else ""
             return FormattedText(
-                [("class:bottom-toolbar", tui.suggest_line(text))]
+                [
+                    ("class:bottom-toolbar", tui.suggest_line(text) + "\n"),
+                    ("class:prompt", "paper_tui> "),
+                ]
             )
 
         session = PromptSession(
             completer=TuiCompleter(),
             complete_while_typing=True,
-            bottom_toolbar=toolbar,
             history=InMemoryHistory(),
         )
         holder["session"] = session
+
+        def invalidate(_buffer: Any) -> None:
+            try:
+                session.app.invalidate()
+            except Exception:
+                pass
+
+        try:
+            session.default_buffer.on_text_changed += invalidate
+        except Exception:
+            pass
+
         self.print_welcome()
         while True:
             try:
-                line = session.prompt("paper_tui> ")
+                line = session.prompt(dynamic_prompt)
             except (EOFError, KeyboardInterrupt):
                 self.console.print()
                 break
@@ -1862,13 +2287,16 @@ class PaperTUI:
             "pipeline": ["--profile", "--yes", "--all"],
             "convert": ["--yes", "--all"],
             "split": ["--profile", "--yes"],
-            "help": ["-d", "--definition"],
+            "help": ["-d", "--definition", "-e", "--examples"],
+            "md": ["--verbose", "--clean"],
+            "verbose": ["on", "off"],
         }
         return options.get(command, [])
 
     def completion_candidates(self, text: str) -> List[str]:
+        visible = self.visible_commands()
         if not text:
-            return list(COMMAND_NAMES)
+            return list(visible)
         parts = text.split()
         if text.endswith(" "):
             word = ""
@@ -1878,7 +2306,7 @@ class PaperTUI:
             prior = parts[:-1]
 
         if not prior:
-            return [c for c in COMMAND_NAMES if c.startswith(word)]
+            return [c for c in visible if c.startswith(word)]
 
         command = prior[0]
         if prior and prior[-1] == "--profile":
@@ -1918,17 +2346,25 @@ class PaperTUI:
         stripped = raw.strip()
         trailing = raw.endswith(" ")
         if not stripped:
+            if self.verbose:
+                return (
+                    "commands: help  papers  open  stimulus  tree  md  attachments  "
+                    "search  sync  pipeline  process  convert  split  run  quit"
+                )
             return (
-                "commands: help  papers  open  stimulus  tree  md  attachments  "
-                "search  sync  pipeline  process  convert  split  run  quit"
+                "commands: help  papers  open  md  search  back  pipeline  "
+                "verbose  quit"
             )
 
         parts = stripped.split()
         command = parts[0]
+        visible = self.visible_commands()
         if len(parts) == 1 and not trailing:
-            matches = [c for c in COMMAND_NAMES if c.startswith(command)]
+            matches = [c for c in visible if c.startswith(command)]
             if matches:
                 return "commands: " + "  ".join(matches[:12])
+            if not self.verbose:
+                return "unknown in non-verbose mode; type `verbose on` for all commands"
             return "unknown command; type help"
 
         if command == "papers":
@@ -1951,13 +2387,19 @@ class PaperTUI:
             if "--profile" in parts:
                 return "values: history  cs  auto"
             return "options: --profile --yes  paths: .md"
+        if command == "md":
+            if "--verbose" in parts:
+                return "结构检查：左 DB 结构 -> 右 Markdown 内容；--clean 写出 .clean.md"
+            return "options: --verbose --clean  [paper_id|md_id]"
+        if command == "verbose":
+            return "values: on  off"
         if command == "run":
             return (
                 "scripts: pdf_to_md.py  split_questions.py  paperdb.py  "
                 "crawl_pdfs.py"
             )
         if command in ("help", "?"):
-            return "args: -d/--definition  <command>"
+            return "args: -d/--definition  -e/--examples  <command>"
         if command in (
             "open",
             "question",

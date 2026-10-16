@@ -1,0 +1,1202 @@
+{
+  "source_pdf": "/Users/a67_68/projects/paper_researcher/data/papers/Specimen (2021) QP.pdf",
+  "stem": "Specimen (2021) QP",
+  "generator": "pdf_to_md.py",
+  "image_link_style": "markdown",
+  "table_format": "md",
+  "pages": 8,
+  "images": [
+    {
+      "id": "fig-0001",
+      "page": 7,
+      "bbox": [
+        87.99778747558594,
+        89.19873046875,
+        507.27777099609375,
+        385.5987243652344
+      ],
+      "path": "fig-0001.png",
+      "kind": "raster",
+      "labels_text": []
+    }
+  ],
+  "tables": [],
+  "blocks": [
+    {
+      "id": "blk-0001",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        100.7313003540039,
+        378.7507019042969,
+        125.82329559326172
+      ],
+      "kind": "text",
+      "text": "**Cambridge International AS & A Level**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0002",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        154.1334228515625,
+        538.5809936523438,
+        169.46742248535156
+      ],
+      "kind": "text",
+      "text": "**HISTORY**\n**9489/01**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0003",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        175.150146484375,
+        538.5828247070312,
+        189.0901336669922
+      ],
+      "kind": "text",
+      "text": "Paper 1 Document question\n**For examination from 2021**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0004",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        195.150146484375,
+        538.5828857421875,
+        209.0901336669922
+      ],
+      "kind": "text",
+      "text": "SPECIMEN PAPER\n**1 hour 15 minutes**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0005",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        220.2701416015625,
+        279.2128601074219,
+        233.58013916015625
+      ],
+      "kind": "text",
+      "text": "You must answer on the enclosed answer booklet.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0006",
+      "page": 1,
+      "bbox": [
+        22.987998962402344,
+        223.93719482421875,
+        48.18899917602539,
+        327.02923583984375
+      ],
+      "kind": "text",
+      "text": "*0123456789*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0007",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        245.2701416015625,
+        246.79287719726562,
+        258.58013916015625
+      ],
+      "kind": "text",
+      "text": "You will need:\nAnswer booklet (enclosed)",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0008",
+      "page": 1,
+      "bbox": [
+        56.692901611328125,
+        273.74017333984375,
+        273.3958740234375,
+        300.68017578125
+      ],
+      "kind": "text",
+      "text": "**INSTRUCTIONS**\n●\nAnswer **one** question from **one** section only.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0009",
+      "page": 1,
+      "bbox": [
+        56.692893981933594,
+        299.86016845703125,
+        524.3328247070312,
+        365.170166015625
+      ],
+      "kind": "text",
+      "text": "Section A: European option\nSection B: American option\nSection C: International option\n●\nFollow the instructions on the front cover of the answer booklet. If you need additional answer paper,\nask the invigilator for a continuation booklet.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0010",
+      "page": 1,
+      "bbox": [
+        56.69289779663086,
+        390.74017333984375,
+        434.2227783203125,
+        430.170166015625
+      ],
+      "kind": "text",
+      "text": "**INFORMATION**\n●\nThe total mark for this paper is 40.\n●\nThe number of marks for each question or part question is shown in brackets [  ].",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0011",
+      "page": 1,
+      "bbox": [
+        174.5054931640625,
+        731.2737426757812,
+        420.7554626464844,
+        745.2137451171875
+      ],
+      "kind": "text",
+      "text": "This document has **8** pages. Blank pages are indicated.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0012",
+      "page": 2,
+      "bbox": [
+        294.5788879394531,
+        36.0782470703125,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**2**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0013",
+      "page": 2,
+      "bbox": [
+        49.606300354003906,
+        61.4404296875,
+        264.5935363769531,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "Answer **one** question from **one** section only.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0014",
+      "page": 2,
+      "bbox": [
+        225.4302978515625,
+        87.4444580078125,
+        369.8658752441406,
+        102.77845764160156
+      ],
+      "kind": "text",
+      "text": "**Section A: European option**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0015",
+      "page": 2,
+      "bbox": [
+        164.7653045654297,
+        113.448486328125,
+        430.50006103515625,
+        128.78248596191406
+      ],
+      "kind": "text",
+      "text": "**Liberalism and nationalism in Germany, 1815–1871**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0016",
+      "page": 2,
+      "bbox": [
+        49.60630798339844,
+        152.4434814453125,
+        375.5583190917969,
+        167.77748107910156
+      ],
+      "kind": "text",
+      "text": "**1**\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0017",
+      "page": 2,
+      "bbox": [
+        72.2883071899414,
+        178.447509765625,
+        120.17130279541016,
+        193.78150939941406
+      ],
+      "kind": "text",
+      "text": "**Source A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0018",
+      "page": 2,
+      "bbox": [
+        72.2883071899414,
+        204.5835418701172,
+        548.7421875,
+        297.23663330078125
+      ],
+      "kind": "text",
+      "text": "Count Bismarck thinks that the time has come to mount a great Prussian action abroad and, if it\ncan be done in no other way, to go to war. Such an action has been the goal from the beginning\nof his political career. It would satisfy his ungoverned and daring thirst for achievement. After such\na success, especially if it were attained by means of a fortunate war, the Prussian government\nwould more easily master its internal strife. The only means he has of bringing about a sudden\nchange internally must thus be sought in the field of foreign policy. The diversion of a war is vital to\nBismarck’ s internal policy.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0019",
+      "page": 2,
+      "bbox": [
+        130.12631225585938,
+        308.6876525878906,
+        545.6712036132812,
+        323.24066162109375
+      ],
+      "kind": "text",
+      "text": "*The Austrian ambassador in Prussia, to the Austrian Foreign Minister, February 1866.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0020",
+      "page": 2,
+      "bbox": [
+        72.29931640625,
+        360.46466064453125,
+        120.58930969238281,
+        375.79864501953125
+      ],
+      "kind": "text",
+      "text": "**Source B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0021",
+      "page": 2,
+      "bbox": [
+        72.29931640625,
+        386.60064697265625,
+        548.7434692382812,
+        440.2477111816406
+      ],
+      "kind": "text",
+      "text": "e had to avoid wounding Austria too severely; we had to avoid leaving behind in her any\nunnecessary bitterness of feeling or desire for revenge; we ought rather to reserve the possibility\nof becoming friends again and regard the Austrian state as a piece on the European chessboard.\nIf Austria were severely inj ured she would become the ally of France.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0022",
+      "page": 2,
+      "bbox": [
+        169.88031005859375,
+        451.6986999511719,
+        545.6436157226562,
+        466.251708984375
+      ],
+      "kind": "text",
+      "text": "*From Bismarck’s memoirs, published in 1898, describing events in July 1866.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0023",
+      "page": 2,
+      "bbox": [
+        72.29930877685547,
+        503.4757080078125,
+        120.58930206298828,
+        518.8096923828125
+      ],
+      "kind": "text",
+      "text": "**Source C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0024",
+      "page": 2,
+      "bbox": [
+        72.29930877685547,
+        529.6117553710938,
+        548.7247924804688,
+        661.270751953125
+      ],
+      "kind": "text",
+      "text": "Unhappily I believe in a war with France before long – her vanity, hurt by our victories, will drive\nher in that direction. Yet since I do not know of any French or G erman interest requiring a resort\nto arms, I do not see it as certain. O nly a country’ s most vital interests j ustify embarking on a\nwar, only its honour, which is not to be confused with prestige. No statesman has a right to begin\na war simply because in his opinion it is inevitable in a given period of time. If foreign ministers\nfollowed their rulers and military commanders into the field, H istory would record fewer wars. O n\nthe battlefield and in the hospitals I have seen the flower of our youth struck down by wounds and\ndisease. I would not have a moment’ s peace if I thought I had made war from personal ambition\nand national vanity. I will never advise H is Maj esty to wage war unless the most vital interests of\nthe Fatherland require it.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0025",
+      "page": 2,
+      "bbox": [
+        171.29931640625,
+        672.7216796875,
+        545.661376953125,
+        687.2747192382812
+      ],
+      "kind": "text",
+      "text": "*A letter from Bismarck to a Conservative Deputy in the Landtag, March 1867.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0026",
+      "page": 3,
+      "bbox": [
+        72.28857421875,
+        61.43963623046875,
+        112.63656616210938,
+        76.77363586425781
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0027",
+      "page": 3,
+      "bbox": [
+        72.28857421875,
+        87.5756607055664,
+        548.737060546875,
+        128.22068786621094
+      ],
+      "kind": "text",
+      "text": "There is nothing in our attitude to annoy or alarm France, there is nothing to prevent the\nmaintenance of peace for ten or fifteen years by which time the French will have become\naccustomed to G erman unity and will have ceased to care about it.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0028",
+      "page": 3,
+      "bbox": [
+        72.28857421875,
+        139.58372497558594,
+        548.742919921875,
+        245.2388153076172
+      ],
+      "kind": "text",
+      "text": "I told our generals this spring, when they endeavoured to prove to me by all sorts of arguments\nthat we would beat the French if we went to war at that time, ‘ I will still do all I can to prevent\nwar. You must remember, gentlemen, a war between such near neighbours and old enemies as\nFrance and Prussia, however it may turn out, is only the first of at least six, and what should we\nhave succeeded in doing? Ruining France and most likely ourselves into the bargain. Do you think\na poor bankrupt neighbour is as desirable as a solvent one? France buys largely from us and sells\nus many things we want.’ I strove for peace then and I will do so now. But G erman feelings must\nbe respected or I cannot answer for the people or the K ing!",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0029",
+      "page": 3,
+      "bbox": [
+        173.3455810546875,
+        256.6898498535156,
+        545.640625,
+        271.24285888671875
+      ],
+      "kind": "text",
+      "text": "*From an interview given by Bismarck to a British journalist, September 1867.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0030",
+      "page": 3,
+      "bbox": [
+        72.28857421875,
+        295.46484375,
+        385.93487548828125,
+        310.798828125
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0031",
+      "page": 3,
+      "bbox": [
+        72.28857421875,
+        321.4688415527344,
+        217.24656677246094,
+        336.8028259277344
+      ],
+      "kind": "text",
+      "text": "**(**** ****a)**\nRead Sources **C** and **D** .",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0032",
+      "page": 3,
+      "bbox": [
+        49.6065673828125,
+        347.47283935546875,
+        545.673583984375,
+        362.80682373046875
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nTo what ext ent do these two sources agree about Bismarck’ s attitude towards France?\n[15 ]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0033",
+      "page": 3,
+      "bbox": [
+        72.28855895996094,
+        386.46783447265625,
+        217.86251831054688,
+        401.80181884765625
+      ],
+      "kind": "text",
+      "text": "**(**** ****b)**\nRead **all** of the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0034",
+      "page": 3,
+      "bbox": [
+        49.606563568115234,
+        412.4718322753906,
+        548.74169921875,
+        440.2468566894531
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n‘ Bismarck always intended to use war to achieve G erman unification.’ H ow far do the sources\nsupport this view?\n[25 ]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0035",
+      "page": 4,
+      "bbox": [
+        294.5788879394531,
+        36.0782470703125,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**4**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0036",
+      "page": 4,
+      "bbox": [
+        225.7241973876953,
+        61.4404296875,
+        369.55584716796875,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**Sec**** ****tion B**** ****: Americ**** ****an op**** ****tion**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0037",
+      "page": 4,
+      "bbox": [
+        196.36520385742188,
+        87.4444580078125,
+        398.908203125,
+        102.77845764160156
+      ],
+      "kind": "text",
+      "text": "**The origins of the Civil W**\n**ar, 1820–**** ****186**** ****1**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0038",
+      "page": 4,
+      "bbox": [
+        49.61421203613281,
+        126.439453125,
+        375.56622314453125,
+        141.77345275878906
+      ],
+      "kind": "text",
+      "text": "**2**\nRead the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0039",
+      "page": 4,
+      "bbox": [
+        72.29621124267578,
+        152.4434814453125,
+        120.17920684814453,
+        167.77748107910156
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0040",
+      "page": 4,
+      "bbox": [
+        72.29621124267578,
+        178.5795135498047,
+        548.745849609375,
+        284.234619140625
+      ],
+      "kind": "text",
+      "text": "Everyone knows Douglas, a short, thick- set burly man with a fierce bulldog look. Skilled by a\nthousand conflicts in all the strategy of a hand- to- hand fight, proud, defiant, arrogant, audacious,\nunscrupulous, ‘ Little Dug’ ascended the platform and looked out impudently upon the immense\nthrong before him. The other – Lincoln – is in physique the opposite of Douglas. I must admit\nthat ‘ Long Abe’ s’ appearance is not attractive. But stir him up and the fire of his genius plays on\nevery feature. Listening to him on Saturday, calmly and unprej udiced, I was convinced he has no\nsuperior as an election speaker. The Republicans of Illinois have chosen a champion worthy of\ntheir heartiest support and fully equipped for conflict with the great ‘ Squatter Sovereign’ .",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0041",
+      "page": 4,
+      "bbox": [
+        103.81121063232422,
+        295.6856384277344,
+        545.669189453125,
+        310.2386474609375
+      ],
+      "kind": "text",
+      "text": "*From a report of the Ottawa debate in the ‘Chicago Press and Tribune’, 1 September 1858.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0042",
+      "page": 4,
+      "bbox": [
+        72.30720520019531,
+        347.462646484375,
+        112.65519714355469,
+        362.796630859375
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0043",
+      "page": 4,
+      "bbox": [
+        72.30720520019531,
+        373.5986328125,
+        548.7557373046875,
+        492.2557678222656
+      ],
+      "kind": "text",
+      "text": "The debate at Freeport was attended by 20000 people. At two o’ clock the debates began. Lincoln\nled off by replying to the questions put by Douglas at O ttawa. Lincoln then proceeded to bring out\nDouglas’ s views by asking him some questions. Mr D replied to Lincoln’ s questions and retracted\nwhat he said in Chicago. Douglas evidently adapts his speeches to the section of the state he is\nin, taking for granted that his followers in southern Illinois cannot, or will not, read the anti- slavery\nsentiments he may advocate in the North. Lincoln in his reply utterly demolished Douglas and\nexp osed his double dealing and his cowardice so fully that the friends of Douglas slunk away.\nNo more was heard from his friends while the Republicans held rousing meetings during the\nremainder of the evening.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0044",
+      "page": 4,
+      "bbox": [
+        186.82821655273438,
+        503.7067565917969,
+        545.6779174804688,
+        518.259765625
+      ],
+      "kind": "text",
+      "text": "*From the ‘Galesburg Semi-weekly Democrat’ (Illinois), 1 September 1858.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0045",
+      "page": 4,
+      "bbox": [
+        72.30721282958984,
+        555.4837646484375,
+        120.59720611572266,
+        570.8177490234375
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0046",
+      "page": 4,
+      "bbox": [
+        72.30721282958984,
+        581.6198120117188,
+        548.7778930664062,
+        700.2767944335938
+      ],
+      "kind": "text",
+      "text": "The discussion between Douglas and Lincoln drew an immense crowd of people, numbering we\nthink about 10000, though some put the figure as high as 15 000. The weather was cloudy and cold\nand in consequence of a high wind which prevailed a part of the time, many were prevented from\nhearing the speakers. Lincoln had the opening speech and consumed his time in vain attempts\nto remove himself from the unpleasant position in which Douglas’ s arguments had placed him\nin O ttawa. Taken as a whole, his speech was made up of lame and impotent conclusions and\ncame very short of the exp ectations of his friends. O f Douglas’ s speech, suffice it to say it was a\nmasterly effort. W\ne heard more than one Republican acknowledge that, much as they admired\nLincoln, he was no match for the ‘ Little G iant’ .",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0047",
+      "page": 4,
+      "bbox": [
+        234.10623168945312,
+        711.7277221679688,
+        545.6912231445312,
+        726.28076171875
+      ],
+      "kind": "text",
+      "text": "*From the ‘Freeport Weekly Bulletin’ (Illinois), 2 September 1858.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0048",
+      "page": 5,
+      "bbox": [
+        294.5788879394531,
+        36.0782470703125,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**5**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0049",
+      "page": 5,
+      "bbox": [
+        72.28857421875,
+        61.43963623046875,
+        112.63656616210938,
+        76.77363586425781
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0050",
+      "page": 5,
+      "bbox": [
+        72.28857421875,
+        87.5756607055664,
+        548.7589721679688,
+        206.23277282714844
+      ],
+      "kind": "text",
+      "text": "hen I was a boy of fourteen I had the good fortune to see and hear Lincoln in one of his series of\nhistoric debates with Douglas – at Freeport. I was within a few feet of the low platform from which\nthe two speeches were made and both saw and heard everything which went on. The contrast\nbetween the two speakers was immense, not in physique and bearing only but in relation to their\nsupporters and the audience as a whole. Lincoln seemed a man of the people. H is arguments\nwere as direct in their appeal to Democrats as to Republicans. Douglas, on the other hand, was the\naggressive, defiant party leader, determined to intimidate his opponents by a violence of bearing\nand exp ressions of contempt. I came away from the meeting quite aflame with enthusiasm for the\nnew Republican Party and especially for Lincoln as its new champion.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0051",
+      "page": 5,
+      "bbox": [
+        215.12356567382812,
+        217.68380737304688,
+        545.673583984375,
+        232.23680114746094
+      ],
+      "kind": "text",
+      "text": "*From an account written in 1917 by a Professor at Illinois University.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0052",
+      "page": 5,
+      "bbox": [
+        72.28857421875,
+        256.45880126953125,
+        385.93487548828125,
+        271.79278564453125
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0053",
+      "page": 5,
+      "bbox": [
+        72.28857421875,
+        282.46282958984375,
+        217.24658203125,
+        297.79681396484375
+      ],
+      "kind": "text",
+      "text": "**(**** ****a)**\nRead Sources **B** and **D** .",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0054",
+      "page": 5,
+      "bbox": [
+        49.60658264160156,
+        308.46685791015625,
+        545.6626586914062,
+        323.80084228515625
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nCompare and contrast the accounts of the Freeport meeting given by Sources B and D. [15 ]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0055",
+      "page": 5,
+      "bbox": [
+        72.27758026123047,
+        347.46185302734375,
+        214.7935333251953,
+        362.79583740234375
+      ],
+      "kind": "text",
+      "text": "**(**** ****b)**\nRead **all** of the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0056",
+      "page": 5,
+      "bbox": [
+        49.595577239990234,
+        373.4658508300781,
+        545.6638793945312,
+        401.2408752441406
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nH ow far do the sources support the view that, in the debates with Douglas in 185 8,\nLincoln showed all the talents needed to be a leader of the new Republican Party?\n[25 ]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0057",
+      "page": 6,
+      "bbox": [
+        217.5843048095703,
+        61.4404296875,
+        377.7113952636719,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**Sec**** ****tion C: International op**** ****tion**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0058",
+      "page": 6,
+      "bbox": [
+        135.35931396484375,
+        87.4444580078125,
+        459.9473876953125,
+        102.77845764160156
+      ],
+      "kind": "text",
+      "text": "**The League of Nations and international relations in the 193**** ****0s**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0059",
+      "page": 6,
+      "bbox": [
+        72.29631042480469,
+        126.439453125,
+        375.5663146972656,
+        141.77345275878906
+      ],
+      "kind": "text",
+      "text": "Read the sources and then answer **both** parts of the question.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0060",
+      "page": 6,
+      "bbox": [
+        72.29631042480469,
+        152.4434814453125,
+        120.17930603027344,
+        167.77748107910156
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e A**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0061",
+      "page": 6,
+      "bbox": [
+        72.29631042480469,
+        178.5795135498047,
+        548.748291015625,
+        271.23260498046875
+      ],
+      "kind": "text",
+      "text": "Senator Swanson, the US Representative, drew the determined opposition of almost the entire\nNaval Commission of the Disarmament Conference when he defended the right of the USA and\nG reat Britain to maintain their mighty war fleets. H e bore the brunt of attacks by other powers\nseeking abolition of aircraft carriers and battleships. H e created the biggest sensation when he\nmade it clear that the USA is prepared to maintain a fleet of big submarines for the defence of its\nPhilippine possessions unless the Conference abolishes submarines altogether. This raises the\ndanger of possible future naval warfare between the USA and Ja pan.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0062",
+      "page": 6,
+      "bbox": [
+        155.63230895996094,
+        282.6836242675781,
+        545.659423828125,
+        297.23663330078125
+      ],
+      "kind": "text",
+      "text": "*From a US newspaper report of the World Disarmament Conference, May 1932.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0063",
+      "page": 6,
+      "bbox": [
+        72.30731201171875,
+        334.46063232421875,
+        112.65530395507812,
+        349.79461669921875
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e B**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0064",
+      "page": 6,
+      "bbox": [
+        72.30731201171875,
+        360.59661865234375,
+        548.7526245117188,
+        531.2617797851562
+      ],
+      "kind": "text",
+      "text": "hile the Disarmament Conference did not accomplish all that was desired, its substantial\nachievements give great promise for success when it reconvenes in Ja nuary. W\nhen one considers\nthere were more than fifty nations represented at the Conference, with diverse interests and varied\nneeds for defence, it is pleasing that so much should have been accomplished. It assembled\nunder adverse circumstances, with a conflict between China and Ja pan and with many political\ncomplications in Europe. H owever, it decided to abolish chemical and bacteriological warfare. It\nabsolutely prohibited air attack on civil populations under any circumstances, and prepared plans\nfor the complete abolition of all bombardment from the air. It has committed itself to this abolition\nprovided means can be devised to make it effective. The Conference agreed to limit the size of\ntanks and provided for the limitation of land artillery. The Conference pledged itself to a substantial\nreduction in land, air and sea armaments. An encouraging feature of the Conference was that\nthose who voted against the resolution which summarises the work of the Conference, did so not\nbecause the resolution went too far, but because it did not go far enough.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0065",
+      "page": 6,
+      "bbox": [
+        107.94731140136719,
+        542.7127685546875,
+        545.6593627929688,
+        557.2658081054688
+      ],
+      "kind": "text",
+      "text": "*From a press release by Senator Swanson, US Representative at the World Disarmament*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0066",
+      "page": 6,
+      "bbox": [
+        418.290283203125,
+        555.7147827148438,
+        545.6824340820312,
+        570.267822265625
+      ],
+      "kind": "text",
+      "text": "*Conference, August 1932.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0067",
+      "page": 7,
+      "bbox": [
+        72.28829956054688,
+        61.4404296875,
+        120.57829284667969,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e C**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0068",
+      "page": 7,
+      "bbox": [
+        87.99778747558594,
+        89.19873046875,
+        507.27777099609375,
+        385.5987243652344
+      ],
+      "kind": "figure",
+      "text": "",
+      "table_id": null,
+      "image_id": "fig-0001"
+    },
+    {
+      "id": "blk-0069",
+      "page": 7,
+      "bbox": [
+        288.2381896972656,
+        397.0604248046875,
+        545.66796875,
+        411.6134338378906
+      ],
+      "kind": "text",
+      "text": "*Cartoon published in a British newspaper, May 1934.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0070",
+      "page": 7,
+      "bbox": [
+        72.28619384765625,
+        448.8374328613281,
+        112.63418579101562,
+        464.1714172363281
+      ],
+      "kind": "text",
+      "text": "**Sourc**** ****e D**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0071",
+      "page": 7,
+      "bbox": [
+        72.28619384765625,
+        474.9734191894531,
+        548.7445678710938,
+        593.6305541992188
+      ],
+      "kind": "text",
+      "text": "It may be questioned whether, when the Conference met early in 19 3 2, there exi sted the\nconditions required for ultimate success. The progress of the Conference was limited because\nthe settlement of political questions had not been sufficiently prepared in advance and time was\nspent on a series of fruitless discussions. The Conference faced other difficulties, such as serious\nevents in the Far East and conflicts between Colombia and Peru, Bolivia and Paraguay. Further,\nwhen the Conference met, the world was faced with the most serious and widespread economic\nand financial crisis in history. Economic difficulties were creating political unrest. All these events,\ncreating as they did a general uneasiness, undermined mutual confidence between nations and\ntroubled the atmosphere of the Conference from the very start.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0072",
+      "page": 7,
+      "bbox": [
+        206.97019958496094,
+        605.0814819335938,
+        545.6492309570312,
+        619.634521484375
+      ],
+      "kind": "text",
+      "text": "*From the official Report of the World Disarmament Conference, 1936.*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0073",
+      "page": 7,
+      "bbox": [
+        72.28619384765625,
+        643.8565673828125,
+        385.9324951171875,
+        659.1905517578125
+      ],
+      "kind": "text",
+      "text": "Answer **both** parts of the question with reference to the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0074",
+      "page": 7,
+      "bbox": [
+        72.28619384765625,
+        669.8605346679688,
+        217.2441864013672,
+        685.1945190429688
+      ],
+      "kind": "text",
+      "text": "**(**** ****a)**\nRead Sources **A** and **B** .",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0075",
+      "page": 7,
+      "bbox": [
+        49.60418701171875,
+        695.864501953125,
+        548.7196044921875,
+        723.6395263671875
+      ],
+      "kind": "text",
+      "text": "** **\n** **\nCompare and contrast Sources A and B as evidence of the USA’ s attitude towards\ndisarmament.\n[15 ]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0076",
+      "page": 7,
+      "bbox": [
+        72.28619384765625,
+        734.8705444335938,
+        211.74415588378906,
+        750.2045288085938
+      ],
+      "kind": "text",
+      "text": "**(**** ****b)**\nRead **all** of the sources.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0077",
+      "page": 7,
+      "bbox": [
+        49.60419845581055,
+        760.87451171875,
+        548.686279296875,
+        788.6495361328125
+      ],
+      "kind": "text",
+      "text": "** **\n** **\n‘ The W\norld Disarmament Conference was a failure.’ H ow far do the sources support this\nview?\n[25 ]",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0078",
+      "page": 8,
+      "bbox": [
+        294.5788879394531,
+        36.0782470703125,
+        300.69488525390625,
+        51.41224670410156
+      ],
+      "kind": "text",
+      "text": "**8**",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0079",
+      "page": 8,
+      "bbox": [
+        261.6836853027344,
+        61.4404296875,
+        326.2547607421875,
+        76.77442932128906
+      ],
+      "kind": "text",
+      "text": "**B**** ****LANK P**** ****AG**** **",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0080",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        690.1953735351562,
+        142.30029296875,
+        699.4564208984375
+      ],
+      "kind": "text",
+      "text": "*Copyright Acknowledgements:*",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0081",
+      "page": 8,
+      "bbox": [
+        49.606300354003906,
+        708.1364135742188,
+        547.5654907226562,
+        717.4534301757812
+      ],
+      "kind": "text",
+      "text": "Section C Source C:\n© Ref: LSE207 1; David Low; *The Conference E** **x** **cuses Itself*; Evening Standard; Associated Newspapers Ltd. / Solo Syndication;",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0082",
+      "page": 8,
+      "bbox": [
+        141.7753143310547,
+        717.138427734375,
+        301.1766357421875,
+        726.4554443359375
+      ],
+      "kind": "text",
+      "text": "19 3 4; British Cartoon Archive; www.cartoons.ac.uk",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0083",
+      "page": 8,
+      "bbox": [
+        49.60631561279297,
+        735.1354370117188,
+        547.5380859375,
+        762.4564208984375
+      ],
+      "kind": "text",
+      "text": "Permission to reproduce items where third- party owned material protected by copyright is included has been sought and cleared where possible. Every\nreasonable effort has been made by the publisher (UCLES) to trace copyright holders, but if any items requiring clearance have unwittingly been included, the\npublisher will be pleased to make amends at the earliest possible opportunity.",
+      "table_id": null,
+      "image_id": null
+    },
+    {
+      "id": "blk-0084",
+      "page": 8,
+      "bbox": [
+        49.60631561279297,
+        771.1364135742188,
+        547.5577392578125,
+        789.4554443359375
+      ],
+      "kind": "text",
+      "text": "Cambridge Assessment International Education is part of the Cambridge Assessment G roup. Cambridge Assessment is the brand name of the University of\nCambridge Local Ex aminations Syndicate (UCLES), which itself is a department of the University of Cambridge.",
+      "table_id": null,
+      "image_id": null
+    }
+  ]
+}
