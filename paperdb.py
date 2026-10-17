@@ -14,6 +14,10 @@ Design:
   * ``documents``  : one row per Markdown conversion, linked to a PDF.
   * ``questions``  : one row per stimulus / main question / sub-question,
                      linked to a document and, when applicable, to its parent.
+  * ``topic_trees`` / ``topics`` : profile topic taxonomy; the canonical text
+                     source is ``data/topics/<profile>.tree.md``.
+  * ``question_topics`` / ``question_tags`` : Jev topic choices and positional
+                     tags such as Paper 2 / Question 1 / (a).
 
 Other tools can either import the query helpers or call the CLI.  The CLI
 writes data to stdout (JSONL by default) and logs to stderr.
@@ -27,15 +31,18 @@ import json
 import re
 import sqlite3
 import sys
+
+sys.dont_write_bytecode = True
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, Iterator, List, Optional, Sequence, Tuple
 
-SCHEMA_VERSION = 1
+SCHEMA_VERSION = 2
 DEFAULT_DB = "data/papers.db"
 DEFAULT_PAPERS_DIR = "data/papers"
 DEFAULT_MD_DIR = "data/md"
 DEFAULT_QUESTIONS_DIR = "data/questions"
+DEFAULT_TOPICS_DIR = "data/topics"
 
 # Subject -> syllabus code.  Best effort; a URL or filename can override it.
 SUBJECT_SYLLABUS = {
@@ -131,6 +138,60 @@ CREATE INDEX IF NOT EXISTS idx_papers_kind
     ON papers(kind);
 CREATE INDEX IF NOT EXISTS idx_papers_session
     ON papers(session);
+
+CREATE TABLE IF NOT EXISTS topic_trees (
+    tree_id    TEXT PRIMARY KEY,
+    profile    TEXT NOT NULL UNIQUE,
+    title      TEXT,
+    intro      TEXT,
+    created_at TEXT,
+    updated_at TEXT
+);
+
+CREATE TABLE IF NOT EXISTS topics (
+    topic_id  TEXT PRIMARY KEY,
+    tree_id   TEXT NOT NULL REFERENCES topic_trees(tree_id) ON DELETE CASCADE,
+    parent_id TEXT REFERENCES topics(topic_id) ON DELETE CASCADE,
+    name      TEXT NOT NULL,
+    intro     TEXT,
+    position  INTEGER NOT NULL DEFAULT 0,
+    path      TEXT NOT NULL DEFAULT '',
+    path_key  TEXT NOT NULL DEFAULT '',
+    created_at TEXT,
+    updated_at TEXT
+);
+
+CREATE UNIQUE INDEX IF NOT EXISTS idx_topics_tree_path_key
+    ON topics(tree_id, path_key);
+CREATE INDEX IF NOT EXISTS idx_topics_tree_parent
+    ON topics(tree_id, parent_id, position);
+
+CREATE TABLE IF NOT EXISTS question_topics (
+    question_id TEXT NOT NULL REFERENCES questions(question_id) ON DELETE CASCADE,
+    topic_id    TEXT NOT NULL REFERENCES topics(topic_id) ON DELETE CASCADE,
+    source      TEXT NOT NULL DEFAULT 'jev',
+    confidence  REAL,
+    created_at  TEXT,
+    PRIMARY KEY (question_id, topic_id, source)
+);
+
+CREATE INDEX IF NOT EXISTS idx_question_topics_question
+    ON question_topics(question_id);
+CREATE INDEX IF NOT EXISTS idx_question_topics_topic
+    ON question_topics(topic_id);
+
+CREATE TABLE IF NOT EXISTS question_tags (
+    question_id TEXT NOT NULL REFERENCES questions(question_id) ON DELETE CASCADE,
+    tag         TEXT NOT NULL,
+    source      TEXT NOT NULL DEFAULT 'auto',
+    created_at  TEXT,
+    PRIMARY KEY (question_id, tag, source)
+);
+
+CREATE INDEX IF NOT EXISTS idx_question_tags_question
+    ON question_tags(question_id);
+CREATE INDEX IF NOT EXISTS idx_question_tags_tag
+    ON question_tags(tag);
 """
 
 QUESTION_COLUMNS = (
@@ -731,12 +792,75 @@ def sync_questions(
             _warn("%s does not contain a JSON list; skipped" % qpath.name)
             continue
 
+        # Question ids are deterministic, so re-syncing a document should not
+        # throw away Jev/manual topic tags.  Save them before the delete and
+        # restore rows whose question id still exists afterwards.
+        old_ids = [
+            row["question_id"]
+            for row in conn.execute(
+                "SELECT question_id FROM questions WHERE md_id = ?", (md_id,)
+            )
+        ]
+        saved_topics: List[sqlite3.Row] = []
+        saved_tags: List[sqlite3.Row] = []
+        if old_ids:
+            placeholders = ", ".join("?" for _ in old_ids)
+            saved_topics = list(
+                conn.execute(
+                    "SELECT * FROM question_topics WHERE question_id IN (%s)"
+                    % placeholders,
+                    old_ids,
+                )
+            )
+            saved_tags = list(
+                conn.execute(
+                    "SELECT * FROM question_tags WHERE question_id IN (%s)"
+                    % placeholders,
+                    old_ids,
+                )
+            )
+
         conn.execute("DELETE FROM questions WHERE md_id = ?", (md_id,))
         rows = flatten_questions(md_id, pdf_id, groups)
         if rows:
             conn.executemany(INSERT_QUESTION_SQL, rows)
         inserted += len(rows)
         files += 1
+
+        new_ids = {row[0] for row in rows}
+        valid_topic_ids = {
+            row["topic_id"] for row in conn.execute("SELECT topic_id FROM topics")
+        }
+        for saved in saved_topics:
+            if saved["question_id"] not in new_ids:
+                continue
+            if saved["topic_id"] not in valid_topic_ids:
+                continue
+            conn.execute(
+                "INSERT OR IGNORE INTO question_topics "
+                "(question_id, topic_id, source, confidence, created_at) "
+                "VALUES (?, ?, ?, ?, ?)",
+                (
+                    saved["question_id"],
+                    saved["topic_id"],
+                    saved["source"],
+                    saved["confidence"],
+                    saved["created_at"],
+                ),
+            )
+        for saved in saved_tags:
+            if saved["question_id"] not in new_ids:
+                continue
+            conn.execute(
+                "INSERT OR IGNORE INTO question_tags "
+                "(question_id, tag, source, created_at) VALUES (?, ?, ?, ?)",
+                (
+                    saved["question_id"],
+                    saved["tag"],
+                    saved["source"],
+                    saved["created_at"],
+                ),
+            )
 
     _warn("questions: %d rows from %d files" % (inserted, files))
     return inserted
@@ -1016,10 +1140,27 @@ def cmd_sync(args: argparse.Namespace) -> int:
     papers_dir = Path(args.papers_dir).expanduser()
     md_dir = Path(args.md).expanduser()
     questions_dir = Path(args.questions).expanduser()
+    topics_dir = Path(
+        getattr(args, "topics_dir", DEFAULT_TOPICS_DIR) or DEFAULT_TOPICS_DIR
+    ).expanduser()
 
     path_to_id, name_to_ids = sync_papers(conn, papers_dir)
     stem_to_md_id = sync_documents(conn, md_dir, path_to_id, name_to_ids)
     sync_questions(conn, questions_dir, stem_to_md_id)
+
+    # Topic trees are optional, but when present they are synced from the
+    # canonical *.tree.md files.  Auto (positional) tags are always refreshed
+    # because they depend only on the indexed questions and paper metadata.
+    topic_stats = {"topic_files": 0, "topic_nodes": 0, "auto_tag_questions": 0}
+    try:
+        import topic_tree
+
+        synced = topic_tree.sync_topic_trees(conn, topics_dir)
+        topic_stats["topic_files"] = synced.get("files", 0)
+        topic_stats["topic_nodes"] = synced.get("nodes", 0)
+        topic_stats["auto_tag_questions"] = topic_tree.refresh_auto_tags(conn)
+    except Exception as exc:  # pragma: no cover - defensive, keep paper sync alive
+        _warn("topic tree sync failed: %s" % exc)
     conn.commit()
 
     stats = {
@@ -1029,7 +1170,14 @@ def cmd_sync(args: argparse.Namespace) -> int:
         "main_or_sub": conn.execute(
             "SELECT COUNT(*) FROM questions WHERE kind IN ('main', 'sub')"
         ).fetchone()[0],
+        "topic_trees": conn.execute("SELECT COUNT(*) FROM topic_trees").fetchone()[0],
+        "topics": conn.execute("SELECT COUNT(*) FROM topics").fetchone()[0],
+        "question_topics": conn.execute(
+            "SELECT COUNT(*) FROM question_topics"
+        ).fetchone()[0],
+        "question_tags": conn.execute("SELECT COUNT(*) FROM question_tags").fetchone()[0],
     }
+    stats.update(topic_stats)
     conn.close()
     _warn("database: %s" % db_path)
     print(json.dumps(stats, ensure_ascii=False, sort_keys=True), file=sys.stderr)
@@ -1190,10 +1338,17 @@ def cmd_md(args: argparse.Namespace) -> int:
 
 def cmd_stats(args: argparse.Namespace) -> int:
     conn = connect(Path(args.db))
+    init_schema(conn)
     stats: Dict[str, Any] = {}
     stats["papers"] = conn.execute("SELECT COUNT(*) FROM papers").fetchone()[0]
     stats["documents"] = conn.execute("SELECT COUNT(*) FROM documents").fetchone()[0]
     stats["questions_total"] = conn.execute("SELECT COUNT(*) FROM questions").fetchone()[0]
+    stats["topic_trees"] = conn.execute("SELECT COUNT(*) FROM topic_trees").fetchone()[0]
+    stats["topics"] = conn.execute("SELECT COUNT(*) FROM topics").fetchone()[0]
+    stats["question_topics"] = conn.execute(
+        "SELECT COUNT(*) FROM question_topics"
+    ).fetchone()[0]
+    stats["question_tags"] = conn.execute("SELECT COUNT(*) FROM question_tags").fetchone()[0]
     stats["questions_by_kind"] = {
         row["kind"]: row["n"]
         for row in conn.execute(
@@ -1235,6 +1390,11 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--db", default=None, help="SQLite database path (default: %s)" % DEFAULT_DB
     )
+    parser.add_argument(
+        "--topics-dir",
+        default=DEFAULT_TOPICS_DIR,
+        help="topic tree directory (default: %s)" % DEFAULT_TOPICS_DIR,
+    )
     sub = parser.add_subparsers(dest="command", required=True)
 
     p_init = sub.add_parser("init", help="create an empty database and schema")
@@ -1242,7 +1402,7 @@ def build_parser() -> argparse.ArgumentParser:
 
     p_sync = sub.add_parser(
         "sync",
-        help="scan PDF / Markdown / questions directories and upsert the index",
+        help="scan PDF / Markdown / questions / topic-tree files and upsert the index",
     )
     p_sync.add_argument("--papers-dir", default=DEFAULT_PAPERS_DIR, help="PDF corpus dir")
     p_sync.add_argument("--md", default=DEFAULT_MD_DIR, help="Markdown output dir")
@@ -1318,6 +1478,9 @@ def build_parser() -> argparse.ArgumentParser:
     for subparser in sub.choices.values():
         subparser.add_argument(
             "--db", default=argparse.SUPPRESS, help=argparse.SUPPRESS
+        )
+        subparser.add_argument(
+            "--topics-dir", default=argparse.SUPPRESS, help=argparse.SUPPRESS
         )
 
     return parser

@@ -13,6 +13,7 @@ from pathlib import Path
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
+sys.dont_write_bytecode = True
 
 import paperdb  # noqa: E402
 
@@ -26,9 +27,11 @@ def build_fixture(root):
     papers_dir = root / "papers"
     md_dir = root / "md"
     questions_dir = root / "questions"
+    topics_dir = root / "topics"
     papers_dir.mkdir()
     md_dir.mkdir()
     questions_dir.mkdir()
+    topics_dir.mkdir()
 
     pdf_path = papers_dir / "June 2021 (v1) QP.pdf"
     pdf_path.write_bytes(b"%PDF-1.4\n% synthetic test pdf\n")
@@ -153,6 +156,7 @@ def build_fixture(root):
         "papers_dir": papers_dir,
         "md_dir": md_dir,
         "questions_dir": questions_dir,
+        "topics_dir": topics_dir,
         "db": root / "papers.db",
         "pdf_id": pdf_id,
         "stem": stem,
@@ -175,6 +179,8 @@ def main():
                 str(fixture["md_dir"]),
                 "--questions",
                 str(fixture["questions_dir"]),
+                "--topics-dir",
+                str(fixture["topics_dir"]),
             ]
         )
         assert rc == 0, rc

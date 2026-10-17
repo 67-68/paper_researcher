@@ -6,7 +6,8 @@ It is a thin command layer on top of ``paperdb.py``:
   * list and open papers / questions / Markdown documents
   * inspect a question together with its parent, children, tables, attachments
   * jump through the graph by id or by index
-  * run the PDF -> Markdown -> questions -> database pipeline
+  * build/view/edit profile topic trees and inspect inherited tags
+  * run the PDF -> Markdown -> questions -> database + Jev tagging pipeline
 
 Only ``rich`` is required for the TUI itself.  The conversion steps are
 executed as subprocesses, using ``uv`` when PyMuPDF / pdfplumber / requests are
@@ -67,12 +68,14 @@ except ImportError:  # pragma: no cover - optional dependency
 
 import paper_common  # noqa: E402
 import paperdb  # noqa: E402
+import topic_tree  # noqa: E402
 
 
 DEFAULT_DB = "data/papers.db"
 DEFAULT_PAPERS_DIR = "data/papers"
 DEFAULT_MD_DIR = "data/md"
 DEFAULT_QUESTIONS_DIR = "data/questions"
+DEFAULT_TOPICS_DIR = topic_tree.DEFAULT_TOPICS_DIR
 
 HELP_SECTIONS = [
     (
@@ -104,7 +107,7 @@ HELP_SECTIONS = [
                 "兼容别名，等同于 open",
             ),
             ("paper [pdf_id]", "跳到当前题所属的卷子"),
-            ("tree [pdf_id]", "显示 stimulus -> main -> sub 树"),
+            ("tree [pdf_id]", "显示题目的 stimulus -> main -> sub 层级"),
             ("md [pdf_id|md_id]", "渲染 Markdown 全文"),
             ("tables [question_id]", "显示题目关联的表格"),
             ("attachments [question_id]", "显示题目关联的图片附件"),
@@ -112,23 +115,49 @@ HELP_SECTIONS = [
             ("parent", "跳到父题或 stimulus"),
             ("children", "列出子题"),
             ("next / prev", "在当前卷子内前后移动"),
-            ("search <text>", "搜索主题干 / 题干 / 共享材料"),
+            (
+                "search [--tag T|--topic T] <text>",
+                "搜索题干，或按自动 tag / 主题树节点检索（父题含子题 tag）",
+            ),
             ("raw [id]", "显示完整 JSON"),
             ("back", "返回上一个节点"),
             ("home", "回到卷子列表"),
         ],
     ),
     (
+        "Topic tree 主题树",
+        [
+            (
+                "topics [view] [profile]",
+                "查看 profile 的 topic tree（默认 history）",
+            ),
+            (
+                "topics edit [profile]",
+                "导出为可编辑 Markdown 到 .pending/，编辑后回来 `topics import`",
+            ),
+            (
+                "topics export [profile] [--out FILE]",
+                "导出 canonical 树文件；--out - 输出到 stdout",
+            ),
+            (
+                "topics import [profile|file]",
+                "导入 pending / canonical / 指定文件，成功后删除 pending 文件",
+            ),
+            ("topics list", "列出所有 profile 的树"),
+            ("topics pending", "列出等待导入的编辑文件"),
+        ],
+    ),
+    (
         "Paper 处理 Pipeline",
         [
             (
-                "pipeline [--profile P] [--yes] [--all] [pdf_id|pdf ...]",
-                "convert + split + sync；默认 QP；--all 会连 MS 一起转换/入库，但 MS 不切题",
+                "pipeline [--profile P] [--yes] [--all] [--no-tag] [--api-key-file F] [pdf_id|pdf ...]",
+                "convert + split + sync + Jev 主题标注；profile 必须先有 topic tree",
             ),
             ("process [pdf_id]", "处理当前卷子或指定 pdf_id"),
             ("convert [--yes] [--all] [pdf_id|pdf ...]", "PDF -> Markdown"),
             ("split [--profile P] [--yes] [md ...]", "Markdown -> questions.json"),
-            ("sync", "Markdown + questions.json -> papers.db"),
+            ("sync", "Markdown + questions.json + topics/*.tree.md -> papers.db"),
         ],
     ),
     (
@@ -138,6 +167,7 @@ HELP_SECTIONS = [
             ("run pdf_to_md.py --help", "查看 PDF -> Markdown 参数"),
             ("run split_questions.py --help", "查看切题参数"),
             ("run paperdb.py --help", "查看数据库查询参数"),
+            ("run tag_questions.py --help", "查看 Jev 主题标注参数"),
         ],
     ),
 ]
@@ -153,6 +183,8 @@ COMMAND_NAMES = [
     "q",
     "jump",
     "tree",
+    "topics",
+    "topic",
     "md",
     "tables",
     "attachments",
@@ -184,6 +216,7 @@ MINIMAL_COMMANDS = [
     "open",
     "md",
     "search",
+    "topics",
     "back",
     "pipeline",
     "verbose",
@@ -218,6 +251,7 @@ class PaperTUI:
         papers_dir: Path,
         md_dir: Path,
         questions_dir: Path,
+        topics_dir: Optional[Path] = None,
         assume_yes: bool = False,
     ) -> None:
         self.console = Console()
@@ -225,11 +259,13 @@ class PaperTUI:
         self.papers_dir = papers_dir
         self.md_dir = md_dir
         self.questions_dir = questions_dir
+        self.topics_dir = topics_dir or Path(DEFAULT_TOPICS_DIR)
         self.assume_yes = assume_yes
 
         self.conn = None  # type: Any
         self.current_kind = ""  # "paper" | "question"
         self.current_id = ""  # type: str
+        self.current_profile = "history"
         self.history = []  # type: List[Tuple[str, str]]
         self.last_paper_ids = []  # type: List[str]
         self.last_question_ids = []  # type: List[str]
@@ -397,6 +433,8 @@ class PaperTUI:
                 )
             )
 
+        self.render_question_tags(question_id)
+
         parent_id = question.get("parent_id")
         if parent_id:
             parent = self.fetch_question(parent_id)
@@ -436,6 +474,42 @@ class PaperTUI:
             "[dim]parent | stimulus | children | next | prev | tables | "
             "attachments | raw | paper | md | back[/dim]"
         )
+
+    def render_question_tags(self, question_id: str) -> None:
+        """Show direct and inherited topic/auto tags for a question."""
+        try:
+            tags = topic_tree.get_effective_tags(self.conn, question_id)
+        except Exception:
+            return
+        topics = tags.get("topics") or []
+        auto_tags = tags.get("auto_tags") or []
+        if not topics and not auto_tags:
+            return
+
+        table = Table(title="Tags (parent inherits child tags)", show_lines=False)
+        table.add_column("kind", style="cyan", no_wrap=True)
+        table.add_column("tag", overflow="fold")
+        table.add_column("source", no_wrap=True)
+        table.add_column("conf", justify="right", no_wrap=True)
+        table.add_column("origin", no_wrap=True)
+        for topic in topics:
+            confidence = topic.get("confidence")
+            table.add_row(
+                "topic",
+                Text(topic.get("path") or topic.get("name") or ""),
+                Text(",".join(topic.get("sources") or [])),
+                Text("" if confidence is None else "%.2f" % confidence),
+                Text("inherited" if topic.get("inherited") else "direct"),
+            )
+        for tag in auto_tags:
+            table.add_row(
+                "auto",
+                Text(tag.get("tag") or ""),
+                Text(",".join(tag.get("sources") or [])),
+                Text(""),
+                Text("inherited" if tag.get("inherited") else "direct"),
+            )
+        self.console.print(table)
 
     def render_documents(self, documents: List[Dict[str, Any]]) -> None:
         table = Table(title="Documents", show_lines=False)
@@ -1099,9 +1173,10 @@ class PaperTUI:
                     ("papers [--kind QP|MS] [--session S]", "列出卷子"),
                     ("open <n|id>", "统一导航：paper / question / md"),
                     ("md [--verbose] [--clean] [id]", "渲染 Markdown；--verbose 结构检查"),
-                    ("search <text>", "搜索题目"),
+                    ("search [--tag T|--topic T] <text>", "搜索题目 / 自动 tag / 主题树"),
+                    ("topics [view|edit|import|export|list]", "profile 主题树"),
                     ("back", "返回上一个节点"),
-                    ("pipeline [--profile P] [--yes] [id]", "卷子 -> 题目全流程"),
+                    ("pipeline [--profile P] [--yes] [--no-tag] [id]", "卷子 -> 题目 + Jev 标注"),
                     ("verbose on|off", "开启/关闭详细模式"),
                     ("quit / exit", "退出 TUI"),
                 ],
@@ -1228,7 +1303,12 @@ class PaperTUI:
         flow.append("<stem>.questions.json / <stem>.questions.jsonl\n", style="bold")
         flow.append("  -> paperdb.py sync\n")
         flow.append("data/papers.db\n", style="bold")
-        flow.append("  papers -> documents -> questions")
+        flow.append("  papers -> documents -> questions\n\n")
+        flow.append("data/topics/<profile>.tree.md\n", style="bold")
+        flow.append("  -> topics import / paperdb.py sync\n")
+        flow.append("topics -> question_topics + question_tags\n", style="bold")
+        flow.append("  -> tag_questions.py --profile history\n")
+        flow.append("question_topics(jev) + question_tags(auto)")
         self.console.print(
             Panel(flow, title="一次 paper 的处理流程", border_style="green")
         )
@@ -1291,6 +1371,51 @@ class PaperTUI:
             Panel(profiles, title="profile 是什么", border_style="yellow")
         )
 
+        tree_text = Text()
+        tree_text.append(
+            "每个 profile 可以有一棵 topic tree（主题树），例如：\n"
+            "  history -> Peace treaties -> Treaty of Versailles\n"
+            "          -> Cold War       -> Cuban Missile Crisis\n\n"
+        )
+        tree_text.append("source of truth: ", style="bold")
+        tree_text.append("data/topics/<profile>.tree.md\n")
+        tree_text.append(
+            "  以 YAML 头（profile / title / intro，intro <= 100 字）+ 无序列表保存；\n"
+            "  节点写 `名称: 介绍`，节点介绍 <= 40 字。\n\n"
+        )
+        tree_text.append("编辑流程： ", style="bold")
+        tree_text.append(
+            "topics edit history\n"
+            "  写出 data/topics/.pending/history.tree.md；\n"
+            "  手动改完后运行 topics import，程序解析、写回 canonical 文件、\n"
+            "  更新数据库并删除 pending 文件。\n\n"
+        )
+        tree_text.append("Jev 标注： ", style="bold")
+        tree_text.append(
+            "pipeline 在 sync 后调用 tag_questions.py，把每道 main/sub 题\n"
+            "的完整上下文（shared_stem + parent_stem + stem + tables +\n"
+            "attachments）和树上所有节点介绍交给 Jev，选择最具体的一个主题，\n"
+            "结果写入 question_topics(source=jev)。\n\n"
+        )
+        tree_text.append("自动 tag： ", style="bold")
+        tree_text.append(
+            "Paper 2 / Question 1 / (a) / Section A 直接由题号位置生成，\n"
+            "写入 question_tags(source=auto)，不依赖 Jev。\n\n"
+        )
+        tree_text.append("父题继承： ", style="bold")
+        tree_text.append(
+            "查看或检索 main 题时，会自动包含其所有 sub 题的 topic/auto tags；\n"
+            "所以 `search --topic Versailles` 也会命中对应 main 题。\n\n"
+        )
+        tree_text.append("重新标注： ", style="bold")
+        tree_text.append(
+            "sync 会保留已有 Jev tag；修改树后要强制重标，运行\n"
+            "  run tag_questions.py --profile history --refresh --all"
+        )
+        self.console.print(
+            Panel(tree_text, title="topic tree 与 tagging", border_style="cyan")
+        )
+
         nav = Text()
         nav.append(
             "open 是统一入口，会自动识别 paper / question / md。\n"
@@ -1318,6 +1443,10 @@ class PaperTUI:
         nav.append("回到卷子列表\n")
         nav.append("tree           ", style="bold")
         nav.append("查看 stimulus -> main -> sub 树\n")
+        nav.append("topics         ", style="bold")
+        nav.append("查看 / 编辑 / 导入 profile 主题树\n")
+        nav.append("search --topic ", style="bold")
+        nav.append("按主题树节点检索（父题自动包含子题 tag）\n")
         nav.append("raw            ", style="bold")
         nav.append("查看完整 JSON\n\n")
         nav.append(
@@ -1328,8 +1457,20 @@ class PaperTUI:
         )
 
         flows = Text()
+        flows.append("主题树\n", style="bold cyan")
+        flows.append(
+            "  topics edit history      # 导出 pending 文件后手动编辑\n"
+            "  topics import            # 解析并删除 pending 文件\n"
+            "  topics                   # 查看当前 profile 的树\n"
+            "  topics list              # 查看所有 profile 的树\n\n"
+        )
         flows.append("全量处理\n", style="bold cyan")
-        flows.append("  pipeline\n  pipeline --all\n  pipeline --profile history --yes\n\n")
+        flows.append(
+            "  pipeline                 # 需要已有 topic tree；默认 history\n"
+            "  pipeline --all\n"
+            "  pipeline --profile history --yes\n"
+            "  pipeline --no-tag        # 只 convert/split/sync\n\n"
+        )
         flows.append("单份卷子\n", style="bold cyan")
         flows.append("  open <pdf_id>\n  process\n  # 或\n  pipeline <pdf_id>\n\n")
         flows.append("MS（mark scheme）\n", style="bold cyan")
@@ -1352,7 +1493,8 @@ class PaperTUI:
         flows.append(
             "  run pdf_to_md.py --help\n"
             "  run split_questions.py --help\n"
-            "  run paperdb.py --help"
+            "  run paperdb.py --help\n"
+            "  run tag_questions.py --help"
         )
         self.console.print(
             Panel(flows, title="常用工作流", border_style="blue")
@@ -1485,6 +1627,16 @@ class PaperTUI:
             ).fetchone()[0],
             "main_or_sub": self.conn.execute(
                 "SELECT COUNT(*) FROM questions WHERE kind IN ('main', 'sub')"
+            ).fetchone()[0],
+            "topic_trees": self.conn.execute(
+                "SELECT COUNT(*) FROM topic_trees"
+            ).fetchone()[0],
+            "topics": self.conn.execute("SELECT COUNT(*) FROM topics").fetchone()[0],
+            "question_topics": self.conn.execute(
+                "SELECT COUNT(*) FROM question_topics"
+            ).fetchone()[0],
+            "question_tags": self.conn.execute(
+                "SELECT COUNT(*) FROM question_tags"
             ).fetchone()[0],
         }
         table = Table(title="Stats")
@@ -1630,6 +1782,229 @@ class PaperTUI:
         stem = _short(question.get("stem") or "", 70)
         return "%s %s%s%s  %s" % (kind, number, sub, mark_text, stem)
 
+    # ------------------------------------------------------------------
+    # topic trees
+    # ------------------------------------------------------------------
+
+    def cmd_topics(self, args: List[str]) -> None:
+        parser = argparse.ArgumentParser(prog="topics", add_help=False)
+        parser.add_argument("action", nargs="?", default="view")
+        parser.add_argument("target", nargs="?")
+        parser.add_argument("--profile")
+        parser.add_argument("--out")
+        namespace = self._parse(parser, args)
+        if namespace is None:
+            return
+
+        known = {
+            "view",
+            "show",
+            "tree",
+            "list",
+            "ls",
+            "edit",
+            "export",
+            "import",
+            "pending",
+            "use",
+            "set",
+        }
+        action = namespace.action or "view"
+        target = namespace.target
+        profile = namespace.profile
+        if action not in known and target is None and not profile:
+            # `topics history` is shorthand for `topics view history`.
+            profile = action
+            action = "view"
+        if profile is None and target and action in (
+            "view",
+            "show",
+            "tree",
+            "edit",
+            "export",
+            "use",
+            "set",
+        ):
+            profile = target
+        profile = profile or self.current_profile
+
+        if action in ("view", "show", "tree"):
+            self._render_topic_tree(profile)
+        elif action in ("list", "ls"):
+            self._render_topic_list()
+        elif action == "edit":
+            self._topic_edit(profile)
+        elif action == "export":
+            self._topic_export(profile, namespace.out)
+        elif action == "import":
+            self._topic_import(target or profile)
+        elif action == "pending":
+            self._topic_pending()
+        elif action in ("use", "set"):
+            self.current_profile = profile
+            self.console.print(
+                "[green]current profile:[/green] %s" % escape(profile)
+            )
+        else:
+            self.console.print(
+                "[yellow]usage: topics [view|list|edit|export|import|pending|use] "
+                "[profile] [--profile P] [--out FILE][/yellow]"
+            )
+
+    def _render_topic_tree(self, profile: str) -> None:
+        try:
+            tree = topic_tree.load_tree(self.conn, profile, self.topics_dir)
+        except topic_tree.TopicTreeError as exc:
+            self.console.print("[red]%s[/red]" % escape(str(exc)))
+            return
+        if tree is None or not tree.nodes:
+            self.console.print("[yellow]no topic tree for profile:[/yellow] %s" % escape(profile))
+            self.console.print(
+                "[dim]create one with: topics edit %s[/dim]" % escape(profile)
+            )
+            return
+
+        header = Text()
+        header.append("profile: ", style="bold")
+        header.append(tree.profile)
+        header.append("\ntitle: ", style="bold")
+        header.append(tree.title or "")
+        header.append("\nintro: ", style="bold")
+        header.append(tree.intro or "")
+        header.append("\nnodes: ", style="bold")
+        header.append(str(tree.node_count()))
+        self.console.print(Panel(header, title="Topic tree", border_style="cyan"))
+
+        root = Tree(Text(tree.title or tree.profile))
+        for node in tree.nodes:
+            self._add_topic_node(root, node)
+        self.console.print(root)
+        self.console.print(
+            "[dim]edit: topics edit %s | export: topics export %s | "
+            "pipeline uses this tree for profile %s[/dim]"
+            % (escape(tree.profile), escape(tree.profile), escape(tree.profile))
+        )
+
+    def _add_topic_node(self, parent: Any, node: topic_tree.TopicNode) -> None:
+        label = node.name
+        if node.intro:
+            label = "%s: %s" % (label, node.intro)
+        branch = parent.add(Text(label))
+        for child in node.children:
+            self._add_topic_node(branch, child)
+
+    def _render_topic_list(self) -> None:
+        rows = topic_tree.list_trees(self.conn)
+        if not rows:
+            self.console.print("[yellow]no topic trees[/yellow]")
+            return
+        table = Table(title="Topic trees", show_lines=False)
+        table.add_column("profile", style="cyan")
+        table.add_column("title")
+        table.add_column("intro", overflow="fold")
+        table.add_column("nodes", justify="right")
+        table.add_column("updated")
+        for row in rows:
+            table.add_row(
+                Text(row.get("profile") or ""),
+                Text(row.get("title") or ""),
+                Text(row.get("intro") or ""),
+                Text(str(row.get("node_count") or 0)),
+                Text(row.get("updated_at") or ""),
+            )
+        self.console.print(table)
+
+    def _topic_edit(self, profile: str) -> None:
+        try:
+            tree = topic_tree.load_tree(self.conn, profile, self.topics_dir)
+        except topic_tree.TopicTreeError as exc:
+            self.console.print("[red]%s[/red]" % escape(str(exc)))
+            return
+        if tree is None:
+            tree = topic_tree.TopicTree(
+                profile=profile,
+                title=profile,
+                intro="",
+                nodes=[],
+            )
+        path = topic_tree.pending_path(self.topics_dir, profile)
+        topic_tree.write_tree_file(path, tree)
+        self.current_profile = tree.profile
+        self.console.print(
+            Panel(
+                Text(
+                    "Edit this file, then run `topics import %s` (or `topics import`).\n"
+                    "It will be parsed, written to the canonical tree file, and deleted."
+                    % profile
+                ),
+                title="Pending topic tree edit",
+                border_style="yellow",
+            )
+        )
+        self.console.print("[green]wrote[/green] %s" % escape(str(path)))
+
+    def _topic_export(self, profile: str, out: Optional[str]) -> None:
+        try:
+            tree = topic_tree.load_tree(self.conn, profile, self.topics_dir)
+        except topic_tree.TopicTreeError as exc:
+            self.console.print("[red]%s[/red]" % escape(str(exc)))
+            return
+        if tree is None or not tree.nodes:
+            self.console.print("[yellow]no topic tree for profile:[/yellow] %s" % escape(profile))
+            return
+        text = topic_tree.render_topic_markdown(tree)
+        if out == "-":
+            self.console.print(Syntax(text, "markdown", line_numbers=False))
+            return
+        path = Path(out) if out else topic_tree.canonical_path(self.topics_dir, tree.profile)
+        topic_tree.write_tree_file(path, tree)
+        self.console.print("[green]wrote[/green] %s" % escape(str(path)))
+
+    def _topic_import(self, target: str) -> None:
+        source: Optional[Path] = None
+        candidate = Path(target)
+        if candidate.exists():
+            source = candidate
+        else:
+            pending = topic_tree.pending_path(self.topics_dir, target)
+            canonical = topic_tree.canonical_path(self.topics_dir, target)
+            if pending.exists():
+                source = pending
+            elif canonical.exists():
+                source = canonical
+        if source is None:
+            self.console.print(
+                "[yellow]no pending or canonical tree for:[/yellow] %s" % escape(target)
+            )
+            return
+        is_pending = source.parent.name == topic_tree.PENDING_DIRNAME
+        try:
+            tree, stats = topic_tree.import_tree_file(
+                self.conn,
+                source,
+                topics_dir=self.topics_dir,
+                default_profile=target if not candidate.exists() else "",
+                delete_source=is_pending,
+            )
+        except topic_tree.TopicTreeError as exc:
+            self.console.print("[red]%s[/red]" % escape(str(exc)))
+            return
+        self.current_profile = tree.profile
+        self.console.print(
+            "[green]imported[/green] profile=%s nodes=%d removed=%d"
+            % (escape(tree.profile), stats["nodes"], stats["removed"])
+        )
+        if is_pending:
+            self.console.print("[dim]pending file removed[/dim]")
+
+    def _topic_pending(self) -> None:
+        files = topic_tree.pending_files(self.topics_dir)
+        if not files:
+            self.console.print("[yellow]no pending topic tree edits[/yellow]")
+            return
+        for path in files:
+            self.console.print(str(path))
+
     def cmd_md(self, args: List[str]) -> None:
         parser = argparse.ArgumentParser(prog="md", add_help=False)
         parser.add_argument("--verbose", action="store_true")
@@ -1702,17 +2077,44 @@ class PaperTUI:
         self.render_attachments({"attachments": attachments})
 
     def cmd_search(self, args: List[str]) -> None:
-        text = " ".join(args).strip()
-        if not text:
-            self.console.print("[yellow]usage: search <text>[/yellow]")
+        parser = argparse.ArgumentParser(prog="search", add_help=False)
+        parser.add_argument("--tag")
+        parser.add_argument("--topic")
+        parser.add_argument("--limit", type=int, default=200)
+        parser.add_argument("text", nargs="*")
+        namespace = self._parse(parser, args)
+        if namespace is None:
             return
-        questions = self.search(text)
+
+        title = "Search results"
+        if namespace.tag:
+            questions = topic_tree.find_questions_by_tag(
+                self.conn, namespace.tag, limit=namespace.limit
+            )
+            title = "Tagged %s" % namespace.tag
+        elif namespace.topic:
+            questions = topic_tree.find_questions_by_topic(
+                self.conn,
+                namespace.topic,
+                profile=self.current_profile,
+                limit=namespace.limit,
+            )
+            title = "Topic %s" % namespace.topic
+        else:
+            text = " ".join(namespace.text).strip()
+            if not text:
+                self.console.print(
+                    "[yellow]usage: search [--tag TAG | --topic NAME] <text>[/yellow]"
+                )
+                return
+            questions = self.search(text, limit=namespace.limit)
+
         self.last_question_ids = [q["question_id"] for q in questions]
         self.last_list = "questions"
         if not questions:
             self.console.print("[yellow]no matches[/yellow]")
             return
-        self.render_question_table(questions, title="Search results")
+        self.render_question_table(questions, title=title)
         self.console.print("[dim]question <n>[/dim]")
 
     def cmd_raw(self, args: List[str]) -> None:
@@ -1903,6 +2305,8 @@ class PaperTUI:
                 str(self.md_dir),
                 "--questions",
                 str(self.questions_dir),
+                "--topics-dir",
+                str(self.topics_dir),
             ],
             label="sync",
         )
@@ -1975,6 +2379,15 @@ class PaperTUI:
         parser.add_argument("--all", action="store_true")
         parser.add_argument("--yes", action="store_true")
         parser.add_argument(
+            "--no-tag",
+            action="store_true",
+            help="convert/split/sync but skip the Jev topic-tagging stage",
+        )
+        parser.add_argument("--api-key", help="Jev API key (default: environment)")
+        parser.add_argument(
+            "--api-key-file", help="file containing a Jev API key"
+        )
+        parser.add_argument(
             "targets",
             nargs="*",
             help="pdf_id, PDF path, or bare PDF filename; default all QP PDFs",
@@ -2018,16 +2431,63 @@ class PaperTUI:
                 "[dim]QP will be split; MS will only be converted and synced.[/dim]"
             )
 
+        # A profile topic tree is a hard precondition for processing QP papers.
+        # `auto` profiles are resolved from paper metadata / paths when possible.
+        if qp_pdfs:
+            try:
+                effective_profile = topic_tree.resolve_profile_for_tree(
+                    self.conn,
+                    namespace.profile,
+                    [self._paper_for_path(path) for path in qp_pdfs],
+                    qp_pdfs,
+                )
+            except topic_tree.TopicTreeError as exc:
+                self.console.print("[red]%s[/red]" % escape(str(exc)))
+                return
+            self.current_profile = effective_profile
+            try:
+                tree = topic_tree.ensure_tree(
+                    self.conn, effective_profile, self.topics_dir
+                )
+            except topic_tree.TopicTreeError as exc:
+                self.console.print("[red]%s[/red]" % escape(str(exc)))
+                self.console.print(
+                    "[dim]Create it first: topics edit %s[/dim]"
+                    % escape(effective_profile)
+                )
+                return
+            tree_title = tree.title or effective_profile
+            tree_nodes = tree.node_count()
+        else:
+            effective_profile = namespace.profile
+            tree_title = "(no QP selected)"
+            tree_nodes = 0
+
+        tag_note = " then Jev-tag questions" if not namespace.no_tag else " (no Jev tagging)"
         if ms_pdfs:
             confirm_message = (
                 "Run pipeline on %d PDF(s): %d QP, %d MS; MS will only be "
-                "converted/synced, not split. Profile %s?"
-                % (len(pdfs), len(qp_pdfs), len(ms_pdfs), namespace.profile)
+                "converted/synced, not split. Profile %s (%s, %d nodes)%s?"
+                % (
+                    len(pdfs),
+                    len(qp_pdfs),
+                    len(ms_pdfs),
+                    effective_profile,
+                    tree_title,
+                    tree_nodes,
+                    tag_note,
+                )
             )
         else:
             confirm_message = (
-                "Run full pipeline on %d PDF(s) with profile %s?"
-                % (len(pdfs), namespace.profile)
+                "Run full pipeline on %d PDF(s) with profile %s (%s, %d nodes)%s?"
+                % (
+                    len(pdfs),
+                    effective_profile,
+                    tree_title,
+                    tree_nodes,
+                    tag_note,
+                )
             )
         if not self._confirm(confirm_message, force_yes=namespace.yes):
             return
@@ -2051,7 +2511,7 @@ class PaperTUI:
                 "split_questions.py",
                 [
                     "--profile",
-                    namespace.profile,
+                    effective_profile,
                     "--out",
                     str(self.questions_dir),
                 ]
@@ -2073,10 +2533,52 @@ class PaperTUI:
                 str(self.md_dir),
                 "--questions",
                 str(self.questions_dir),
+                "--topics-dir",
+                str(self.topics_dir),
             ],
             label="sync",
         )
         if code == 0:
+            if not namespace.no_tag and qp_pdfs:
+                pdf_ids = []
+                for path in qp_pdfs:
+                    paper = self._paper_for_path(path)
+                    if paper and paper.get("pdf_id"):
+                        pdf_ids.append(paper["pdf_id"])
+                if not pdf_ids:
+                    self.console.print(
+                        "[yellow]no indexed QP paper ids for Jev tagging; "
+                        "skipped[/yellow]"
+                    )
+                else:
+                    tag_args = [
+                        "--db",
+                        str(self.db_path),
+                        "--topics-dir",
+                        str(self.topics_dir),
+                        "--profile",
+                        effective_profile,
+                    ]
+                    if namespace.api_key:
+                        tag_args.extend(["--api-key", namespace.api_key])
+                    if namespace.api_key_file:
+                        tag_args.extend(["--api-key-file", namespace.api_key_file])
+                    for pdf_id in pdf_ids:
+                        tag_args.extend(["--paper", pdf_id])
+                    tag_code = self._run_script(
+                        "tag_questions.py", tag_args, label="tag"
+                    )
+                    if tag_code != 0:
+                        self.console.print(
+                            "[red]Jev tagging failed; papers are converted and "
+                            "indexed, but questions may be untagged.[/red]"
+                        )
+                        return
+            elif namespace.no_tag:
+                self.console.print(
+                    "[yellow]Jev tagging skipped (--no-tag); "
+                    "auto positional tags were refreshed by sync.[/yellow]"
+                )
             self.console.print("[green]pipeline complete[/green]")
             self.cmd_stats([])
             if explicit and self.current_kind == "paper":
@@ -2128,6 +2630,7 @@ class PaperTUI:
                     "  help -d    基本概念、处理流程、profile 和导航说明\n"
                     "  help -e    用具体卷子演示查询与 DB 对应关系\n"
                     "  open <n|id> 统一入口：自动识别 paper / question / md\n"
+                    "  topics     查看/编辑 topic tree（pipeline 的前置条件）\n"
                     "  home       卷子列表\n"
                     "  quit       退出\n\n"
                     "输入时会在输入行上方实时显示匹配命令和候选参数。"
@@ -2162,6 +2665,8 @@ class PaperTUI:
             "q": self.cmd_question,
             "jump": self.cmd_jump,
             "tree": self.cmd_tree,
+            "topics": self.cmd_topics,
+            "topic": self.cmd_topics,
             "md": self.cmd_md,
             "tables": self.cmd_tables,
             "attachments": self.cmd_attachments,
@@ -2284,11 +2789,30 @@ class PaperTUI:
                 "--syllabus",
                 "--paper-code",
             ],
-            "pipeline": ["--profile", "--yes", "--all"],
+            "pipeline": [
+                "--profile",
+                "--yes",
+                "--all",
+                "--no-tag",
+                "--api-key",
+                "--api-key-file",
+            ],
             "convert": ["--yes", "--all"],
             "split": ["--profile", "--yes"],
             "help": ["-d", "--definition", "-e", "--examples"],
             "md": ["--verbose", "--clean"],
+            "topics": [
+                "view",
+                "list",
+                "edit",
+                "export",
+                "import",
+                "pending",
+                "use",
+                "--profile",
+                "--out",
+            ],
+            "search": ["--tag", "--topic", "--limit"],
             "verbose": ["on", "off"],
         }
         return options.get(command, [])
@@ -2313,6 +2837,19 @@ class PaperTUI:
             return [v for v in ("history", "cs", "auto") if v.startswith(word)]
         if prior and prior[-1] == "--kind":
             return [v for v in ("QP", "MS") if v.upper().startswith(word.upper())]
+        if prior and prior[-1] == "--out":
+            return [v for v in ("-",) if v.startswith(word)]
+        if command in ("topics", "topic") and len(prior) == 1:
+            subcommands = [
+                "view",
+                "list",
+                "edit",
+                "export",
+                "import",
+                "pending",
+                "use",
+            ]
+            return [c for c in subcommands if c.startswith(word)]
 
         options = self._option_list(command)
         candidates = []  # type: List[str]
@@ -2348,11 +2885,11 @@ class PaperTUI:
         if not stripped:
             if self.verbose:
                 return (
-                    "commands: help  papers  open  stimulus  tree  md  attachments  "
+                    "commands: help  papers  open  topics  stimulus  tree  md  attachments  "
                     "search  sync  pipeline  process  convert  split  run  quit"
                 )
             return (
-                "commands: help  papers  open  md  search  back  pipeline  "
+                "commands: help  papers  open  topics  md  search  back  pipeline  "
                 "verbose  quit"
             )
 
@@ -2375,11 +2912,18 @@ class PaperTUI:
             if "--session" in parts:
                 return "values: June 2021  November 2017  Specimen (2015) ..."
             return "options: --subject --kind --session --syllabus --paper-code"
+        if command in ("topics", "topic"):
+            if "--profile" in parts:
+                return "values: history  cs  auto"
+            return (
+                "actions: view  list  edit  export  import  pending  use  "
+                "current profile: %s" % self.current_profile
+            )
         if command in ("pipeline", "convert"):
             if "--profile" in parts:
                 return "values: history  cs  auto"
             return (
-                "options: --profile --yes --all  "
+                "options: --profile --yes --all --no-tag  "
                 "targets: pdf_id/path; recent papers: "
                 + self._sample_ids(self.last_paper_ids)
             )
@@ -2387,6 +2931,8 @@ class PaperTUI:
             if "--profile" in parts:
                 return "values: history  cs  auto"
             return "options: --profile --yes  paths: .md"
+        if command == "search":
+            return "options: --tag TAG  --topic NAME|ID  --limit N  <text>"
         if command == "md":
             if "--verbose" in parts:
                 return "结构检查：左 DB 结构 -> 右 Markdown 内容；--clean 写出 .clean.md"
@@ -2463,6 +3009,9 @@ def build_parser() -> argparse.ArgumentParser:
         "--questions", default=DEFAULT_QUESTIONS_DIR, help="questions JSON directory"
     )
     parser.add_argument(
+        "--topics-dir", default=DEFAULT_TOPICS_DIR, help="topic tree directory"
+    )
+    parser.add_argument(
         "--yes", action="store_true", help="do not ask for confirmation"
     )
     parser.add_argument(
@@ -2483,6 +3032,7 @@ def main(argv: Optional[Sequence[str]] = None) -> int:
         papers_dir=Path(args.papers_dir),
         md_dir=Path(args.md),
         questions_dir=Path(args.questions),
+        topics_dir=Path(args.topics_dir),
         assume_yes=args.yes,
     )
     if args.command:
